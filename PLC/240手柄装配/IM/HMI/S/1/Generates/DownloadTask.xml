@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DownloadTask>
+  <ProjectInfo
+    DeviceVersion="14.0.1.0"
+    CreationTime="2020-06-15 02:24:43 (UTC)"
+    Runtime="SMART"
+    RtProjectName="20190128.HMI[KTP900 Basic PN]"
+    RtProjectFolderName="20190128.HMI[KTP900 Basic PN]"
+    DeviceType="KTP900_Basic"
+    DisplayOrientation="0"
+    RTReleaseNo="14.0.1.0"
+    ImageReleaseNo="14.0.1.0"
+    RTCV="14.0.1.0"
+    PRCV="14.0.1.0"
+    FirmwareFileName="KTP900\14.0.1.0\KTP900_V14_00_01_00.fwf"
+    RuntimeFileName="KTP900\14.0.1.0\KTP900_V14_00_01_00.fwf"
+    RuntimeAddonFolderName="KTP900" />
+  <FullDownload>pdata.srt</FullDownload>
+  <FullDownload
+    type="ADMINDATA">pdata.pwx</FullDownload>
+  <FullDownload>pdata.ORIE.cnk</FullDownload>
+  <FullDownload>pdata.ETH0.cnk</FullDownload>
+</DownloadTask>

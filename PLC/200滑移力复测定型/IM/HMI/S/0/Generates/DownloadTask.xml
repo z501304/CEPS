@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DownloadTask>
+  <ProjectInfo
+    DeviceVersion="14.0.1.0"
+    CreationTime="2020-07-05 06:51:57 (UTC)"
+    Runtime="SMART"
+    RtProjectName="200上柱管总成装配、滑移力复测.HMI_1[KTP900 Basic PN]"
+    RtProjectFolderName="200上柱管总成装配、滑移力复测.HMI_1[KTP900 Basic PN]"
+    DeviceType="KTP900_Basic"
+    DisplayOrientation="0"
+    RTReleaseNo="14.0.1.0"
+    ImageReleaseNo="14.0.1.0"
+    RTCV="14.0.1.0"
+    PRCV="14.0.1.0"
+    FirmwareFileName="KTP900\14.0.1.0\KTP900_V14_00_01_00.fwf"
+    RuntimeFileName="KTP900\14.0.1.0\KTP900_V14_00_01_00.fwf"
+    RuntimeAddonFolderName="KTP900" />
+  <FullDownload>pdata.srt</FullDownload>
+  <FullDownload
+    type="ADMINDATA">pdata.pwx</FullDownload>
+  <FullDownload>pdata.ORIE.cnk</FullDownload>
+  <FullDownload
+    type="RECIPE">pdata.R001.cnk</FullDownload>
+  <FullDownload>pdata.ETH0.cnk</FullDownload>
+  <FullDownload
+    type="RECIPE">pdata.R000.cnk</FullDownload>
+</DownloadTask>

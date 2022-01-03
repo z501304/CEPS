@@ -1,0 +1,568 @@
+FPAttributeValueFile
+
+0 SetAPSxParameter 2 3 false s
+0 GetAPSxParameter 2 3 false g
+0 SetAPSxParameterVt 2 3 false s
+0 GetAPSxParameterVt 2 3 false g
+
+v outputDriver		APSX_VAL_OUTPUT_OFF			(0)	"Output Off"
+					APSX_VAL_HIGH_SIDE_DRIVER	(1)	"High Side Driver"
+					APSX_VAL_LOW_SIDE_DRIVER 	(2)	"Low Side Driver"
+
+1  all    "OTP Bits"           "ASIC OTP Memory Values"
+2  all    "Main"               ""
+3  all    "3 Coils"							APSX_BIT_3_COILS				i  sg
+3  all    "Rollover"						APSX_ROLL_OVR					i  sg
+3  all    "PWM Prescale"					APSX_PRE_SCL_PWM				i  sg
+3  all    "PWM Slope"						APSX_SLOPE					i  sg
+3  all    "Output-Type"						APSX_OUTPUT_TYPE				i  sg
+3  all    "Analog Output"					APSX_ANALOG1_OUTPUT				i  sg	outputDriver
+3  all    "PWM Output"						APSX_PWM1_OUTPUT				i  sg	outputDriver
+3  all    "Output-Source"					APSX_OUTPUT_SOURCE				i  sg
+3  all    "Switch Mode"						APSX_SWITCH_MODE				i  sg
+3  all    "Output Inverse"					APSX_OUTPUT_INV					i  sg
+3  all    "Output Full"						APSX_OUTPUT_FULL				i  sg
+3  all    "Oscillator single, quadruple"			APSX_OSC1					i  sg
+3  all    "Oscillator Full"					APSX_OSC_FULL					i  sg
+3  all    "Oscillator power down"				APSX_OSC_HZ					i  sg
+3  all    "Syncronism Limit"					APSX_SYNC_LIMIT					i  sg
+3  all    "BGAP trimming"					APSX_BGAP					i  sg
+3  all    "DC/DC2"						APSX_DC1_DC2					i  sg
+3  all    "Master/Slave"					APSX_MASTER_SLAVE				i  sg
+3  all    "LVV Limit"						APSX_LVV_LIMIT					i  sg
+3  all    "Test"						APSX_TEST					i  sg
+3  all    "Parity"						APSX_PARITY					i  sg
+3  all    "Lock"						APSX_LOCK					i  sg
+3  all    "OpenShortDetectionDisable"				APSX_OPEN_SHORT_DETECT_DISABLE			i  sg
+
+2  all    "DSP A (or single output)"             ""
+3  all    "AGC-Detect"						APSX_AGC_DETECT					i  sg
+3  all    "Rotor Offset Correction"			APSX_ROTOR_OFFSET_CORRECTION	i  sg
+3  all    "Scaling"							APSX_SCALING					i  sg
+3  all    "Lower Limit"						APSX_LOWER_LIMIT				i  sg
+3  all    "Upper Limit"						APSX_UPPER_LIMIT				i  sg
+3  all    "PCB Attenuation"					APSX_PCB_ATTENUATION			i  sg
+3  all    "PCB Compensation 10"				APSX_PCB10_COMPENSATION			i  sg
+3  all    "PCB Compensation 20"				APSX_PCB20_COMPENSATION			i  sg
+3  all    "PCB Compensation 21"				APSX_PCB21_COMPENSATION			i  sg
+3  all    "System Error Full"				APSX_SYS_ERR_FULL				i  sg
+3  all    "Oscillator Gm"					APSX_OSC_GM						i  sg
+3  all    "LVV Limit"						APSX_LVV_LIMIT					i  sg
+3  all    "Parity"							APSX_PARITY_A					i  sg
+
+2  all    "DSP B"             ""
+3  all    "AGC-Detect"						APSX_AGC_DETECT_B				i  sg
+3  all    "Rotor Offset Correction"			APSX_ROTOR_OFFSET_CORRECTION_B	i  sg
+3  all    "Scaling"							APSX_SCALING_B					i  sg
+3  all    "Lower Limit"						APSX_LOWER_LIMIT_B				i  sg
+3  all    "Upper Limit"						APSX_UPPER_LIMIT_B				i  sg
+3  all    "PCB Attenuation"					APSX_PCB_ATTENUATION_B			i  sg
+3  all    "PCB Compensation 10"				APSX_PCB10_COMPENSATION_B		i  sg
+3  all    "PCB Compensation 20"				APSX_PCB20_COMPENSATION_B		i  sg
+3  all    "PCB Compensation 21"				APSX_PCB21_COMPENSATION_B		i  sg
+3  all    "System Error Full"				APSX_SYS_ERR_FULL_B				i  sg
+3  all    "Oscillator Gm"					APSX_OSC_GM						i  sg
+3  all    "Parity"							APSX_PARITY_B					i  sg
+
+1  all    "FF Bits"           "ASIC Flip-Flop Memory Values"
+2  all    "DSP A (or single output)"             ""
+3  all    "Range"							APSX_RANGE_1					i  sg
+3  all    "AGC Out"							APSX_AGC_OUT					i  sg
+3  all    "Offset Control"					APSX_OFFSET_CTRL				i  sg
+3  all    "Range Error"						APSX_RANGE_ERROR				i  sg
+3  all    "AGC Error"						APSX_AGC_ERROR					i  sg
+3  all    "Offset Control Error"			APSX_OFFSET_CTRL_ERROR			i  sg
+
+2  all    "DSP B"             ""
+3  all    "Range"							APSX_RANGE_B					i  sg
+3  all    "AGC Out"							APSX_AGC_OUT_B					i  sg
+3  all    "AGC Error"						APSX_AGC_ERROR_B				i  sg
+
+1  all    "Calculated Bits"   ""
+2  all    "Scaling (Physical Unit)"			APSX_SCALING_PHYSICAL			d  sg
+2  all    "Rotor Offset Correction (Physical Unit)"	APSX_ROTOR_OFFSET_CORRECTION_PHYSICAL	i  sg
+2  all    "Upper Limit in Percent"			APSX_UPPER_LIMIT_PERCENT		d  sg
+2  all    "Lower Limit in Percent"			APSX_LOWER_LIMIT_PERCENT		d  sg
+2  all    "PCB Compensation 3"				APSX_PCB3_COMPENSATION			i  g
+2  all    "Rotor Offset"					APSX_ROTOR_OFFSET				i  g
+	"call 'IndexPointCalibration' or 'RefCurveLeveling' withAutoAdjustOffset once before"
+    "Rotor Offset Distance from a calibrated cursor position to the start position of range 0 in Digit. "
+    "You can use to determine absolute positions. You can set the offset manualy, but be aware of asic malefunction.\n"
+	
+2  all    "AGC Min"							APSX_AGC_MIN					i  g
+	"call 'IndexPointCalibration' or 'RefCurveLeveling' withAutoAdjustOffset once before"
+	"Minimum agc-value over full sensor range\n"
+2  all    "Analog Output Driver Type"		APSX_ANALOG1_OUTPUT				i  sg	outputDriver
+2  all    "PWM Output Driver Type"			APSX_PWM1_OUTPUT				i  sg	outputDriver
+
+v booleans			TRUE				(1)
+					FALSE				(0)
+					
+v asicTypes			ASIC_TYPE_APSB		(0x01)	"APSB"
+					ASIC_TYPE_APSC			(0x40)		"APSC"
+					ASIC_TYPE_APSP_N	 	(0x02)		"APSP-N1A"
+					ASIC_TYPE_APSP			(0x08)		"APSP"
+					ASIC_TYPE_APSF  		(0x04)		"APSF/E"
+					ASIC_TYPE_HISA			(0x10)		"HISA"
+					ASIC_TYPE_APSA			(0x20)		"APSA"
+					ASIC_TYPE_HISB_O		(0x80)		"HISB_O"
+					ASIC_TYPE_HISB_P		(0x81)		"HISB_P"
+					ASIC_TYPE_HISC			(0x100)		"HISC"
+					ASIC_TYPE_HISC|ASIC_DSP_A	(0x10100)	"HISC (only DSPA)"
+					ASIC_TYPE_HISC|ASIC_DSP_B	(0x10100)	"HISC (only DSPB)"
+					ASIC_TYPE_HISD			(0x110)		"HISD"
+					ASIC_TYPE_HIST			(0x120)		"HIST"
+					ASIC_TYPE_HIST_O		(0x130)		"HIST_O"
+					ASIC_TYPE_HIST_P		(0x131)		"HIST_P"
+					ASIC_TYPE_HISF			(0x140)		"HISF"
+					ASIC_TYPE_HISH			(0x150)		"HISH"
+					ASIC_TYPE_HISR			(0x160)		"HISR"
+					ASIC_TYPE_HISS			(0x170)		"HISS"
+					ASIC_TYPE_HISS|ASIC_DSP_A	(0x10170)	"HISS (only DSPA)"
+					ASIC_TYPE_HISS|ASIC_DSP_B	(0x20170)	"HISS (only DSPB)"
+					ASIC_TYPE_HISS_HIGH_CAP		(0x171)		"HISS_HIGH_CAP"
+					ASIC_TYPE_HISS_HIGH_CAP|ASIC_DSP_A	(0x10171)	"HISS_HIGH_CAP (only DSPA)"
+					ASIC_TYPE_HISS_HIGH_CAP|ASIC_DSP_B	(0x20171)	"HISS_HIGH_CAP (only DSPB)"
+					ASIC_TYPE_CIPF			(0x801)		"CIPF"
+					ASIC_TYPE_CIPP			(0x810)		"CIPP"
+					ASIC_TYPE_HISW			(0x180)		"HISW"
+					ASIC_TYPE_HISW|ASIC_DSP_A	(0x10180)	"HISW (only DSPA)"
+					ASIC_TYPE_HISW|ASIC_DSP_B	(0x20180)	"HISW (only DSPB)"
+					ASIC_TYPE_HISW_HIGH_CAP		(0x181)		"HISW_HIGH_CAP"
+					ASIC_TYPE_HISW_HIGH_CAP|ASIC_DSP_A	(0x10181)	"HISW_HIGH_CAP (only DSPA)"
+					ASIC_TYPE_HISW_HIGH_CAP|ASIC_DSP_B	(0x20182)	"HISW_HIGH_CAP (only DSPB)"
+
+v language			APSX_VAL_GERMAN_LANGUAGE    		(1)	"german"
+    				APSX_VAL_ENGLISH_LANGUAGE   		(0) "english"
+
+v liftOffProbes		APSX_VAL_NEVER_LIFT_OFF				(0) "never. (24V max)"
+    				APSX_VAL_OTP_WRITE_ONLY_LIFT_OFF	(1) "only during burning the OTP-Register of an ASIC (10V max)."
+        			APSX_VAL_READ_WRITE_LIFT_OFF		(2)	"while read or write access to the ASIC (5V max)."
+        			APSX_VAL_ON_EVERY_PGI_ACTIVITY		(3)	"during every access to the ASIC"
+        			APSX_VAL_BREAK_CONTACT				(0x00)  "normal probe relay behaviour"
+        			APSX_VAL_MAKE_CONTACT				(0x80)	"invert probe relay behaviour"
+
+v vccRelay			APSX_VAL_BREAK_CONTACT				(0x00)  "normal Vcc relay behaviour"
+        			APSX_VAL_MAKE_CONTACT				(0x80)	"invert Vcc relay behaviour"
+        			APSX_VAL_MAKE_CONTACT				(0x80)	"invert Vcc relay behaviour"
+
+v fixOut1			APSX_VAL_RELEASE_OUT				(0) "opened connection"
+    				APSX_VAL_HOLD_OUT					(1) "closed connection"
+
+v powerSupply		APSX_VAL_OFF						(0)	"Disable OTP Output"
+					APSX_VAL_ON							(1)	"Enable OTP Output"
+
+v pcbOptimizationOptions	APSX_VAL_TWO_PERIODIC_ERROR			(0x01)
+							APSX_VAL_THREE_PERIODIC_ERROR		(0x02)
+							APSX_VAL_SIX_PERIODIC_ERROR			(0x04)
+							APSX_VAL_PCB_USE_FIXED_AGC			(0x10)	"Deaktivate internal AGCmin calculation, Set AGC with SetAPSxParameter( hAsic, APSX_VAL_AGC, AGCValue)"
+							APSX_VAL_NEGATIVE_PHASE_SEQUENCE	(0x20)
+v uirDeactivateOptions					APSX_VAL_BIT_CTRLS			(0x01)	"Deactivate all communication and bit controls"
+							APSX_VAL_ZAP_BUTTON			(0x02)	"Deactivate the zap button"
+
+v OtpVerificationLevels					APSX_VAL_NO_VERIFICATION		(0x00)	"Loading programmed data for verification is done by power on reset"
+							APSX_VAL_NORMAL_THRESHOLD		(0x01)	"Loading programmed data for verification is done by ASIC load OTP mechanism at normal data comparator threshold."							
+							APSX_VAL_DETECT_WEAK_ZERO		(0x02)	"Loading programmed data for verification is done by ASIC load OTP mechanism at modified data comparator threshold to detect weakly zapped OTPs."							
+							APSX_VAL_DETECT_WEAK_ONE		(0x04)	"Loading programmed data for verification is done by ASIC load OTP mechanism at modified data comparator threshold to detect weakly zapped OTPs."							
+0 SetAPSxAttribute 2 3 false s
+0 GetAPSxAttribute 2 3 false g
+0 SetAPSxAttributeVt 2 3 false s
+0 GetAPSxAttributeVt 2 3 false g
+
+1  all    "ASIC Attributes"				"ASIC Attributes"
+2  all    "ASIC Type"										APSX_ATTR_ASICTYPE							i  sg	asicTypes
+    "Sets the ASIC-Type of the ASIC-Object, which is handled by ASIC Handle.\n"
+    
+2  all    "ASIC Name"										APSX_ATTR_ASIC_NAME							s  sg
+    "Sets the ASIC-Name of the ASIC-Object, which is e.g. shown in the ASIC Windows.\n"
+
+2  all    "Lift Off Probes Relay"							APSX_ATTR_LIFT_OF_PROBES					i  sg	liftOffProbes
+    "Cut off the probes of an external measurement device during the PGI has access to the sensor.\nIt is also possible to invert the relay behaviour (Concated by '|' operator).\n"
+
+2  all    "Vcc Relay"										APSX_ATTR_VCC_RELAY							i  sg	vccRelay
+    "Invert the relay behaviour.\n"
+
+2  all    "Power Supply"									APSX_ATTR_POWER_SUPPLY						i  sg	powerSupply
+    "Switches the OTP relay.\n"
+ 
+2  all    "Reference Curve"									APSX_ATTR_REF_CURVE							"T_APSX_REFCURVE *" sg
+    "Returns or sets a pointer to the data-structure of the ASIC-Objects reference curve.\n"
+
+2  all    "Signal Curve"									APSX_ATTR_SIG_CURVE							"T_APSX_CURVE *" sg
+    "Returns or sets a pointer to the data-structure of the ASIC-Objects signal curve.\n"
+
+2  all    "Oszillator Frequency"							APSX_ATTR_OSCILLATOR_FREQ					d  sg
+    "Frequency of the transmitter coil. This value is used to fit the display of the PWM-Frequency.\n"
+    "Unit: [MHz]"
+
+2  all    "OTP Connection"									APSX_ATTR_OTP_LINE							i  sg
+    "Number of the OTP channel from the PGI, which is used to communicate with the ASIC-Objects. "
+    "It is needed for sensors with more than one ASIC, but only one OTP pin.\n"
+
+2  all    "Voltage Offset at OTP"							APSX_ATTR_OTP_OFFSET						i  sg
+    "Increasing of the voltage at OTP, e.g. to equalize the voltage drop of a polarity reversal protection diode.\n"
+    "Unit: [mV]"
+
+2  all    "Max. Current through OTP"						APSX_ATTR_OTP_CURRENT						i  sg
+    "Current limiting for the OTP-Input of the sensor during the OTP programming (burning)."
+    "This current determines mainly the behavior of the zap-diodes.\n"
+    "Unit: [mA]"
+
+2  all    "Max. Current through OUT"						APSX_ATTR_OUT_CURRENT						i  sg
+    "Current limiting for the OUT-Input of the sensor during the OTP programming (burning)."
+    "This current determines the edge steepness of the bit pattern, which has to be burned.\n"
+    "Unit: [mA]"
+
+2  all    "Out Connection"									APSX_ATTR_OUT_LINE							i  sg
+    "Determines the serial communication protocoll that is used beetween ASIC and PGI.\n"
+    "Insure the right ASIC out pin is connected to PGI.\n"
+
+2  all    "PGI Channel"										APSX_ATTR_PGI_CHANNEL           			i  sg
+    "Number of the PGI Channel, that the ASIC is connected to.\n"
+
+2  all    "Number of receiving coils"						APSX_ATTR_NUM_COILS							i  sg
+    "This attribute do not replace the ASIC parameter APSX_BIT_3_COILS."
+    "It is used to calculate nominal and optimized values of the characteristic.\n"
+    "Valid for: APS-B, -C\n"
+ 
+2  all    "Geometrical Way of the Receiving Structure"		APSX_ATTR_ALPHA_GEO							d  sg
+    "Angel in [°] with rotatory sensors\n"
+    "Distance in [mm] with linear sensors"
+
+2  all    "Fix 'OUT' Line"									APSX_ATTR_FIX_OUT							i  sg	fixOut1
+    "Determines the condition of the wiring between PGI and Out1 of the sensor, whenever the PGI does not have access to the sensor. "
+    "If the connection is closed, a faster processing of read- or write-commands is performed (opening the connection can be omitted). "
+    "However, the output-signal of the sensor can not be measured.\n"
+
+2  all    "Enable APS-F Ksens Correction (O1B Bug)"			APSX_ATTR_APSF_KSENS_CORRECTION				i  sg	booleans
+    "Disables some Ksens values and replaces this values by the next possible Ksens value.\n"
+
+2  all    "Suppress Parity Calculation"						APSX_ATTR_SUPPRESS_PARITY_CALCULATION		i  sg	booleans
+    "Suppresses the parity calculation, which is performed before the OTP programming (burning).\n"
+
+2  all    "Internal Status of Zapped OTPBits"				APSX_ATTR_ZAP_OTPBITS_STATUS				i  sg
+    "The DLL internaly stores a copy of the zapped OTP-Bits. "
+    "This copy is needed to prevent from zapping one bit zwice. "
+    "The Status and the internal copy is automaticly updated if you use POR and Read-Write-Functions. "
+    "However you can set the status manualy, but be aware of asic malefunction.\n"
+2  all    "Prevent self-zapping (HISB/D)"							APSX_ATTR_PREVENT_UNWANTED_ZAPPING						i  sg
+	"To prevent the risk of zapping bits during soft programming, the HISB/D ASIC needs a modified programming sequence in case of HISB/D is programmed using OUT2 ASIC pin and OUT1 ASIC pin is not connected (neither on PCB nor externally).\n"
+	"Under this condition the attribute has to be set to 1."
+2  all    "PCB Optimization Options"						APSX_ATTR_PCB_OPTI_OPTIONS					i  sg	pcbOptimizationOptions
+	"Select a fitting curve that represents the measured signal curve best. "
+	"There are several options available also. \n"
+	"i.e.: for a signal that contains a 2 and 3 periodic error beside the PCB (1 periodic) error set the parameter to (APSX_VAL_TWO_PERIODIC_ERROR | APSX_VAL_THREE_PERIODIC_ERROR)\n"
+2  all    "Max Error of PCB Optimization"					APSX_ATTR_PCB_MAX_MEAN_SQUARED_ERROR		d  sg
+	"Max value for the mean squared error of the automatic PCB optimization function. If the error exceeds this value the function will return 'Determing of the coefficient for the model function failed'\n"
+	"Default value: 1.0E-5"
+2  all    "Min PCBAtt value"					APSX_ATTR_PCB_MIN_ATT		i  sg
+	"Min value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Min Att value for the selected ASIC"
+2  all    "Max PCBAtt value"					APSX_ATTR_PCB_MAX_ATT		i  sg
+	"Max value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Max Att value for the selected ASIC"
+2  all    "Min PCBcomp1 value"					APSX_ATTR_PCB_MIN_COMP1		i  sg
+	"Min value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Min PCBcomp1 value for the selected ASIC"
+2  all    "Max PCBcomp1 value"					APSX_ATTR_PCB_MAX_COMP1		i  sg
+	"Max value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Max PCBcomp1 value for the selected ASIC"
+2  all    "Min PCBcomp2 value"					APSX_ATTR_PCB_MIN_COMP2		i  sg
+	"Min value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Min PCBcomp2 value for the selected ASIC"
+2  all    "Max PCBcomp2 value"					APSX_ATTR_PCB_MAX_COMP2		i  sg
+	"Max value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Max PCBcomp2 value for the selected ASIC"
+2  all    "Min PCBcomp3 value"					APSX_ATTR_PCB_MIN_COMP3		i  sg
+	"Min value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Min PCBcomp3 value for the selected ASIC"
+2  all    "Max PCBcomp3 value"					APSX_ATTR_PCB_MAX_COMP3		i  sg
+	"Max value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Max PCBcomp3 value for the selected ASIC"
+2  all    "OTP verification level"					APSX_ATTR_ASIC_OTP_VERIFY_LEVEL		i  sg	OtpVerificationLevels
+	"Combinitions are possible by logical OR the attribute values"
+2  all    "Use enhanced protocol"					APSX_ATTR_USE_ENHANCED_PROTOCOL		i  sg	booleans
+	"Addressing of full memory during write / read commands."
+2  all    "Optimisation at fix position"					APSX_ATTR_FIX_OUTPUT_OPTIMISATION		i  sg	booleans
+	"Configures the signal curve optimisation functions to find optimal values for a given position instead of optimisation over the whole range.\nThe position is set with attribute APSX_ATTR_FIX_OUTPUT_OPTIMISATION_POS"
+2  all    "Reference position for ix position optimisation"					APSX_ATTR_FIX_OUTPUT_OPTIMISATION_POS		d  sg	
+	"If APSX_ATTR_FIX_OUTPUT_OPTIMISATION is set to TRUE, the signal optimisation functions will optimise the signal at the given position"
+2  all    "Consider residual optimisation error"					APSX_ATTR_OPTI_DEPENDENCY_ASIC		i  sg	
+          "Set the ASIC object handle of the ASIC, that residual error after optimisation caused by correction factor quantisation should be considered during optimisation of this ASIC"
+2  all    "Sets the factor for consideration of residual error of ASIC object APSX_ATTR_OPTI_DEPENDENCY_ASIC"					APSX_ATTR_OPTI_DEPENDENY_FACTOR		d  sg	
+2  all    "Ignore preprogrammed vendor bits"					APSX_ATTR_IGNORE_PRESET_BITS		i  sg	booleans
+           "The preprogrammed bits (i.e. trimming bits programmed by ASIC vendor) are not considered"
+2  all    "Remain in 3W mode"					APSX_ATTR_REMAIN_IN_3W_MODE		i  sg	booleans
+            "Force the ASIC to remain in communication mode after a write / read command. This option can be used for programming time optimisation for ASICs that need a 'release communication' programming, i.e. CIPP"
+2  all    "Internal KoffsInit value"					APSX_ATTR_KOFFS_INIT		i  sg	
+          "The internal KoffsInit value defines the abolute rotor to receiver coil offset and is calculated inside the IndexPointCalEvel function"
+2  all    "Keep preprogrammed PCB comp"					APSX_ATTR_USE_PRESET_PCB		i  sg	booleans
+           "Prohibits changing of the preprogrammed PCBcomp values"
+
+1  all    "PGI Attributes"				"PGI Attributes"
+2  all    "Supported ASIC Number"							APSX_ATTR_PGI_NUM_ASICS         			i  g
+    "This function returns a zero terminated list of ASIC-Types supported by the PGI\n"
+	
+2  all    "Supported ASIC Types"							APSX_ATTR_PGI_SUPPORTED_ASICS   			i  g	asicTypes
+    "ASIC-Types supported by the PGI\n"
+
+2  all    "Manufacture Name"								APSX_ATTR_PGI_MANUFACTURE       			s  g
+	"Manufacturer name of the PGI.\n"
+
+2  all    "Serial Number"									APSX_ATTR_PGI_SERIALNUMBER      			s  g
+	"Serial number of the PGI.\n"
+
+2  all    "PGI Version"										APSX_ATTR_PGI_VERSION           			s  g
+	"Version number of the PGI.\n"
+
+2  all    "COM Port"										APSX_ATTR_PGI_COMPORT           			i  sg
+    "Number of the COM Port (Gen1 PGI) or Device Number (Gen2 PGI), which is connected to the PGI.\n"
+
+2  all    "Enable use of OTP2 as OUT3"										HISX_ATTR_ENA_PGI_OUT3_EMU							i  sg
+    "Enables OTP2 usage as OUT line for 3rd ASIC (PGI Gen2 only).\nThis attribute is available in HisX.dll only.\nUse PGI attribute APSX_ATTR_PGI_OUT3_EMU instead when using APSx.dll.\n\nThe attribute has to be set after object construction and before connectiong the object to the PGI!\nIts value has to be the PGI device number."
+2  all    "Disable use of OTP2 as OUT3"										HISX_ATTR_DISA_PGI_OUT3_EMU							i  sg
+    "Disables OTP2 usage as OUT line for 3rd ASIC (PGI Gen2 only).\nThis attribute is available in HisX.dll only.\nUse PGI attribute APSX_ATTR_PGI_OUT3_EMU instead when using APSx.dll.\n\nThe attribute has to be set after object construction and before connectiong the object to the PGI!\nIts value has to be the PGI device number."
+1  all    "DLL Attributes"				"APSx-Library Attributes"
+2  all    "Supported ASIC Types"							APSX_ATTR_DLL_SUPPORTED_ASICS   			i  g	asicTypes
+	"ASIC-Types supported by the APSx.DLL\n"
+	
+2  all    "DLL Version"										APSX_ATTR_DLL_VERSION           			s  g
+	"Version number of the APSx.DLL\n"
+	
+2  all    "Language"										APSX_ATTR_DLL_LANGUAGE						i  sg
+	"default language: english\n"
+	
+2  all    "Help Filename"									APSX_ATTR_DLL_HELP_FILE						i  sg
+    "the name off the DLL-associated help file.\n"
+    "Can include directory information.\n"
+    "Default 'APSx.hlp'.\n"
+
+1  all    "Source Code Connection"				"Attributes related to the connection between the dll and your application source code."
+2  all    "Measurement for Auto Rotor Offset Callback Function"				APSX_ATTR_MEASURE_CALLBACK_FUNCTION     	"void *"  sg
+    "passes a user-defined callback function, which returns the current output of the ASIC. "
+    "This value is needed for calculation of the Offset-Correction factor. "
+    "This function depends on the measurement device of the user, and therefore to be provided by the user.\n"
+    "Measurement function type:\n	 int __stdcall (*MyOwnAsicMeasurementFunction)(int hAsic, void * callbackData, IN OUT double * pSignal)\n"
+    "See also 'Write RefCurve to ASIC'. \n"
+
+2  all    "Measurement for Auto Rotor Offset Callback Data"					APSX_ATTR_MEASURE_CALLBACK_DATA				"void *"  sg
+2  all    "PGI IO Callback Function"										APSX_ATTR_PGI_IO_CALLBACK_FUNCTION			"void *"  sg
+    "passes a user-defined callback function, which is called on PGI activity.\n"
+    "This gives the user the possibility, to do additionaly setup in case of communication, i.e. relay control by the application.\n"
+    "Function type:\n	 int __stdcall (*PgiIOFunction)(int hAsic, int event, void * callbackData)\n\n"
+    "\nposible events:"
+    "    APSX_EVENT_WRITE_OTP\n"
+    "    APSX_EVENT_READ_DATA\n"
+    "    APSX_EVENT_WRITE_DATA\n"
+    "    APSX_EVENT_VCC_OFF\n"
+    "    APSX_EVENT_VCC_ON\n"
+    "    APSX_EVENT_PROCESS_TERMINATE\n\n"
+    "If this function returnes a negative value, the programming process will be aborted.\n"
+    "function type: \n	int (*FuncName)(int hAsic, int Event, void *callbackData)\n"
+
+2  all    "PGI IO Callback Data"											APSX_ATTR_PGI_IO_CALLBACK_DATA				"void *"  sg
+    "passes the callback data, which is used from the user-defined callback function, described in 'PGI IO Callback Function'."
+
+2  all    "Customer Defined 'Reference Curve Dialog' Callback Function"		APSX_ATTR_REF_CURVE_CALLBACK_FUNCTION		"void *"  sg
+    "passes a user-defined callback function, which replaces the default function to build a reference curve."
+    "It will be called in the window 'model characteristics' and 'optimize characteristics'.\n"
+    "function type: \n	int (*FuncName)(int hAsic, T_APSX_REFCURVE * pReferenceCurve, void *callbackData) \n"
+
+
+2  all    "Customer Defined 'Reference Curve Dialog' Callback Data"			APSX_ATTR_REF_CURVE_CALLBACK_DATA			"void *"  sg
+    "passes the callback data, which is used from the user-defined callback function, described in 'Define RefCurve Callback Function'.\n"
+
+1  all    "User Interface Attributes"	"User Interface Attributes"
+2  all    "Build Panel Callback Function"									APSX_ATTR_BUILD_PANEL_CALLBACK_FUNCTION		"void *"  sg
+2  all    "APSx-Panel Callback Function"									APSX_ATTR_PANEL_CALLBACK_FUNCTION			"void *"  sg
+2  all    "Panel Background Picture"										APSX_ATTR_PANEL_BACKGND_PIC					s  sg
+    "Display file as background for APSx panels. "
+    "Supported image types are BMP, DIB, RLE, ICO, PCX, and WMF.\n"
+2  all    "Show old style ASIC OTP- and FF-Bits panel"						APSX_ATTR_OLD_APSB_GUI						i  sg
+2  all    "Set options in optimization panel"						APSX_ATTR_OPTIMIZE_PANEL_PARAMETER			i  sg
+	"Set preselected optimization methods in the optimize panel\n"
+	"Bit No.        Meaning\n"
+	"----------------------\n"
+	"0              Scaling\n"
+	"1              Rotor Offset\n"
+	"2              Upper Limit\n"
+	"3              Lower Limit\n"
+	"4              PCB Compensation\n"
+	"5              2nd Point Calibration"
+2  all    "Deactivate interactive ASIC bits controls"					APSX_ATTR_PANEL_DEACTIVATE_CTRLS			i  sg  uirDeactivateOptions  
+	"Disables user input for all controls of the ASIC OTP- and FF-bits panels"
+	
+
+0 APSxSetSensorAttribute 2 3 false s
+0 APSxGetSensorAttribute 2 3 false g
+0 APSxSetSensorAttributeVt 2 3 false s
+0 APSxGetSensorAttributeVt 2 3 false g
+
+1  all    "Sensor Attributes"				"Sensor Attributes"
+2  all    "Measurement Function for Auto Rotor Correction"					APSX_ATTR_MEASURE_CALLBACK_FUNCTION		"void *"  sg
+    "passes a user-defined callback function, that returns the current output of all ASICs. "
+    "This value is needed to calculate of the Offset-Correction factor. "
+    "This function depends on the measurement device of the user, and therefore to be provided by the user. \n"
+    "Type: int __stdcall (*MyOwnSensorMeasurementFunction)(int hSensor, void * callbackData, IN OUT double * pSignalList, IN int iNumSignals)\n"
+    "used for automatic index calibration\n\n"
+	"For further help, see also 'Set ASIC Attribute' and 'WriteRefCurve to ASIC'.\n"
+
+2  all    "Measurement for Auto Rotor Offset Callback Data"					APSX_ATTR_MEASURE_CALLBACK_DATA				"void *"  sg
+
+2  all    "Name"											APSX_ATTR_ASIC_NAME							s  sg
+    "Sets the Name of the Sensor-Object, not used at the moment.\n"
+    
+1  all    "ASIC Attributes"				
+	"Setting ASIC-Attribute this way is exactly the same, like using SetAPSxAttribute, but effects to all ASICs on this sensor. "
+	"Because of different return values it it not possible to get attributes this way"
+2  all    "ASIC Type"										APSX_ATTR_ASICTYPE							i  s	asicTypes
+    "Sets the ASIC-Type of the ASIC-Object, which is handled by ASIC Handle.\n"
+    
+2  all    "ASIC Name"										APSX_ATTR_ASIC_NAME							s  s
+    "Sets the ASIC-Name of the ASIC-Object, which is e.g. shown in the ASIC Windows.\n"
+
+2  all    "Lift Off Probes"									APSX_ATTR_LIFT_OF_PROBES					i  s	liftOffProbes
+    "Cut off the probes of an external measurement device during the PGI has access to the sensor.\n"
+
+2  all    "Reference Curve"									APSX_ATTR_REF_CURVE							"T_APSX_REFCURVE *" s
+    "Returns or sets a pointer to the data-structure of the ASIC-Objects reference curve.\n"
+    
+2  all    "Signal Curve"									APSX_ATTR_SIG_CURVE							"T_APSX_CURVE *" s    "Returns or sets a pointer to the data-structure of the ASIC-Objects signal curve.\n"
+
+2  all    "Oszillator Frequency"							APSX_ATTR_OSCILLATOR_FREQ					d  s
+    "Frequency of the transmitter coil. This value is used to fit the display of the PWM-Frequency.\n"
+    "Unit: [MHz]"
+
+2  all    "OTP Connection"									APSX_ATTR_OTP_LINE							i  s
+    "Number of the OTP channel from the PGI, which is used to communicate with the ASIC-Objects. "
+    "It is needed for sensors with more than one ASIC, but only one OTP pin.\n"
+
+2  all    "Voltage Offset at OTP"							APSX_ATTR_OTP_OFFSET						i  s
+    "Increasing of the voltage at OTP, e.g. to equalize the voltage drop of a polarity reversal protection diode.\n"
+    "Unit: [mV]"
+    
+2  all    "Max. Current through OTP"						APSX_ATTR_OTP_CURRENT						i  s
+    "Current limiting for the OTP-Input of the sensor during the OTP programming (burning)."
+    "This current determines mainly the behavior of the zap-diodes.\n"
+    "Unit: [mA]"
+
+2  all    "Max. Current through OUT"						APSX_ATTR_OUT_CURRENT						i  s
+    "Current limiting for the OUT-Input of the sensor during the OTP programming (burning)."
+    "This current determines the edge steepness of the bit pattern, which has to be burned.\n"
+    "Unit: [mA]"
+
+2  all    "Out Connection"									APSX_ATTR_OUT_LINE							i  s
+    "Determines the serial communication protocoll that is used beetween ASIC and PGI.\n"
+    "Insure the right ASIC out pin is connected to PGI.\n"
+
+2  all    "Number of receiving coils"						APSX_ATTR_NUM_COILS							i  s
+    "This attribute do not replace the ASIC parameter APSX_BIT_3_COILS."
+    "It is used to calculate nominal and optimized values of the characteristic.\n"
+    "Valid for: APS-B, -C\n"
+ 
+2  all    "Geometrical Way of the Receiving Structure"		APSX_ATTR_ALPHA_GEO							d  s
+    "Angel in [°] with rotatory sensors\n"
+    "Distance in [mm] with linear sensors"
+
+2  all    "Fix 'OUT' Line"									APSX_ATTR_FIX_OUT							i  s	fixOut1
+    "Determines the condition of the wiring between PGI and Out1 of the sensor, whenever the PGI does not have access to the sensor. "
+    "If the connection is closed, a faster processing of read- or write-commands is performed (opening the connection can be omitted). "
+    "However, the output-signal of the sensor can not be measured.\n"
+
+2  all    "Enable APS-F Ksens Correction (O1B Bug)"			APSX_ATTR_APSF_KSENS_CORRECTION				i  s	booleans
+    "Disables some Ksens values and replaces this values by the next possible Ksens value.\n"
+
+2  all    "Suppress Parity Calculation"						APSX_ATTR_SUPPRESS_PARITY_CALCULATION		i  s	booleans
+    "Suppresses the parity calculation, which is performed before the OTP programming (burning).\n"
+
+2  all    "Internal Status of Zapped OTPBits"				APSX_ATTR_ZAP_OTPBITS_STATUS				i  s
+    "The DLL internaly stores a copy of the zapped OTP-Bits. "
+    "This copy is needed to prevent from zapping one bit zwice. "
+    "The Status and the internal copy is automaticly updated if you use POR and Read-Write-Functions. "
+    "However you can set the status manualy, but be aware of asic malefunction.\n"
+
+2  all    "PCB Optimization Options"						APSX_ATTR_PCB_OPTI_OPTIONS					i  s	pcbOptimizationOptions
+	"Select a fitting curve that represents the measured signal curve best. "
+	"There are several options available also. \n"
+	"i.e.: for a signal that contains a 2 and 3 periodic error beside the PCB (1 periodic) error set the parameter to (APSX_VAL_TWO_PERIODIC_ERROR | APSX_VAL_THREE_PERIODIC_ERROR)\n"
+
+2  all    "Max Error of PCB Optimization"					APSX_ATTR_PCB_MAX_MEAN_SQUARED_ERROR		d  s
+	"Max value for the mean squared error of the automatic PCB optimization function. If the error exceeds this value the function will return 'Determing of the coefficient for the model function failed'\n"
+	"Default value: 1.0E-5"
+2  all    "Min PCBAtt value"					APSX_ATTR_PCB_MIN_ATT		i  s
+	"Min value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Min Att value for the selected ASIC"
+2  all    "Max PCBAtt value"					APSX_ATTR_PCB_MAX_ATT		i  s
+	"Max value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Max Att value for the selected ASIC"
+2  all    "Min PCBcomp1 value"					APSX_ATTR_PCB_MIN_COMP1		i  s
+	"Min value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Min PCBcomp1 value for the selected ASIC"
+2  all    "Max PCBcomp1 value"					APSX_ATTR_PCB_MAX_COMP1		i  s
+	"Max value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Max PCBcomp1 value for the selected ASIC"
+2  all    "Min PCBcomp2 value"					APSX_ATTR_PCB_MIN_COMP2		i  s
+	"Min value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Min PCBcomp2 value for the selected ASIC"
+2  all    "Max PCBcomp2 value"					APSX_ATTR_PCB_MAX_COMP2		i  s
+	"Max value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Max PCBcomp2 value for the selected ASIC"
+2  all    "Min PCBcomp3 value"					APSX_ATTR_PCB_MIN_COMP3		i  s
+	"Min value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Min PCBcomp3 value for the selected ASIC"
+2  all    "Max PCBcomp3 value"					APSX_ATTR_PCB_MAX_COMP3		i  s
+	"Max value for PCB compensation algorithm.\nIn case of using the CurveFit PCB compensation (APSX_OPTIMIZE_PCB_COMP) the result is checked against this limit.\n In case of using the 'brute force' PCB compensation (APSX_OPTIMIZE_PCB_COMP_BRUTE_FORCE) the optimal linearity is caluculated with respect to this limit."
+	"Default value: Max PCBcomp3 value for the selected ASIC"
+2  all    "OTP verification level"					APSX_ATTR_ASIC_OTP_VERIFY_LEVEL		i  s	OtpVerificationLevels
+	"Combinitions are possible by logical OR the attribute values"
+2  all    "Use enhanced protocol"					APSX_ATTR_USE_ENHANCED_PROTOCOL		i  s	booleans
+	"Addressing of full memory during write / read commands."
+2  all    "Optimisation at fix position"					APSX_ATTR_FIX_OUTPUT_OPTIMISATION		i  s	booleans
+	"Configures the signal curve optimisation functions to find optimal values for a given position instead of optimisation over the whole range.\nThe position is set with attribute APSX_ATTR_FIX_OUTPUT_OPTIMISATION_POS"
+2  all    "Reference position for ix position optimisation"					APSX_ATTR_FIX_OUTPUT_OPTIMISATION_POS		d  s	
+	"If APSX_ATTR_FIX_OUTPUT_OPTIMISATION is set to TRUE, the signal optimisation functions will optimise the signal at the given position"
+2  all    "Consider residual optimisation error"					APSX_ATTR_OPTI_DEPENDENCY_ASIC		i  s	
+          "Set the ASIC object handle of the ASIC, that residual error after optimisation caused by correction factor quantisation should be considered during optimisation of this SENSOR"
+2  all    "Sets the factor for consideration of residual error of ASIC object APSX_ATTR_OPTI_DEPENDENCY_ASIC"					APSX_ATTR_OPTI_DEPENDENY_FACTOR		d  s	
+2  all    "Ignore preprogrammed vendor bits"					APSX_ATTR_IGNORE_PRESET_BITS		i  s	booleans
+           "The preprogrammed bits (i.e. trimming bits programmed by ASIC vendor) are not considered"
+2  all    "Remain in 3W mode"					APSX_ATTR_REMAIN_IN_3W_MODE		i  s	booleans
+            "Force the ASIC to remain in communication mode after a write / read command. This option can be used for programming time optimisation for ASICs that need a 'release communicatio programming, i.e. CIPP"
+2  all    "Internal KoffsInit value"					APSX_ATTR_KOFFS_INIT		i  s	
+          "The internal KoffsInit value defines the abolute rotor to receiver coil offset and is calculated inside the IndexPointCalEvel function"
+2  all    "Keep preprogrammed PCB comp"					APSX_ATTR_USE_PRESET_PCB		i  s	booleans
+           "Prohibits changing of the preprogrammed PCBcomp values"
+
+
+0 APSxSetPGIAttribute 2 3 false s
+0 APSxGetPGIAttribute 2 3 false g
+0 APSxSetPGIAttributeVt 2 3 false s
+0 APSxGetPGIAttributeVt 2 3 false g
+
+1  all    "Supported ASIC Number"							APSX_ATTR_PGI_NUM_ASICS         			i  g
+	"Number of ASICs, supported by the PGI.\n"
+	
+1  all    "Supported ASIC Types"							APSX_ATTR_PGI_SUPPORTED_ASICS   			i  g	asicTypes
+    "This function returns a zero terminated list of ASIC-Types supported by the PGI\n"
+
+1  all    "Manufacture Name"								APSX_ATTR_PGI_MANUFACTURE       			s  g
+	"Manufacturer name of the PGI.\n"
+
+1  all    "Serial Number"									APSX_ATTR_PGI_SERIALNUMBER      			s  g
+	"Serial number of the PGI.\n"
+
+1  all    "PGI Version"										APSX_ATTR_PGI_VERSION           			s  g
+	"Version number of the PGI.\n"
+
+1  all    "COM Port / Device Number"									APSX_ATTR_PGI_COMPORT           			i  sg
+    "Number of the COM-Port (PGI Gen1) or Device Number (PGI Gen2).\n"
+
+1  all    "Lift Off Probes Relay"							APSX_ATTR_LIFT_OF_PROBES					i  sg	vccRelay
+    "Invert the relay behaviour.\n"
+
+1  all    "Vcc Relay"										APSX_ATTR_VCC_RELAY							i  sg	vccRelay
+    "Invert the relay behaviour.\n"
+
+1  all    "Use OTP2 as OUT3"										APSX_ATTR_PGI_OUT3_EMU							i  sg 	booleans
+    "Enables or disables OTP2 usage as OUT line for 3rd ASIC (PGI Gen2 only).\nThe attribute has to be set before ASIC object initialisation!\nUse ASIC attribute HISX_ATTR_ENA_PGI_OUT3_EMU or HISX_ATTR_DISA_PGI_OUT3_EMU with DevNum as Parameter when using HISx.dll."
+

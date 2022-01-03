@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\XSD\GSDML-DeviceProfile-v2.3.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity DeviceID="0xDB01" VendorID="0x0378">
+      <InfoText TextId="DeviceDescription_InfoText" />
+      <VendorName Value="Balluff GmbH" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="Encoders" ProductFamily="BTL7-V50T" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem AddressAssignment="DCP;LOCAL" DNS_CompatibleName="BTL7" DeviceAccessSupported="true" FixedInSlots="0" ID="DIM 5" ImplementationType="netX" MinDeviceInterval="32" ModuleIdentNumber="0x00002001" MultipleWriteSupported="true" NameOfStationNotTransferable="true" ObjectUUID_LocalIndex="1" PNIO_Version="V2.2" PhysicalSlots="0..1" ResetToFactoryModes="2 8" SharedDeviceSupported="true" SharedInputSupported="true">
+          <ModuleInfo>
+            <Name TextId="BTL7-V50T" />
+            <InfoText TextId="DIM 5_InfoText" />
+            <VendorName Value="Balluff GmbH" />
+            <OrderNumber Value="BTL7V50T" />
+            <HardwareRelease Value="3" />
+            <!-- Unsigned 16 Number between 0...65535 -->
+            <SoftwareRelease Value="V1.6.2" />
+            <!-- 1 Char (V: official released version; R: revision of modular product; P: Prototype; U: Under test; T: Testdevice, 3 Unsigned 8, i.e. V0.0.0 -->
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="X1" />
+            <SubslotItem SubslotNumber="32769" TextId="X1P1" />
+            <SubslotItem SubslotNumber="32770" TextId="X1P2" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="150" MaxOutputLength="150" />
+          <UseableModules>
+            <ModuleItemRef FixedInSlots="1" ModuleItemTarget="Encoder_Module" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DIM 5" SubmoduleIdentNumber="0x00002000" Writeable_IM_Records="1 2 3 4">
+              <IOData IOCS_Length="1" IOPS_Length="1" />
+              <ModuleInfo CategoryRef="DAP Module">
+                <Name TextId="BTL7-V50T" />
+                <InfoText TextId="DIM 5_InfoText" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem DCP_HelloSupported="true" ID="DIM 5 Interfacesubmodule" IsochroneModeInRT_Classes="RT_CLASS_3" NetworkComponentDiagnosisSupported="true" SubmoduleIdentNumber="0x00002001" SubslotNumber="32768" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" TextId="PN-IO">
+              <RT_Class3Properties ForwardingMode="Relative" MaxBridgeDelay="5500" MaxNumberIR_FrameData="256"  StartupMode="Legacy"/>
+              <SynchronisationMode MaxLocalJitter="50" SupportedRole="SyncSlave" SupportedSyncProtocols="PTCP" T_PLL_MAX="1000" />
+              <ApplicationRelations NumberOfAR="2" StartupMode="Advanced;Legacy">
+                <TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="32 64 128" />
+                <RT_Class3TimingProperties ReductionRatio="1 2 4 8 16" SendClock="8 16 32 64 128" />
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client"/>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="DIM 5 Portsubmodule 1" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" MaxPortRxDelay="340" MaxPortTxDelay="92" SubmoduleIdentNumber="0x00002002" SubslotNumber="32769" TextId="Port1"  IsDefaultRingport="true"/>
+            <PortSubmoduleItem ID="DIM 5 Portsubmodule 2" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" MaxPortRxDelay="340" MaxPortTxDelay="92" SubmoduleIdentNumber="0x00002003" SubslotNumber="32770" TextId="Port2"  IsDefaultRingport="true"/>
+            </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceSymbol" />
+            <GraphicItemRef GraphicItemTarget="2" Type="DeviceIcon" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ModuleIdentNumber="0x00000001" ID="Encoder_Module" PhysicalSubslots="2">
+          <ModuleInfo>
+            <Name TextId="BLT7" />
+            <InfoText TextId="BLT7_InfoText" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="MODULE_ACCESS_POINT" SubmoduleIdentNumber="0x0000FFFF" API="15616" FixedInSubslots="1">
+              <IOData />
+              <RecordDataList>
+                <ParameterRecordDataItem Index="4096" Length="20" TransferSequence="0">
+                  <Name TextId="T_ManufactParameters" />
+                  <Const Data="0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00" />
+                  <Ref ByteOffset="0" DataType="Unsigned32" DefaultValue="5000" AllowedValues="0..4294967295" Changeable="true" Visible="true" TextId="T_FMMDiagnosisTime" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="48896" Length="31" TransferSequence="0">
+                  <Name TextId="T_EncoderParameters" />
+                  <Const Data="0x24,0x00,0x00,0x00,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00" />
+                  <Ref ValueItemTarget="CodeSequence" ByteOffset="0" DataType="Bit" BitOffset="0" DefaultValue="0" TextId="T_CodeSequence" />
+                  <Ref ValueItemTarget="Class4_Funct" ByteOffset="0" DataType="Bit" BitOffset="1" DefaultValue="1" TextId="T_Class4Functionality" />
+                  <Ref ValueItemTarget="Not_DisEnable" ByteOffset="0" DataType="Bit" BitOffset="2" DefaultValue="1" TextId="T_PresetControl" />
+                  <Ref ValueItemTarget="DisEnable" ByteOffset="0" DataType="Bit" BitOffset="3" DefaultValue="1" TextId="T_ScalingFuncControl" />
+                  <Ref ValueItemTarget="DisEnable" ByteOffset="0" DataType="Bit" BitOffset="4" DefaultValue="1" TextId="T_AlarmChannelControl" />
+                  <Ref ValueItemTarget="Not_DisEnable" ByteOffset="0" DataType="Bit" BitOffset="5" DefaultValue="1" TextId="T_CompatibilityMode" />
+                  <Ref ByteOffset="1" DataType="Unsigned32" DefaultValue="1000" AllowedValues="1..4294967295" Changeable="true" Visible="true" TextId="T_MeasuringUnitsPerRevolution" />
+                  <Ref ByteOffset="9" DataType="Unsigned32" DefaultValue="0" AllowedValues="0..4294967295" Changeable="true" Visible="true" TextId="T_TotalMeasuringRange" />
+                  <Ref ByteOffset="17" DataType="Unsigned8" DefaultValue="1" AllowedValues="1..255" Changeable="true" Visible="true" TextId="T_MaxToleratedFailuresOfMaster_Sign_Of_Life" />
+                  <Ref ByteOffset="18" ValueItemTarget="VelocityMeasuringUnit" DataType="Unsigned8" DefaultValue="0" AllowedValues="0..2" TextId="T_VelocityMeasuringUnit" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="MAP_Name" />
+                <InfoText TextId="MAP_InfoText" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <UseableSubmodules>
+
+
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_81" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_101" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_102" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_103" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_104" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_105" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_106" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_107" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_108" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_109" AllowedInSubslots="2" /> 
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_110" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_111" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_112" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_113" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_114" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_115" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_116" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_117" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_201" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_202" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_203" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_204" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_205" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_206" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_207" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_208" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_209" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_210" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_211" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_212" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_213" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_214" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_215" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_216" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_217" AllowedInSubslots="2" />
+          </UseableSubmodules>
+        </ModuleItem>
+      </ModuleList>
+      <SubmoduleList>
+        <SubmoduleItem ID="ID_Mod_81" SubmoduleIdentNumber="0x51" API="15616">
+          <!-- 81, 3D00 -->
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Std_Telegram_81_Input" Length="12" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Std_Telegram_81_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_81" />
+            <InfoText TextId="TOK_TextId_Module_81" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_101" SubmoduleIdentNumber="0xC0" API="15616">
+          <!-- 81, 3D00 -->
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_101_Input" Length="16" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_101_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_101" />
+            <InfoText TextId="TOK_TextId_Module_101" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_102" SubmoduleIdentNumber="0xC1" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_102_Input" Length="20" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_102_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_102" />
+            <InfoText TextId="TOK_TextId_Module_102" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_103" SubmoduleIdentNumber="0xC2" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_103_Input" Length="24" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_103_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_103" />
+            <InfoText TextId="TOK_TextId_Module_103" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_104" SubmoduleIdentNumber="0xC3" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_104_Input" Length="28" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_104_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_104" />
+            <InfoText TextId="TOK_TextId_Module_104" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_105" SubmoduleIdentNumber="0xC4" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_105_Input" Length="32" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_105_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_105" />
+            <InfoText TextId="TOK_TextId_Module_105" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_106" SubmoduleIdentNumber="0xC5" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_106_Input" Length="36" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_106_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_106" />
+            <InfoText TextId="TOK_TextId_Module_106" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_107" SubmoduleIdentNumber="0xC6" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_107_Input" Length="40" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_107_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_107" />
+            <InfoText TextId="TOK_TextId_Module_107" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_108" SubmoduleIdentNumber="0xC7" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_108_Input" Length="44" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_108_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_108" />
+            <InfoText TextId="TOK_TextId_Module_108" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_109" SubmoduleIdentNumber="0xC8" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_109_Input" Length="48" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_109_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_109" />
+            <InfoText TextId="TOK_TextId_Module_109" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_110" SubmoduleIdentNumber="0xC9" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_110_Input" Length="52" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_110_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_110" />
+            <InfoText TextId="TOK_TextId_Module_110" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_111" SubmoduleIdentNumber="0xCA" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_111_Input" Length="56" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_111_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_111" />
+            <InfoText TextId="TOK_TextId_Module_111" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_112" SubmoduleIdentNumber="0xCB" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_112_Input" Length="60" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_112_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_112" />
+            <InfoText TextId="TOK_TextId_Module_112" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_113" SubmoduleIdentNumber="0xCC" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_113_Input" Length="64" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_113_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_113" />
+            <InfoText TextId="TOK_TextId_Module_113" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_114" SubmoduleIdentNumber="0xCD" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_114_Input" Length="68" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_114_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_114" />
+            <InfoText TextId="TOK_TextId_Module_114" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_115" SubmoduleIdentNumber="0xCE" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_115_Input" Length="72" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_115_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_115" />
+            <InfoText TextId="TOK_TextId_Module_115" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_116" SubmoduleIdentNumber="0xCF" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_116_Input" Length="76" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_116_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_116" />
+            <InfoText TextId="TOK_TextId_Module_116" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_117" SubmoduleIdentNumber="0xA0" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_117_Input" Length="76" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_117_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_117" />
+            <InfoText TextId="TOK_TextId_Module_117" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_201" SubmoduleIdentNumber="0xD0" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_201_Input" Length="20" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_201_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_201" />
+            <InfoText TextId="TOK_TextId_Module_201" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_202" SubmoduleIdentNumber="0xD1" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_202_Input" Length="28" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_202_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_202" />
+            <InfoText TextId="TOK_TextId_Module_202" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_203" SubmoduleIdentNumber="0xD2" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_203_Input" Length="36" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_203_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_203" />
+            <InfoText TextId="TOK_TextId_Module_203" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_204" SubmoduleIdentNumber="0xD3" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_204_Input" Length="44" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_204_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_204" />
+            <InfoText TextId="TOK_TextId_Module_204" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_205" SubmoduleIdentNumber="0xD4" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_205_Input" Length="52" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_205_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_205" />
+            <InfoText TextId="TOK_TextId_Module_205" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_206" SubmoduleIdentNumber="0xD5" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_206_Input" Length="60" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_206_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_206" />
+            <InfoText TextId="TOK_TextId_Module_206" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_207" SubmoduleIdentNumber="0xD6" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_207_Input" Length="68" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_207_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_207" />
+            <InfoText TextId="TOK_TextId_Module_207" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_208" SubmoduleIdentNumber="0xD7" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_208_Input" Length="76" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_208_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_208" />
+            <InfoText TextId="TOK_TextId_Module_208" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_209" SubmoduleIdentNumber="0xD8" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_209_Input" Length="84" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_209_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_209" />
+            <InfoText TextId="TOK_TextId_Module_209" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_210" SubmoduleIdentNumber="0xD9" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_210_Input" Length="92" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_210_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_210" />
+            <InfoText TextId="TOK_TextId_Module_210" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_211" SubmoduleIdentNumber="0xDA" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_211_Input" Length="100" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_211_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_211" />
+            <InfoText TextId="TOK_TextId_Module_211" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_212" SubmoduleIdentNumber="0xDB" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_212_Input" Length="108" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_212_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_212" />
+            <InfoText TextId="TOK_TextId_Module_212" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_213" SubmoduleIdentNumber="0xDC" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_213_Input" Length="116" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_213_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_213" />
+            <InfoText TextId="TOK_TextId_Module_213" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_214" SubmoduleIdentNumber="0xDD" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_214_Input" Length="124" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_214_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_214" />
+            <InfoText TextId="TOK_TextId_Module_214" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_215" SubmoduleIdentNumber="0xDE" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_215_Input" Length="132" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_215_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_215" />
+            <InfoText TextId="TOK_TextId_Module_215" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_216" SubmoduleIdentNumber="0xDF" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_216_Input" Length="140" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_216_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_216" />
+            <InfoText TextId="TOK_TextId_Module_216" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_217" SubmoduleIdentNumber="0xB0" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_217_Input" Length="140" UseAsBits="false" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Balluff_Telegram_217_Output" Length="4" UseAsBits="false" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_217" />
+            <InfoText TextId="TOK_TextId_Module_217" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="1" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+      </SubmoduleList>
+      <ValueList>
+        <ValueItem ID="DisEnable">
+          <Assignments>
+            <Assign TextId="T_disable" Content="0" />
+            <Assign TextId="T_enable" Content="1" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="Not_DisEnable">
+          <Assignments>
+            <Assign TextId="T_disable" Content="1" />
+            <Assign TextId="T_enable" Content="0" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="CodeSequence">
+          <Assignments>
+            <Assign TextId="T_CodeSequence_CW" Content="0" />
+            <Assign TextId="T_CodeSequence_CCW" Content="1" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="VelocityMeasuringUnit">
+          <Assignments>
+            <Assign Content="0" TextId="T_StepsPer1000ms" />
+            <Assign Content="1" TextId="T_StepsPer100ms" />
+            <Assign Content="2" TextId="T_StepsPer10ms" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="Class4_Funct">
+          <Assignments>
+            <Assign TextId="T_Class4_disable" Content="0" />
+            <Assign TextId="T_Class4_enable" Content="1" />
+          </Assignments>
+        </ValueItem>
+      </ValueList>
+      <ChannelDiagList>
+        <ChannelDiagItem ErrorType="27">
+          <Name TextId="TOK_Name_ErrorType27" />
+          <Help TextId="TOK_HelpName_ErrorType27" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="28">
+          <Name TextId="TOK_Name_ErrorType28" />
+          <Help TextId="TOK_HelpName_ErrorType28" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="29">
+          <Name TextId="TOK_Name_ErrorType29" />
+          <Help TextId="TOK_HelpName_ErrorType29" />
+        </ChannelDiagItem>
+        <ProfileChannelDiagItem ErrorType="36864" API="15616">
+          <Name TextId="TOK_Name_ErrorType9000" />
+          <Help TextId="TOK_HelpName_ErrorType9000" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem ErrorType="36869" API="15616">
+          <Name TextId="TOK_Name_ErrorType9005" />
+          <Help TextId="TOK_HelpName_ErrorType9005" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem ErrorType="36874" API="15616">
+          <Name TextId="TOK_Name_ErrorType900A" />
+          <Help TextId="TOK_HelpName_ErrorType900A" />
+        </ProfileChannelDiagItem>
+      </ChannelDiagList>
+      <GraphicsList>
+        <GraphicItem ID="1" GraphicFile="GSDML-0378-DB01-BTL7" />
+        <!-- 70(62)*40Pixel, 16 Colors BMP Format-->
+        <GraphicItem ID="2" GraphicFile="GSDML-0378-DB01-BTL7" />
+        <!-- 16*16Pixel      16 Colors Icon Format -->
+      </GraphicsList>
+      <CategoryList>
+        <CategoryItem ID="DAP Module" TextId="DAP Module_CategoryName" />
+        <CategoryItem ID="Input Module" TextId="Input Module_CategoryName" />
+        <CategoryItem ID="Output Module" TextId="Output Module_CategoryName" />
+      </CategoryList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <Text TextId="DAP Module_CategoryName" Value="Device Access Point Modules" />
+          <Text TextId="DIM 5_InfoText" Value="Firmware version V3.5.x. Constant Forwarder. Supports FastStartup, Identification &amp; Maintenance 1-4, RT and IRT Communication." />
+          <Text TextId="DeviceDescription_InfoText" Value="BTL7-V50T Linear Encoder" />
+          <Text TextId="BTL7-V50T" Value="BTL7-V50T" />
+          <Text TextId="PN-IO" Value="PN-IO" />
+          <Text TextId="Port1" Value="Port 1" />
+          <Text TextId="Port2" Value="Port 2" />
+          <Text TextId="X1" Value="X1" />
+          <Text TextId="X1P1" Value="X1 P1" />
+          <Text TextId="X1P2" Value="X1 P2" />
+          <Text TextId="T_MOD_Sub1_MAP_Name" Value="Module Access Point" />
+          <Text TextId="TOK_TextId_Module_81" Value="Standard Telegram 81" />
+          <Text TextId="TOK_TextId_Module_101" Value=" 1 Position Value" />
+          <Text TextId="TOK_TextId_Module_102" Value=" 2 Position Values" />
+          <Text TextId="TOK_TextId_Module_103" Value=" 3 Position Values" />
+          <Text TextId="TOK_TextId_Module_104" Value=" 4 Position Values" />
+          <Text TextId="TOK_TextId_Module_105" Value=" 5 Position Values" />
+          <Text TextId="TOK_TextId_Module_106" Value=" 6 Position Values" />
+          <Text TextId="TOK_TextId_Module_107" Value=" 7 Position Values" />
+          <Text TextId="TOK_TextId_Module_108" Value=" 8 Position Values" />
+          <Text TextId="TOK_TextId_Module_109" Value=" 9 Position Values" />
+          <Text TextId="TOK_TextId_Module_110" Value="10 Position Values" />
+          <Text TextId="TOK_TextId_Module_111" Value="11 Position Values" />
+          <Text TextId="TOK_TextId_Module_112" Value="12 Position Values" />
+          <Text TextId="TOK_TextId_Module_113" Value="13 Position Values" />
+          <Text TextId="TOK_TextId_Module_114" Value="14 Position Values" />
+          <Text TextId="TOK_TextId_Module_115" Value="15 Position Values" />
+          <Text TextId="TOK_TextId_Module_116" Value="16 Position Values" />
+          <Text TextId="TOK_TextId_Module_117" Value="FMM Position Values" />
+          <Text TextId="TOK_TextId_Module_201" Value=" 1 Position-/ Velocity Value" />
+          <Text TextId="TOK_TextId_Module_202" Value=" 2 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_203" Value=" 3 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_204" Value=" 4 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_205" Value=" 5 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_206" Value=" 6 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_207" Value=" 7 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_208" Value=" 8 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_209" Value=" 9 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_210" Value="10 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_211" Value="11 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_212" Value="12 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_213" Value="13 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_214" Value="14 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_215" Value="15 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_216" Value="16 Position-/ Velocity Values" />
+          <Text TextId="TOK_TextId_Module_217" Value="FMM Position-/ Velocity Values" />
+          <Text TextId="BLT7" Value="Linear encoder" />
+          <Text TextId="BLT7_InfoText" Value="Linear absolute encoder based on PNO Encoder Profile V4.1. The encoder can be used with up to 16 position markers." />
+          <Text TextId="MAP_Name" Value="Module Access Point" />
+          <Text TextId="MAP_InfoText" Value="Module Access Point Text" />
+          <Text TextId="Input Module" Value="Input" />
+          <Text TextId="Output Module" Value="Output" />
+          <Text TextId="Input Module_CategoryName" Value="Input Data" />
+          <Text TextId="Output Module_CategoryName" Value="Output Data" />
+          <Text TextId="TOK_Std_Telegram_81_Input" Value="Standard Telegram 81 Input" />
+          <Text TextId="TOK_Std_Telegram_81_Output" Value="Standard Telegram 81 Output" />
+          <Text TextId="TOK_Balluff_Telegram_101_Input" Value="1 Position Value Input" />
+          <Text TextId="TOK_Balluff_Telegram_101_Output" Value="1 Position Value Output" />
+          <Text TextId="TOK_Balluff_Telegram_102_Input" Value="2 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_102_Output" Value="2 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_103_Input" Value="3 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_103_Output" Value="3 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_104_Input" Value="4 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_104_Output" Value="4 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_105_Input" Value="5 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_105_Output" Value="5 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_106_Input" Value="6 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_106_Output" Value="6 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_107_Input" Value="7 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_107_Output" Value="7 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_108_Input" Value="8 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_108_Output" Value="8 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_109_Input" Value="9 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_109_Output" Value="9 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_110_Input" Value="10 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_110_Output" Value="10 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_111_Input" Value="11 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_111_Output" Value="11 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_112_Input" Value="12 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_112_Output" Value="12 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_113_Input" Value="13 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_113_Output" Value="13 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_114_Input" Value="14 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_114_Output" Value="14 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_115_Input" Value="15 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_115_Output" Value="15 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_116_Input" Value="16 Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_116_Output" Value="16 Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_117_Input" Value="FMM Position Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_117_Output" Value="FMM Position Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_201_Input" Value="1 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_201_Output" Value="1 Position-/ Velocity Value Output" />
+          <Text TextId="TOK_Balluff_Telegram_202_Input" Value="2 Position-/ Velocity Value Input" />
+          <Text TextId="TOK_Balluff_Telegram_202_Output" Value="2 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_203_Input" Value="3 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_203_Output" Value="3 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_204_Input" Value="4 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_204_Output" Value="4 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_205_Input" Value="5 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_205_Output" Value="5 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_206_Input" Value="6 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_206_Output" Value="6 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_207_Input" Value="7 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_207_Output" Value="7 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_208_Input" Value="8 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_208_Output" Value="8 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_209_Input" Value="9 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_209_Output" Value="9 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_210_Input" Value="10 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_210_Output" Value="10 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_211_Input" Value="11 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_211_Output" Value="11 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_212_Input" Value="12 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_212_Output" Value="12 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_213_Input" Value="13 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_213_Output" Value="13 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_214_Input" Value="14 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_214_Output" Value="14 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_215_Input" Value="15 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_215_Output" Value="15 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_216_Input" Value="16 Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_216_Output" Value="16 Position-/ Velocity Values Output" />
+          <Text TextId="TOK_Balluff_Telegram_217_Input" Value="FMM Position-/ Velocity Values Input" />
+          <Text TextId="TOK_Balluff_Telegram_217_Output" Value="FMM Position-/ Velocity Values Output" />
+          <!--errortype name-->
+          <Text TextId="TOK_Name_ErrorType27" Value="FMM: Number of position markers has changed" />
+          <Text TextId="TOK_Name_ErrorType28" Value="Position marker higher than high limit" />
+          <Text TextId="TOK_Name_ErrorType29" Value="Position marker lower than low limit" />
+          <Text TextId="TOK_Name_ErrorType9000" Value="Memory Error" />
+          <Text TextId="TOK_Name_ErrorType9005" Value="Overtemperature" />
+          <Text TextId="TOK_Name_ErrorType900A" Value="Position error" />
+          <Text TextId="TOK_HelpName_ErrorType27" Value="Number of position markers has changed, this warning will be present for a configurated time" />
+          <Text TextId="TOK_HelpName_ErrorType28" Value="One Position Marker is out of the Limits" />
+          <Text TextId="TOK_HelpName_ErrorType29" Value="One Position Marker is out of the Limits" />
+          <Text TextId="TOK_HelpName_ErrorType9000" Value="Failure loading the stored offset" />
+          <Text TextId="TOK_HelpName_ErrorType9005" Value="Temperature is out of the specificated Limits" />
+          <Text TextId="TOK_HelpName_ErrorType900A" Value="Failure in Measurement System" />
+          <Text TextId="T_ManufactParameters" Value="Manufacturer specific parameters" />
+          <Text TextId="T_FMMDiagnosisTime" Value="Diagnostic time for FMM" />
+          <Text TextId="T_EncoderParameters" Value="Standard parameter (Encoder Profile)" />
+          <Text TextId="T_CodeSequence" Value="Code sequence" />
+          <Text TextId="T_Class4Functionality" Value="Encoder Class 4 functionality" />
+          <Text TextId="T_PresetControl" Value="Preset affects XIST1" />
+          <Text TextId="T_ScalingFuncControl" Value="Scaling function control" />
+          <Text TextId="T_AlarmChannelControl" Value="Alarm channel control" />
+          <Text TextId="T_CompatibilityMode" Value="Compatibility Mode V3.1" />
+          <Text TextId="T_MeasuringUnitsPerRevolution" Value="Scaling: Measuring step [nm]" />
+          <Text TextId="T_TotalMeasuringRange" Value="Scaling: Total measuring range" />
+          <Text TextId="T_MaxToleratedFailuresOfMaster_Sign_Of_Life" Value="Tolerated sign of life faults" />
+          <Text TextId="T_VelocityMeasuringUnit" Value="Velocity measuring unit" />
+          <Text TextId="T_PositionValue" Value="Position value" />
+          <Text TextId="T_VelocityValue" Value="Velocity value" />
+          <Text TextId="T_ParameterAssignmentError" Value="Parameter assignment error" />
+          <Text TextId="T_StepsPer1000ms" Value="Steps / 1000 ms" />
+          <Text TextId="T_StepsPer100ms" Value="Steps / 100 ms" />
+          <Text TextId="T_StepsPer10ms" Value="Steps / 10 ms" />
+          <Text TextId="T_Class4_disable" Value="Scaling, Offset, Code Sequence disabled" />
+          <Text TextId="T_Class4_enable" Value="Scaling, Offset, Code Sequence enabled" />
+          <Text TextId="T_disable" Value="disable" />
+          <Text TextId="T_enable" Value="enable" />
+          <Text TextId="T_CodeSequence_CW" Value="Minimum value at connector side" />
+          <Text TextId="T_CodeSequence_CCW" Value="Maximum value at connector side" />
+          <Text TextId="T_PresetValue" Value="Preset value" />
+        </PrimaryLanguage>
+        <Language xml:lang="de">
+          <Text TextId="DAP Module_CategoryName" Value="Device Access Point Modules" />
+          <Text TextId="DIM 5_InfoText" Value="Firmware version V3.5.x. Constant Forwarder. Supports FastStartup, Identification &amp; Maintenance 1-4, RT and IRT Communication." />
+          <Text TextId="DeviceDescription_InfoText" Value="BTL7-V50T linearer Wegaufnehmer" />
+          <Text TextId="BTL7-V50T" Value="BTL7-V50T" />
+          <Text TextId="PN-IO" Value="PN-IO" />
+          <Text TextId="Port1" Value="Port 1" />
+          <Text TextId="Port2" Value="Port 2" />
+          <Text TextId="X1" Value="X1" />
+          <Text TextId="X1P1" Value="X1 P1" />
+          <Text TextId="X1P2" Value="X1 P2" />
+          <Text TextId="T_MOD_Sub1_MAP_Name" Value="Module Access Point" />
+          <Text TextId="TOK_TextId_Module_81" Value="Standard Telegramm 81" />
+          <Text TextId="TOK_TextId_Module_101" Value=" 1 Positionswert" />
+          <Text TextId="TOK_TextId_Module_102" Value=" 2 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_103" Value=" 3 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_104" Value=" 4 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_105" Value=" 5 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_106" Value=" 6 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_107" Value=" 7 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_108" Value=" 8 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_109" Value=" 9 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_110" Value="10 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_111" Value="11 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_112" Value="12 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_113" Value="13 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_114" Value="14 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_115" Value="15 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_116" Value="16 Positionswerte" />
+          <Text TextId="TOK_TextId_Module_117" Value="FMM Positionswerte" />
+          <Text TextId="TOK_TextId_Module_201" Value=" 1 Position-/ Geschwindigkeitswert" />
+          <Text TextId="TOK_TextId_Module_202" Value=" 2 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_203" Value=" 3 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_204" Value=" 4 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_205" Value=" 5 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_206" Value=" 6 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_207" Value=" 7 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_208" Value=" 8 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_209" Value=" 9 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_210" Value="10 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_211" Value="11 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_212" Value="12 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_213" Value="13 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_214" Value="14 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_215" Value="15 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_216" Value="16 Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="TOK_TextId_Module_217" Value="FMM Positions-/ Geschwindigkeitswerte" />
+          <Text TextId="BLT7" Value="Linearer Wegaufnehmer" />
+          <Text TextId="BLT7_InfoText" Value="Linearer absoluter Wegaufnehmer basierend auf dem PNO Encoder Profil V4.1. Der Wegaufnehmer kann mit bis zu 16 Positionsgebern betrieben werden." />
+          <Text TextId="MAP_Name" Value="Modulzugangspunkt" />
+          <Text TextId="MAP_InfoText" Value="Modulzugangspunkt" />
+          <Text TextId="Input Module" Value="Eingang" />
+          <Text TextId="Output Module" Value="Ausgang" />
+          <Text TextId="Input Module_CategoryName" Value="Eingangsdaten" />
+          <Text TextId="Output Module_CategoryName" Value="Ausgangsdaten" />
+          <Text TextId="TOK_Std_Telegram_81_Input" Value="Standard Telegramm 81 Eingang" />
+          <Text TextId="TOK_Std_Telegram_81_Output" Value="Standard Telegramm 81 Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_101_Input" Value="1 Positionswert Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_101_Output" Value="1 Positionswert Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_102_Input" Value="2 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_102_Output" Value="2 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_103_Input" Value="3 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_103_Output" Value="3 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_104_Input" Value="4 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_104_Output" Value="4 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_105_Input" Value="5 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_105_Output" Value="5 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_106_Input" Value="6 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_106_Output" Value="6 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_107_Input" Value="7 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_107_Output" Value="7 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_108_Input" Value="8 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_108_Output" Value="8 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_109_Input" Value="9 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_109_Output" Value="9 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_110_Input" Value="10 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_110_Output" Value="10 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_111_Input" Value="11 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_111_Output" Value="11 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_112_Input" Value="12 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_112_Output" Value="12 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_113_Input" Value="13 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_113_Output" Value="13 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_114_Input" Value="14 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_114_Output" Value="14 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_115_Input" Value="15 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_115_Output" Value="15 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_116_Input" Value="16 Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_116_Output" Value="16 Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_117_Input" Value="FMM Positionswerte Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_117_Output" Value="FMM Positionswerte Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_201_Input" Value="1 Position/ Geschwindligkeit Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_201_Output" Value="1 Position/ Geschwindligkeit Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_202_Input" Value="2 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_202_Output" Value="2 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_203_Input" Value="3 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_203_Output" Value="3 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_204_Input" Value="4 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_204_Output" Value="4 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_205_Input" Value="5 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_205_Output" Value="5 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_206_Input" Value="6 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_206_Output" Value="6 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_207_Input" Value="7 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_207_Output" Value="7 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_208_Input" Value="8 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_208_Output" Value="8 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_209_Input" Value="9 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_209_Output" Value="9 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_210_Input" Value="10 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_210_Output" Value="10 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_211_Input" Value="10 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_211_Output" Value="11 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_212_Input" Value="12 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_212_Output" Value="12 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_213_Input" Value="13 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_213_Output" Value="13 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_214_Input" Value="14 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_214_Output" Value="14 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_215_Input" Value="15 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_215_Output" Value="15 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_216_Input" Value="16 Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_216_Output" Value="16 Positionen/ Geschwindligkeiten Ausgang" />
+          <Text TextId="TOK_Balluff_Telegram_217_Input" Value="FMM Positionen/ Geschwindligkeiten Eingang" />
+          <Text TextId="TOK_Balluff_Telegram_217_Output" Value="FMM Positionen/ Geschwindligkeiten Ausgang" />
+          <!--errortype name-->
+          <Text TextId="TOK_Name_ErrorType27" Value="FMM: Anzahl Positionsgeber hat sich geaendert" />
+          <Text TextId="TOK_Name_ErrorType28" Value="Positionsgeber oberhalb des Maximums" />
+          <Text TextId="TOK_Name_ErrorType29" Value="Positionsgeber unterhalb des Minimums" />
+          <Text TextId="TOK_Name_ErrorType9000" Value="Speicherfehler" />
+          <Text TextId="TOK_Name_ErrorType9005" Value="Temperaturwarnung" />
+          <Text TextId="TOK_Name_ErrorType900A" Value="Positionsfehler" />
+          <Text TextId="TOK_HelpName_ErrorType27" Value="Anzahl Positionsgeber hat sich geaendert, Warnung wird fuer eine konfigurierte Zeit angezeigt" />
+          <Text TextId="TOK_HelpName_ErrorType28" Value="Ein Positionsgeber ist außerhalb des Messbereichs" />
+          <Text TextId="TOK_HelpName_ErrorType29" Value="Ein Positionsgeber ist außerhalb des Messbereichs" />
+          <Text TextId="TOK_HelpName_ErrorType9000" Value="Fehler beim Laden des gespeicherten Offsets" />
+          <Text TextId="TOK_HelpName_ErrorType9005" Value="Temperatur außerhalb der spezifizierten Bereichsgrenzen" />
+          <Text TextId="TOK_HelpName_ErrorType900A" Value="Fehler im Messsystem" />
+          <Text TextId="T_ManufactParameters" Value="Herstellerspezifische Parameter" />
+          <Text TextId="T_EncoderParameters" Value="Standardparameter (Encoder Profil)" />
+          <Text TextId="T_CodeSequence" Value="Messrichtung" />
+          <Text TextId="T_Class4Functionality" Value="Encoder Klasse 4 Funktionalitaet" />
+          <Text TextId="T_PresetControl" Value="Preset beeinflusst XIST1" />
+          <Text TextId="T_ScalingFuncControl" Value="Skalierungssteuerung" />
+          <Text TextId="T_AlarmChannelControl" Value="Alarmkanalsteuerung" />
+          <Text TextId="T_CompatibilityMode" Value="Kompatibilitaetsmodus V3.1" />
+          <Text TextId="T_MeasuringUnitsPerRevolution" Value="Skalierung: Aufloesung [nm]" />
+          <Text TextId="T_TotalMeasuringRange" Value="Skalierung: Gesamter Messbereich" />
+          <Text TextId="T_MaxToleratedFailuresOfMaster_Sign_Of_Life" Value="Tolerierte Anzahl Lebenszeichenfehler" />
+          <Text TextId="T_VelocityMeasuringUnit" Value="Geschwindigkeitseinheit" />
+          <Text TextId="T_PositionValue" Value="Positionswert" />
+          <Text TextId="T_VelocityValue" Value="Geschwindigkeitswert" />
+          <Text TextId="T_ParameterAssignmentError" Value="Parameter Zuordnungsfehler" />
+          <Text TextId="T_StepsPer1000ms" Value="Schritte / 1000 ms" />
+          <Text TextId="T_StepsPer100ms" Value="Schritte / 100 ms" />
+          <Text TextId="T_StepsPer10ms" Value="Schritte / 10 ms" />
+          <Text TextId="T_Class4_disable" Value="Skalierungs-, Offset und Messrichtungsfunktion deaktiviert" />
+          <Text TextId="T_Class4_enable" Value="Skalierungs-, Offset und Messrichtungsfunktion aktiviert" />
+          <Text TextId="T_disable" Value="deaktivieren" />
+          <Text TextId="T_enable" Value="aktivieren" />
+          <Text TextId="T_CodeSequence_CW" Value="Minimalwert an Steckerseite" />
+          <Text TextId="T_CodeSequence_CCW" Value="Maximalwert an Steckerseite" />
+          <Text TextId="T_PresetValue" Value="Vorgabewert" />
+          <Text TextId="T_FMMDiagnosisTime" Value="Diagnosezeit fuer FMM" />
+        </Language>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

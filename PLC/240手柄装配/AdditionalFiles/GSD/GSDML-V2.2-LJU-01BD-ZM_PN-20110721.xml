@@ -1,0 +1,1722 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\XSD\GSDML-DeviceProfile-v2.2.xsd">
+    <ProfileHeader>
+        <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+        <ProfileRevision>1.00</ProfileRevision>
+        <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+        <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+        <ProfileClassID>Device</ProfileClassID>
+        <ISO15745Reference>
+            <ISO15745Part>4</ISO15745Part>
+            <ISO15745Edition>1</ISO15745Edition>
+            <ProfileTechnology>GSDML</ProfileTechnology>
+        </ISO15745Reference>
+    </ProfileHeader>
+
+
+    <ProfileBody>
+        <DeviceIdentity VendorID="0x01BD" DeviceID="0xEAE9">
+            <InfoText TextId="T_ID_DEV_DESCRIPTION"/>
+            <VendorName Value="LJU Automatisierungstechnik GmbH"/>
+        </DeviceIdentity>
+
+        <DeviceFunction>
+            <Family MainFamily="General" ProductFamily="Zentralmodul"/>
+        </DeviceFunction>
+
+        <ApplicationProcess>
+
+<!-- ============================================================================================ -->
+<!--   List of Device Access Points (DAP)                                                         -->
+<!-- ============================================================================================ -->
+            <DeviceAccessPointList>
+                <!-- ============================== -->
+                <!--   Migration DAP V1             -->
+                <!-- ============================== -->
+                <DeviceAccessPointItem ID="ZM DAP V1 RT" PhysicalSlots="0..13" ModuleIdentNumber="0xA0000000" MinDeviceInterval="64" ImplementationType="ERTEC200" DNS_CompatibleName="ZM-PN" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" RequiredSchemaVersion="V1.0">
+                    <ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+                        <Name TextId="T_ID_ZM_PN_DAP_V1"/>
+                        <InfoText TextId="T_ID_V1_DEV_DESCRIPTION"/>
+                        <VendorName Value="LJU Automatisierungstechnik GmbH"/>
+                        <OrderNumber Value="WNR60137"/>
+                        <HardwareRelease Value="V1.0"/>
+                        <SoftwareRelease Value="V1.0"/>
+                    </ModuleInfo>
+                    <!-- =============================================================================== -->
+                    <!-- Slave-Konfiguration mit GDMSL-Datei Schema V1.0                                 -->
+                    <!-- MaxInputLength ="11"                                                            -->
+                    <!-- MaxOutputLength="31"                                                            -->
+                    <!-- <IOConfigData MaxInputLength="11" MaxOutputLength="31"/>                        -->
+                    <!-- =============================================================================== -->
+                    <!-- Slave-Konfiguration mit GDMSL-Datei Schema V2.2                                 -->
+                    <!-- Hier zaehlen die versteckten Datenbegleiter-Bytes (hier je 14) mit.             -->
+                    <!-- MaxInputLength ="11 + 14 = 25"                                                  -->
+                    <!-- MaxOutputLength="31 + 14 = 45"                                                  -->
+                    <IOConfigData MaxInputLength="25" MaxOutputLength="45"/>
+                    <!-- =============================================================================== -->
+                    <UseableModules>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_IN_00"      FixedInSlots="1"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_IN_01"      AllowedInSlots="6..8"    UsedInSlots="6..8"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_IN_02"      AllowedInSlots="6..8"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_IN_03"      AllowedInSlots="11..13"  UsedInSlots="11..13"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_00"     FixedInSlots="2"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_01"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_02"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_03"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_04"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_05"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_06"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_07"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_08"     AllowedInSlots="3..5"    UsedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_09"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_10"     AllowedInSlots="9..10"   UsedInSlots="9..10" />
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_EMPTY_SLOT" AllowedInSlots="3..13"/>
+                    </UseableModules>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ZM DAP V1 RT PARAM" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">
+                            <IOData/>
+                            <RecordDataList>
+                                <ParameterRecordDataItem Index="1" Length="41">
+                                    <Name TextId="T_CFG_Parameter"/>
+                                    <Ref ValueItemTarget="ID_Parameter1" ByteOffset="0"  DataType="Unsigned8" DefaultValue="0"  Changeable="true" Visible="true" TextId="T_ParameterTxt01"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="1"  DataType="Unsigned8" DefaultValue="1"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="2"  DataType="Unsigned8" DefaultValue="2"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="3"  DataType="Unsigned8" DefaultValue="3"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="4"  DataType="Unsigned8" DefaultValue="4"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="5"  DataType="Unsigned8" DefaultValue="5"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="6"  DataType="Unsigned8" DefaultValue="6"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="7"  DataType="Unsigned8" DefaultValue="7"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="8"  DataType="Unsigned8" DefaultValue="8"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter1" ByteOffset="9"  DataType="Unsigned8" DefaultValue="0"  Changeable="true" Visible="true" TextId="T_ParameterTxt03"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="10" DataType="Unsigned8" DefaultValue="9"  Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="11" DataType="Unsigned8" DefaultValue="10" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="12" DataType="Unsigned8" DefaultValue="11" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="13" DataType="Unsigned8" DefaultValue="12" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="14" DataType="Unsigned8" DefaultValue="13" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="15" DataType="Unsigned8" DefaultValue="14" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="16" DataType="Unsigned8" DefaultValue="15" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="17" DataType="Unsigned8" DefaultValue="16" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter1" ByteOffset="18" DataType="Unsigned8" DefaultValue="0"  Changeable="true" Visible="true" TextId="T_ParameterTxt05"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="19" DataType="Unsigned8" DefaultValue="17" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="20" DataType="Unsigned8" DefaultValue="18" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="21" DataType="Unsigned8" DefaultValue="19" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="22" DataType="Unsigned8" DefaultValue="20" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="23" DataType="Unsigned8" DefaultValue="21" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="24" DataType="Unsigned8" DefaultValue="22" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="25" DataType="Unsigned8" DefaultValue="23" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="26" DataType="Unsigned8" DefaultValue="24" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="27" DataType="Unsigned8" DefaultValue="1"  Changeable="true" Visible="true" TextId="T_ParameterTxt07"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="28" DataType="Unsigned8" DefaultValue="2"  Changeable="true" Visible="true" TextId="T_ParameterTxt08"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="29" DataType="Unsigned8" DefaultValue="3"  Changeable="true" Visible="true" TextId="T_ParameterTxt09"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="30" DataType="Unsigned8" DefaultValue="4"  Changeable="true" Visible="true" TextId="T_ParameterTxt10"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="31" DataType="Unsigned8" DefaultValue="5"  Changeable="true" Visible="true" TextId="T_ParameterTxt11"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="32" DataType="Unsigned8" DefaultValue="6"  Changeable="true" Visible="true" TextId="T_ParameterTxt12"/>
+                                    <Ref ValueItemTarget="ID_Parameter1" ByteOffset="33" DataType="Unsigned8" DefaultValue="25" Changeable="true" Visible="true" TextId="T_ParameterTxt13"/>
+                                    <Ref ValueItemTarget="ID_Parameter1" ByteOffset="34" DataType="Unsigned8" DefaultValue="26" Changeable="true" Visible="true" TextId="T_ParameterTxt14"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="35" DataType="Unsigned8" DefaultValue="7"  Changeable="true" Visible="true" TextId="T_ParameterTxt15"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="36" DataType="Unsigned8" DefaultValue="8"  Changeable="true" Visible="true" TextId="T_ParameterTxt16"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="37" DataType="Unsigned8" DefaultValue="9"  Changeable="true" Visible="true" TextId="T_ParameterTxt17"/>
+                                    <Ref ValueItemTarget="ID_Parameter4" ByteOffset="38" DataType="Unsigned8" DefaultValue="50" Changeable="true" Visible="true" TextId="T_ParameterTxt18"/>
+                                    <Ref ValueItemTarget="ID_Parameter5" ByteOffset="39" DataType="Unsigned8" DefaultValue="10" Changeable="true" Visible="true" TextId="T_ParameterTxt19"/>
+                                    <Ref ValueItemTarget="ID_Parameter6" ByteOffset="40" DataType="Unsigned8" DefaultValue="2"  Changeable="true" Visible="true" TextId="T_ParameterTxt20"/>
+                                </ParameterRecordDataItem>
+                            </RecordDataList>
+                            <ModuleInfo>
+                                <Name TextId="ZM-PARA_NAME"/>
+                                <InfoText TextId="ZM-PARA_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                    <Graphics>
+                        <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ZM_DeviceSymbol"/>
+                    </Graphics>
+                </DeviceAccessPointItem>
+                <!-- ============================== -->
+                <!--   Advanced DAP V2              -->
+                <!-- ============================== -->
+                <DeviceAccessPointItem ID="ZM DAP V2 RT" PhysicalSlots="0..13" ModuleIdentNumber="0xA0000000" MinDeviceInterval="64" ImplementationType="ERTEC200" DNS_CompatibleName="ZM-PN" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" RequiredSchemaVersion="V2.2" MaxSupportedRecordSize="4068">
+                    <ModuleInfo>
+                        <Name TextId="T_ID_ZM_PN_DAP_V2"/>
+                        <InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+                        <VendorName Value="LJU Automatisierungstechnik GmbH"/>
+                        <OrderNumber Value="WNR60137"/>
+                        <HardwareRelease Value="V1.0"/>
+                        <SoftwareRelease Value="V1.1"/>
+                    </ModuleInfo>
+                    <SubslotList>
+                        <SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+                        <SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+                        <SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+                    </SubslotList>
+                    <!-- =============================================================================== -->
+                    <!-- Slave-Konfiguration mit GDMSL-Datei Schema V1.0                                 -->
+                    <!-- MaxInputLength ="11"                                                            -->
+                    <!-- MaxOutputLength="31"                                                            -->
+                    <!-- <IOConfigData MaxInputLength="11" MaxOutputLength="31"/>                        -->
+                    <!-- =============================================================================== -->
+                    <!-- Slave-Konfiguration mit GDMSL-Datei Schema V2.2                                 -->
+                    <!-- Hier zaehlen die versteckten Datenbegleiter-Bytes (hier je 14+3) mit.           -->
+                    <!-- MaxInputLength ="11 + 17 = 28"                                                  -->
+                    <!-- MaxOutputLength="31 + 17 = 48"                                                  -->
+                    <IOConfigData MaxInputLength="28" MaxOutputLength="48"/>
+                    <!-- =============================================================================== -->
+                    <UseableModules>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_IN_00"      FixedInSlots="1"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_IN_01"      AllowedInSlots="6..8"    UsedInSlots="6..8"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_IN_02"      AllowedInSlots="6..8"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_IN_03"      AllowedInSlots="11..13"  UsedInSlots="11..13"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_00"     FixedInSlots="2"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_01"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_02"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_03"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_04"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_05"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_06"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_07"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_08"     AllowedInSlots="3..5"    UsedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_09"     AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_OUT_10"     AllowedInSlots="9..10"   UsedInSlots="9..10" />
+                        <ModuleItemRef ModuleItemTarget="ID_MOD_EMPTY_SLOT" AllowedInSlots="3..13"/>
+                    </UseableModules>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ZM DAP V2 RT PARAM" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">
+                            <IOData/>
+                            <RecordDataList>
+                                <ParameterRecordDataItem Index="1" Length="41">
+                                    <Name TextId="T_CFG_Parameter"/>
+                                    <Ref ValueItemTarget="ID_Parameter1" ByteOffset="0"  DataType="Unsigned8" DefaultValue="0"  Changeable="true" Visible="true" TextId="T_ParameterTxt01"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="1"  DataType="Unsigned8" DefaultValue="1"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="2"  DataType="Unsigned8" DefaultValue="2"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="3"  DataType="Unsigned8" DefaultValue="3"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="4"  DataType="Unsigned8" DefaultValue="4"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="5"  DataType="Unsigned8" DefaultValue="5"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="6"  DataType="Unsigned8" DefaultValue="6"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="7"  DataType="Unsigned8" DefaultValue="7"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="8"  DataType="Unsigned8" DefaultValue="8"  Changeable="true" Visible="true" TextId="T_ParameterTxt02"/>
+                                    <Ref ValueItemTarget="ID_Parameter1" ByteOffset="9"  DataType="Unsigned8" DefaultValue="0"  Changeable="true" Visible="true" TextId="T_ParameterTxt03"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="10" DataType="Unsigned8" DefaultValue="9"  Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="11" DataType="Unsigned8" DefaultValue="10" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="12" DataType="Unsigned8" DefaultValue="11" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="13" DataType="Unsigned8" DefaultValue="12" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="14" DataType="Unsigned8" DefaultValue="13" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="15" DataType="Unsigned8" DefaultValue="14" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="16" DataType="Unsigned8" DefaultValue="15" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="17" DataType="Unsigned8" DefaultValue="16" Changeable="true" Visible="true" TextId="T_ParameterTxt04"/>
+                                    <Ref ValueItemTarget="ID_Parameter1" ByteOffset="18" DataType="Unsigned8" DefaultValue="0"  Changeable="true" Visible="true" TextId="T_ParameterTxt05"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="19" DataType="Unsigned8" DefaultValue="17" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="20" DataType="Unsigned8" DefaultValue="18" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="21" DataType="Unsigned8" DefaultValue="19" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="22" DataType="Unsigned8" DefaultValue="20" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="23" DataType="Unsigned8" DefaultValue="21" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="24" DataType="Unsigned8" DefaultValue="22" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="25" DataType="Unsigned8" DefaultValue="23" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter2" ByteOffset="26" DataType="Unsigned8" DefaultValue="24" Changeable="true" Visible="true" TextId="T_ParameterTxt06"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="27" DataType="Unsigned8" DefaultValue="1"  Changeable="true" Visible="true" TextId="T_ParameterTxt07"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="28" DataType="Unsigned8" DefaultValue="2"  Changeable="true" Visible="true" TextId="T_ParameterTxt08"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="29" DataType="Unsigned8" DefaultValue="3"  Changeable="true" Visible="true" TextId="T_ParameterTxt09"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="30" DataType="Unsigned8" DefaultValue="4"  Changeable="true" Visible="true" TextId="T_ParameterTxt10"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="31" DataType="Unsigned8" DefaultValue="5"  Changeable="true" Visible="true" TextId="T_ParameterTxt11"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="32" DataType="Unsigned8" DefaultValue="6"  Changeable="true" Visible="true" TextId="T_ParameterTxt12"/>
+                                    <Ref ValueItemTarget="ID_Parameter1" ByteOffset="33" DataType="Unsigned8" DefaultValue="25" Changeable="true" Visible="true" TextId="T_ParameterTxt13"/>
+                                    <Ref ValueItemTarget="ID_Parameter1" ByteOffset="34" DataType="Unsigned8" DefaultValue="26" Changeable="true" Visible="true" TextId="T_ParameterTxt14"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="35" DataType="Unsigned8" DefaultValue="7"  Changeable="true" Visible="true" TextId="T_ParameterTxt15"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="36" DataType="Unsigned8" DefaultValue="8"  Changeable="true" Visible="true" TextId="T_ParameterTxt16"/>
+                                    <Ref ValueItemTarget="ID_Parameter3" ByteOffset="37" DataType="Unsigned8" DefaultValue="9"  Changeable="true" Visible="true" TextId="T_ParameterTxt17"/>
+                                    <Ref ValueItemTarget="ID_Parameter4" ByteOffset="38" DataType="Unsigned8" DefaultValue="50" Changeable="true" Visible="true" TextId="T_ParameterTxt18"/>
+                                    <Ref ValueItemTarget="ID_Parameter5" ByteOffset="39" DataType="Unsigned8" DefaultValue="10" Changeable="true" Visible="true" TextId="T_ParameterTxt19"/>
+                                    <Ref ValueItemTarget="ID_Parameter6" ByteOffset="40" DataType="Unsigned8" DefaultValue="3"  Changeable="true" Visible="true" TextId="T_ParameterTxt20"/>
+                                </ParameterRecordDataItem>
+                            </RecordDataList>
+                            <ModuleInfo>
+                                <Name TextId="ZM-PARA_NAME"/>
+                                <InfoText TextId="ZM-PARA_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                    <SystemDefinedSubmoduleList>
+                        <InterfaceSubmoduleItem SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Class="Class3" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_2;RT_CLASS_3" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" NetworkComponentDiagnosisSupported="true" DCP_HelloSupported="true" >
+                            <RT_Class3Properties MaxBridgeDelay="2920" MaxNumberIR_FrameData="400" />
+                            <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="50" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP"/>
+                            <ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0">
+                                <TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+                                <RT_Class3TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16"/>
+                            </ApplicationRelations>
+                        </InterfaceSubmoduleItem>
+                        <PortSubmoduleItem SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUType="100BASETXFD" TextId="T_ID_PORT" MaxPortRxDelay="302" MaxPortTxDelay="108"/>
+                        <PortSubmoduleItem SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUType="100BASETXFD" TextId="T_ID_PORT" MaxPortRxDelay="302" MaxPortTxDelay="108"/>
+                    </SystemDefinedSubmoduleList>
+                    <Graphics>
+                        <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ZM_DeviceSymbol"/>
+                    </Graphics>
+                </DeviceAccessPointItem>
+            </DeviceAccessPointList>
+
+<!-- ============================================================================================ -->
+<!--   List of modules                                                                            -->
+<!-- ============================================================================================ -->
+
+            <ModuleList>
+
+                <!--Input modules -->
+                <!--Header 2 Byte Input -->
+                <ModuleItem ID="ID_MOD_IN_00" ModuleIdentNumber="0x00000001">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_IN_MOD">
+                        <Name TextId="T_ID_IN_00_NAME"/>
+                        <InfoText TextId="T_ID_IN_00_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_IN_00" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Input Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="2" TextId="T_ID_INPUT"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_IN_00_NAME"/>
+                                <InfoText TextId="T_ID_IN_00_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--EM-8-DP HW 2 Byte Input -->
+                <ModuleItem ID="ID_MOD_IN_01" ModuleIdentNumber="0x00000002">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_IN_MOD">
+                        <Name TextId="T_ID_IN_01_NAME"/>
+                        <InfoText TextId="T_ID_IN_01_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_IN_01" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Input Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="2" TextId="T_ID_INPUT"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_IN_01_NAME"/>
+                                <InfoText TextId="T_ID_IN_01_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--EM-8-DP VW 1 Byte Input -->
+                <ModuleItem ID="ID_MOD_IN_02" ModuleIdentNumber="0x00000003">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_IN_MOD">
+                        <Name TextId="T_ID_IN_02_NAME"/>
+                        <InfoText TextId="T_ID_IN_02_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_IN_02" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Input Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="1" TextId="T_ID_INPUT"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_IN_02_NAME"/>
+                                <InfoText TextId="T_ID_IN_02_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--EM24-DP VW 1 Byte Input -->
+                <ModuleItem ID="ID_MOD_IN_03" ModuleIdentNumber="0x00000004">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_IN_MOD">
+                        <Name TextId="T_ID_IN_03_NAME"/>
+                        <InfoText TextId="T_ID_IN_03_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_IN_03" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Input Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="1" TextId="T_ID_INPUT"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_IN_03_NAME"/>
+                                <InfoText TextId="T_ID_IN_03_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--Output modules-->
+                <!--Header 2 Byte Output -->
+                <ModuleItem ID="ID_MOD_OUT_00" ModuleIdentNumber="0x00000020">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_OUT_MOD">
+                        <Name TextId="T_ID_OUT_00_NAME"/>
+                        <InfoText TextId="T_ID_OUT_00_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_OUT_00" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="2" TextId="T_ID_OUTPUT"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_OUT_00_NAME"/>
+                                <InfoText TextId="T_ID_OUT_00_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--PCM-8-DP 1 Byte Output -->
+                <ModuleItem ID="ID_MOD_OUT_01" ModuleIdentNumber="0x00000021">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_OUT_MOD">
+                        <Name TextId="T_ID_OUT_01_NAME"/>
+                        <InfoText TextId="T_ID_OUT_01_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_OUT_01" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="1" TextId="T_ID_OUTPUT"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_OUT_01_NAME"/>
+                                <InfoText TextId="T_ID_OUT_01_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--PCM-8-DP 2 Byte Output -->
+                <ModuleItem ID="ID_MOD_OUT_02" ModuleIdentNumber="0x00000022">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_OUT_MOD">
+                        <Name TextId="T_ID_OUT_02_NAME"/>
+                        <InfoText TextId="T_ID_OUT_02_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_OUT_02" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="2" TextId="T_ID_OUTPUT"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_OUT_02_NAME"/>
+                                <InfoText TextId="T_ID_OUT_02_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--PCM-8-DP 3 Byte Output -->
+                <ModuleItem ID="ID_MOD_OUT_03" ModuleIdentNumber="0x00000023">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_OUT_MOD">
+                        <Name TextId="T_ID_OUT_03_NAME"/>
+                        <InfoText TextId="T_ID_OUT_03_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_OUT_03" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="3" TextId="T_ID_OUTPUT"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_OUT_03_NAME"/>
+                                <InfoText TextId="T_ID_OUT_03_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--PCM-8-DP 4 Byte Output -->
+                <ModuleItem ID="ID_MOD_OUT_04" ModuleIdentNumber="0x00000024">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_OUT_MOD">
+                        <Name TextId="T_ID_OUT_04_NAME"/>
+                        <InfoText TextId="T_ID_OUT_04_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_OUT_04" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="4" TextId="T_ID_OUTPUT"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_OUT_04_NAME"/>
+                                <InfoText TextId="T_ID_OUT_04_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--PCM-8-DP 5 Byte Output -->
+                <ModuleItem ID="ID_MOD_OUT_05" ModuleIdentNumber="0x00000025">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_OUT_MOD">
+                        <Name TextId="T_ID_OUT_05_NAME"/>
+                        <InfoText TextId="T_ID_OUT_05_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_OUT_05" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="5" TextId="T_ID_OUTPUT"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_OUT_05_NAME"/>
+                                <InfoText TextId="T_ID_OUT_05_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--PCM-8-DP 6 Byte Output -->
+                <ModuleItem ID="ID_MOD_OUT_06" ModuleIdentNumber="0x00000026">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_OUT_MOD">
+                        <Name TextId="T_ID_OUT_06_NAME"/>
+                        <InfoText TextId="T_ID_OUT_06_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_OUT_06" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="6" TextId="T_ID_OUTPUT"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_OUT_06_NAME"/>
+                                <InfoText TextId="T_ID_OUT_06_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--PCM-8-DP 7 Byte Output -->
+                <ModuleItem ID="ID_MOD_OUT_07" ModuleIdentNumber="0x00000027">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_OUT_MOD">
+                        <Name TextId="T_ID_OUT_07_NAME"/>
+                        <InfoText TextId="T_ID_OUT_07_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_OUT_07" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="7" TextId="T_ID_OUTPUT"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_OUT_07_NAME"/>
+                                <InfoText TextId="T_ID_OUT_07_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--PCM-8-DP 8 Byte Output -->
+                <ModuleItem ID="ID_MOD_OUT_08" ModuleIdentNumber="0x00000028">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_OUT_MOD">
+                        <Name TextId="T_ID_OUT_08_NAME"/>
+                        <InfoText TextId="T_ID_OUT_08_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_OUT_08" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="8" TextId="T_ID_OUTPUT"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_OUT_08_NAME"/>
+                                <InfoText TextId="T_ID_OUT_08_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--PCM-8-DP 9 Byte Output -->
+                <ModuleItem ID="ID_MOD_OUT_09" ModuleIdentNumber="0x00000029">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_OUT_MOD">
+                        <Name TextId="T_ID_OUT_09_NAME"/>
+                        <InfoText TextId="T_ID_OUT_09_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_OUT_09" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="9" TextId="T_ID_OUTPUT"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_OUT_09_NAME"/>
+                                <InfoText TextId="T_ID_OUT_09_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--AM24-8-DP 1 Byte Output -->
+                <ModuleItem ID="ID_MOD_OUT_10" ModuleIdentNumber="0x0000002A">
+                    <ModuleInfo CategoryRef="CAT_REF_RT_OUT_MOD">
+                        <Name TextId="T_ID_OUT_10_NAME"/>
+                        <InfoText TextId="T_ID_OUT_10_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_MOD_OUT_10" SubmoduleIdentNumber="0x00000001">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" Length="1" TextId="T_ID_OUTPUT"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="T_ID_OUT_10_NAME"/>
+                                <InfoText TextId="T_ID_OUT_10_INFO"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+                <!--Other modules -->
+                <ModuleItem ID="ID_MOD_EMPTY_SLOT" ModuleIdentNumber="0xB0000000">
+                    <ModuleInfo CategoryRef="CAT_REF_OTHER_MOD">
+                        <Name TextId="T_ID_EMPTY_SLOT_NAME"/>
+                        <InfoText TextId="T_ID_EMPTY_SLOT_INFO"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="ID_SUBMOD_EMPTY_SLOT" SubmoduleIdentNumber="0x00000001" API="0">
+                            <IOData/>
+                            <ModuleInfo>
+                               <Name TextId="T_ID_EMPTY_SLOT_NAME" />
+                               <InfoText TextId="T_ID_EMPTY_SLOT_INFO" />
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+
+            </ModuleList>
+
+            <ValueList>
+                <!-- Zuordnung Ausgangsbyte OFF,2..30 -->
+                <ValueItem ID="ID_Parameter1">
+                    <Assignments>
+                    <Assign Content="0"  TextId="T_ParameterTxt1_00"/>
+                    <Assign Content="1"  TextId="T_ParameterTxt1_01"/>
+                    <Assign Content="2"  TextId="T_ParameterTxt1_02"/>
+                    <Assign Content="3"  TextId="T_ParameterTxt1_03"/>
+                    <Assign Content="4"  TextId="T_ParameterTxt1_04"/>
+                    <Assign Content="5"  TextId="T_ParameterTxt1_05"/>
+                    <Assign Content="6"  TextId="T_ParameterTxt1_06"/>
+                    <Assign Content="7"  TextId="T_ParameterTxt1_07"/>
+                    <Assign Content="8"  TextId="T_ParameterTxt1_08"/>
+                    <Assign Content="9"  TextId="T_ParameterTxt1_09"/>
+                    <Assign Content="10" TextId="T_ParameterTxt1_10"/>
+                    <Assign Content="11" TextId="T_ParameterTxt1_11"/>
+                    <Assign Content="12" TextId="T_ParameterTxt1_12"/>
+                    <Assign Content="13" TextId="T_ParameterTxt1_13"/>
+                    <Assign Content="14" TextId="T_ParameterTxt1_14"/>
+                    <Assign Content="15" TextId="T_ParameterTxt1_15"/>
+                    <Assign Content="16" TextId="T_ParameterTxt1_16"/>
+                    <Assign Content="17" TextId="T_ParameterTxt1_17"/>
+                    <Assign Content="18" TextId="T_ParameterTxt1_18"/>
+                    <Assign Content="19" TextId="T_ParameterTxt1_19"/>
+                    <Assign Content="20" TextId="T_ParameterTxt1_20"/>
+                    <Assign Content="21" TextId="T_ParameterTxt1_21"/>
+                    <Assign Content="22" TextId="T_ParameterTxt1_22"/>
+                    <Assign Content="23" TextId="T_ParameterTxt1_23"/>
+                    <Assign Content="24" TextId="T_ParameterTxt1_24"/>
+                    <Assign Content="25" TextId="T_ParameterTxt1_25"/>
+                    <Assign Content="26" TextId="T_ParameterTxt1_26"/>
+                    <Assign Content="27" TextId="T_ParameterTxt1_27"/>
+                    <Assign Content="28" TextId="T_ParameterTxt1_28"/>
+                    <Assign Content="29" TextId="T_ParameterTxt1_29"/>
+                    </Assignments>
+                </ValueItem>
+
+                <!-- Zuordnung Ausgangsbyte OFF,2..30,High-Low-Nibble 2..30,Festcode 0..155 -->
+                <ValueItem ID="ID_Parameter2">
+                    <Assignments>
+                    <Assign Content="0"   TextId="T_ParameterTxt2_00"/>
+                    <Assign Content="1"   TextId="T_ParameterTxt2_01"/>
+                    <Assign Content="2"   TextId="T_ParameterTxt2_02"/>
+                    <Assign Content="3"   TextId="T_ParameterTxt2_03"/>
+                    <Assign Content="4"   TextId="T_ParameterTxt2_04"/>
+                    <Assign Content="5"   TextId="T_ParameterTxt2_05"/>
+                    <Assign Content="6"   TextId="T_ParameterTxt2_06"/>
+                    <Assign Content="7"   TextId="T_ParameterTxt2_07"/>
+                    <Assign Content="8"   TextId="T_ParameterTxt2_08"/>
+                    <Assign Content="9"   TextId="T_ParameterTxt2_09"/>
+                    <Assign Content="10"  TextId="T_ParameterTxt2_10"/>
+                    <Assign Content="11"  TextId="T_ParameterTxt2_11"/>
+                    <Assign Content="12"  TextId="T_ParameterTxt2_12"/>
+                    <Assign Content="13"  TextId="T_ParameterTxt2_13"/>
+                    <Assign Content="14"  TextId="T_ParameterTxt2_14"/>
+                    <Assign Content="15"  TextId="T_ParameterTxt2_15"/>
+                    <Assign Content="16"  TextId="T_ParameterTxt2_16"/>
+                    <Assign Content="17"  TextId="T_ParameterTxt2_17"/>
+                    <Assign Content="18"  TextId="T_ParameterTxt2_18"/>
+                    <Assign Content="19"  TextId="T_ParameterTxt2_19"/>
+                    <Assign Content="20"  TextId="T_ParameterTxt2_20"/>
+                    <Assign Content="21"  TextId="T_ParameterTxt2_21"/>
+                    <Assign Content="22"  TextId="T_ParameterTxt2_22"/>
+                    <Assign Content="23"  TextId="T_ParameterTxt2_23"/>
+                    <Assign Content="24"  TextId="T_ParameterTxt2_24"/>
+                    <Assign Content="25"  TextId="T_ParameterTxt2_25"/>
+                    <Assign Content="26"  TextId="T_ParameterTxt2_26"/>
+                    <Assign Content="27"  TextId="T_ParameterTxt2_27"/>
+                    <Assign Content="28"  TextId="T_ParameterTxt2_28"/>
+                    <Assign Content="29"  TextId="T_ParameterTxt2_29"/>
+                    <Assign Content="31"  TextId="T_ParameterTxt2_31"/>
+                    <Assign Content="32"  TextId="T_ParameterTxt2_32"/>
+                    <Assign Content="33"  TextId="T_ParameterTxt2_33"/>
+                    <Assign Content="34"  TextId="T_ParameterTxt2_34"/>
+                    <Assign Content="35"  TextId="T_ParameterTxt2_35"/>
+                    <Assign Content="36"  TextId="T_ParameterTxt2_36"/>
+                    <Assign Content="37"  TextId="T_ParameterTxt2_37"/>
+                    <Assign Content="38"  TextId="T_ParameterTxt2_38"/>
+                    <Assign Content="39"  TextId="T_ParameterTxt2_39"/>
+                    <Assign Content="40"  TextId="T_ParameterTxt2_40"/>
+                    <Assign Content="41"  TextId="T_ParameterTxt2_41"/>
+                    <Assign Content="42"  TextId="T_ParameterTxt2_42"/>
+                    <Assign Content="43"  TextId="T_ParameterTxt2_43"/>
+                    <Assign Content="44"  TextId="T_ParameterTxt2_44"/>
+                    <Assign Content="45"  TextId="T_ParameterTxt2_45"/>
+                    <Assign Content="46"  TextId="T_ParameterTxt2_46"/>
+                    <Assign Content="47"  TextId="T_ParameterTxt2_47"/>
+                    <Assign Content="48"  TextId="T_ParameterTxt2_48"/>
+                    <Assign Content="49"  TextId="T_ParameterTxt2_49"/>
+                    <Assign Content="50"  TextId="T_ParameterTxt2_50"/>
+                    <Assign Content="51"  TextId="T_ParameterTxt2_51"/>
+                    <Assign Content="52"  TextId="T_ParameterTxt2_52"/>
+                    <Assign Content="53"  TextId="T_ParameterTxt2_53"/>
+                    <Assign Content="54"  TextId="T_ParameterTxt2_54"/>
+                    <Assign Content="55"  TextId="T_ParameterTxt2_55"/>
+                    <Assign Content="56"  TextId="T_ParameterTxt2_56"/>
+                    <Assign Content="57"  TextId="T_ParameterTxt2_57"/>
+                    <Assign Content="58"  TextId="T_ParameterTxt2_58"/>
+                    <Assign Content="59"  TextId="T_ParameterTxt2_59"/>
+                    <Assign Content="61"  TextId="T_ParameterTxt2_61"/>
+                    <Assign Content="62"  TextId="T_ParameterTxt2_62"/>
+                    <Assign Content="63"  TextId="T_ParameterTxt2_63"/>
+                    <Assign Content="64"  TextId="T_ParameterTxt2_64"/>
+                    <Assign Content="65"  TextId="T_ParameterTxt2_65"/>
+                    <Assign Content="66"  TextId="T_ParameterTxt2_66"/>
+                    <Assign Content="67"  TextId="T_ParameterTxt2_67"/>
+                    <Assign Content="68"  TextId="T_ParameterTxt2_68"/>
+                    <Assign Content="69"  TextId="T_ParameterTxt2_69"/>
+                    <Assign Content="70"  TextId="T_ParameterTxt2_70"/>
+                    <Assign Content="71"  TextId="T_ParameterTxt2_71"/>
+                    <Assign Content="72"  TextId="T_ParameterTxt2_72"/>
+                    <Assign Content="73"  TextId="T_ParameterTxt2_73"/>
+                    <Assign Content="74"  TextId="T_ParameterTxt2_74"/>
+                    <Assign Content="75"  TextId="T_ParameterTxt2_75"/>
+                    <Assign Content="76"  TextId="T_ParameterTxt2_76"/>
+                    <Assign Content="77"  TextId="T_ParameterTxt2_77"/>
+                    <Assign Content="78"  TextId="T_ParameterTxt2_78"/>
+                    <Assign Content="79"  TextId="T_ParameterTxt2_79"/>
+                    <Assign Content="80"  TextId="T_ParameterTxt2_80"/>
+                    <Assign Content="81"  TextId="T_ParameterTxt2_81"/>
+                    <Assign Content="82"  TextId="T_ParameterTxt2_82"/>
+                    <Assign Content="83"  TextId="T_ParameterTxt2_83"/>
+                    <Assign Content="84"  TextId="T_ParameterTxt2_84"/>
+                    <Assign Content="85"  TextId="T_ParameterTxt2_85"/>
+                    <Assign Content="86"  TextId="T_ParameterTxt2_86"/>
+                    <Assign Content="87"  TextId="T_ParameterTxt2_87"/>
+                    <Assign Content="88"  TextId="T_ParameterTxt2_88"/>
+                    <Assign Content="89"  TextId="T_ParameterTxt2_89"/>
+                    <Assign Content="100" TextId="T_ParameterTxt2_100"/>
+                    <Assign Content="101" TextId="T_ParameterTxt2_101"/>
+                    <Assign Content="102" TextId="T_ParameterTxt2_102"/>
+                    <Assign Content="103" TextId="T_ParameterTxt2_103"/>
+                    <Assign Content="104" TextId="T_ParameterTxt2_104"/>
+                    <Assign Content="105" TextId="T_ParameterTxt2_105"/>
+                    <Assign Content="106" TextId="T_ParameterTxt2_106"/>
+                    <Assign Content="107" TextId="T_ParameterTxt2_107"/>
+                    <Assign Content="108" TextId="T_ParameterTxt2_108"/>
+                    <Assign Content="109" TextId="T_ParameterTxt2_109"/>
+                    <Assign Content="110" TextId="T_ParameterTxt2_110"/>
+                    <Assign Content="111" TextId="T_ParameterTxt2_111"/>
+                    <Assign Content="112" TextId="T_ParameterTxt2_112"/>
+                    <Assign Content="113" TextId="T_ParameterTxt2_113"/>
+                    <Assign Content="114" TextId="T_ParameterTxt2_114"/>
+                    <Assign Content="115" TextId="T_ParameterTxt2_115"/>
+                    <Assign Content="116" TextId="T_ParameterTxt2_116"/>
+                    <Assign Content="117" TextId="T_ParameterTxt2_117"/>
+                    <Assign Content="118" TextId="T_ParameterTxt2_118"/>
+                    <Assign Content="119" TextId="T_ParameterTxt2_119"/>
+                    <Assign Content="120" TextId="T_ParameterTxt2_120"/>
+                    <Assign Content="121" TextId="T_ParameterTxt2_121"/>
+                    <Assign Content="122" TextId="T_ParameterTxt2_122"/>
+                    <Assign Content="123" TextId="T_ParameterTxt2_123"/>
+                    <Assign Content="124" TextId="T_ParameterTxt2_124"/>
+                    <Assign Content="125" TextId="T_ParameterTxt2_125"/>                                                                                                                                                                                            
+                    <Assign Content="126" TextId="T_ParameterTxt2_126"/>
+                    <Assign Content="127" TextId="T_ParameterTxt2_127"/>
+                    <Assign Content="128" TextId="T_ParameterTxt2_128"/>
+                    <Assign Content="129" TextId="T_ParameterTxt2_129"/>
+                    <Assign Content="130" TextId="T_ParameterTxt2_130"/>
+                    <Assign Content="131" TextId="T_ParameterTxt2_131"/>
+                    <Assign Content="132" TextId="T_ParameterTxt2_132"/>
+                    <Assign Content="133" TextId="T_ParameterTxt2_133"/>
+                    <Assign Content="134" TextId="T_ParameterTxt2_134"/>
+                    <Assign Content="135" TextId="T_ParameterTxt2_135"/>                                                                                                                                                                                            
+                    <Assign Content="136" TextId="T_ParameterTxt2_136"/>
+                    <Assign Content="137" TextId="T_ParameterTxt2_137"/>
+                    <Assign Content="138" TextId="T_ParameterTxt2_138"/>
+                    <Assign Content="139" TextId="T_ParameterTxt2_139"/>
+                    <Assign Content="140" TextId="T_ParameterTxt2_140"/>
+                    <Assign Content="141" TextId="T_ParameterTxt2_141"/>
+                    <Assign Content="142" TextId="T_ParameterTxt2_142"/>
+                    <Assign Content="143" TextId="T_ParameterTxt2_143"/>
+                    <Assign Content="144" TextId="T_ParameterTxt2_144"/>
+                    <Assign Content="145" TextId="T_ParameterTxt2_145"/>                                                                                                                                                                                            
+                    <Assign Content="146" TextId="T_ParameterTxt2_146"/>
+                    <Assign Content="147" TextId="T_ParameterTxt2_147"/>
+                    <Assign Content="148" TextId="T_ParameterTxt2_148"/>
+                    <Assign Content="149" TextId="T_ParameterTxt2_149"/>
+                    <Assign Content="150" TextId="T_ParameterTxt2_150"/>
+                    <Assign Content="151" TextId="T_ParameterTxt2_151"/>
+                    <Assign Content="152" TextId="T_ParameterTxt2_152"/>
+                    <Assign Content="153" TextId="T_ParameterTxt2_153"/>
+                    <Assign Content="154" TextId="T_ParameterTxt2_154"/>
+                    <Assign Content="155" TextId="T_ParameterTxt2_155"/>
+                    <Assign Content="156" TextId="T_ParameterTxt2_156"/>
+                    <Assign Content="157" TextId="T_ParameterTxt2_157"/>
+                    <Assign Content="158" TextId="T_ParameterTxt2_158"/>
+                    <Assign Content="159" TextId="T_ParameterTxt2_159"/>
+                    <Assign Content="160" TextId="T_ParameterTxt2_160"/>
+                    <Assign Content="161" TextId="T_ParameterTxt2_161"/>
+                    <Assign Content="162" TextId="T_ParameterTxt2_162"/>
+                    <Assign Content="163" TextId="T_ParameterTxt2_163"/>
+                    <Assign Content="164" TextId="T_ParameterTxt2_164"/>
+                    <Assign Content="165" TextId="T_ParameterTxt2_165"/>                                                                                                                                                                                            
+                    <Assign Content="166" TextId="T_ParameterTxt2_166"/>
+                    <Assign Content="167" TextId="T_ParameterTxt2_167"/>
+                    <Assign Content="168" TextId="T_ParameterTxt2_168"/>
+                    <Assign Content="169" TextId="T_ParameterTxt2_169"/>                    
+                    <Assign Content="170" TextId="T_ParameterTxt2_170"/>
+                    <Assign Content="171" TextId="T_ParameterTxt2_171"/>
+                    <Assign Content="172" TextId="T_ParameterTxt2_172"/>
+                    <Assign Content="173" TextId="T_ParameterTxt2_173"/>
+                    <Assign Content="174" TextId="T_ParameterTxt2_174"/>
+                    <Assign Content="175" TextId="T_ParameterTxt2_175"/>                                                                                                                                                                                            
+                    <Assign Content="176" TextId="T_ParameterTxt2_176"/>
+                    <Assign Content="177" TextId="T_ParameterTxt2_177"/>
+                    <Assign Content="178" TextId="T_ParameterTxt2_178"/>
+                    <Assign Content="179" TextId="T_ParameterTxt2_179"/>                    
+                    <Assign Content="180" TextId="T_ParameterTxt2_180"/>
+                    <Assign Content="181" TextId="T_ParameterTxt2_181"/>
+                    <Assign Content="182" TextId="T_ParameterTxt2_182"/>
+                    <Assign Content="183" TextId="T_ParameterTxt2_183"/>
+                    <Assign Content="184" TextId="T_ParameterTxt2_184"/>
+                    <Assign Content="185" TextId="T_ParameterTxt2_185"/>                                                                                                                                                                                            
+                    <Assign Content="186" TextId="T_ParameterTxt2_186"/>
+                    <Assign Content="187" TextId="T_ParameterTxt2_187"/>
+                    <Assign Content="188" TextId="T_ParameterTxt2_188"/>
+                    <Assign Content="189" TextId="T_ParameterTxt2_189"/>
+                    <Assign Content="190" TextId="T_ParameterTxt2_190"/>
+                    <Assign Content="191" TextId="T_ParameterTxt2_191"/>
+                    <Assign Content="192" TextId="T_ParameterTxt2_192"/>
+                    <Assign Content="193" TextId="T_ParameterTxt2_193"/>
+                    <Assign Content="194" TextId="T_ParameterTxt2_194"/>
+                    <Assign Content="195" TextId="T_ParameterTxt2_195"/>                                                                                                                                                                                            
+                    <Assign Content="196" TextId="T_ParameterTxt2_196"/>
+                    <Assign Content="197" TextId="T_ParameterTxt2_197"/>
+                    <Assign Content="198" TextId="T_ParameterTxt2_198"/>
+                    <Assign Content="199" TextId="T_ParameterTxt2_199"/>                    
+                    <Assign Content="200" TextId="T_ParameterTxt2_200"/>
+                    <Assign Content="201" TextId="T_ParameterTxt2_201"/>
+                    <Assign Content="202" TextId="T_ParameterTxt2_202"/>
+                    <Assign Content="203" TextId="T_ParameterTxt2_203"/>
+                    <Assign Content="204" TextId="T_ParameterTxt2_204"/>
+                    <Assign Content="205" TextId="T_ParameterTxt2_205"/>                                                                                                                                                                                                
+                    <Assign Content="206" TextId="T_ParameterTxt2_206"/>
+                    <Assign Content="207" TextId="T_ParameterTxt2_207"/>
+                    <Assign Content="208" TextId="T_ParameterTxt2_208"/>
+                    <Assign Content="209" TextId="T_ParameterTxt2_209"/>
+                    <Assign Content="210" TextId="T_ParameterTxt2_210"/>
+                    <Assign Content="211" TextId="T_ParameterTxt2_211"/>
+                    <Assign Content="212" TextId="T_ParameterTxt2_212"/>
+                    <Assign Content="213" TextId="T_ParameterTxt2_213"/>
+                    <Assign Content="214" TextId="T_ParameterTxt2_214"/>
+                    <Assign Content="215" TextId="T_ParameterTxt2_215"/>                                                                                                                                                                                                
+                    <Assign Content="216" TextId="T_ParameterTxt2_216"/>
+                    <Assign Content="217" TextId="T_ParameterTxt2_217"/>
+                    <Assign Content="218" TextId="T_ParameterTxt2_218"/>
+                    <Assign Content="219" TextId="T_ParameterTxt2_219"/>
+                    <Assign Content="220" TextId="T_ParameterTxt2_220"/>
+                    <Assign Content="221" TextId="T_ParameterTxt2_221"/>
+                    <Assign Content="222" TextId="T_ParameterTxt2_222"/>
+                    <Assign Content="223" TextId="T_ParameterTxt2_223"/>
+                    <Assign Content="224" TextId="T_ParameterTxt2_224"/>
+                    <Assign Content="225" TextId="T_ParameterTxt2_225"/>                                                                                                                                                                                                
+                    <Assign Content="226" TextId="T_ParameterTxt2_226"/>
+                    <Assign Content="227" TextId="T_ParameterTxt2_227"/>
+                    <Assign Content="228" TextId="T_ParameterTxt2_228"/>
+                    <Assign Content="229" TextId="T_ParameterTxt2_229"/>
+                    <Assign Content="230" TextId="T_ParameterTxt2_230"/>                                                                                                                                                                                             
+                    <Assign Content="231" TextId="T_ParameterTxt2_231"/>                                                                                                                                                                                                                
+                    <Assign Content="232" TextId="T_ParameterTxt2_232"/>                                                                                                                                                                                                                
+                    <Assign Content="233" TextId="T_ParameterTxt2_233"/>                                                                                                                                                                                                    
+                    <Assign Content="234" TextId="T_ParameterTxt2_234"/>                                                                                                                                                                                                                
+                    <Assign Content="235" TextId="T_ParameterTxt2_235"/>                                                                                                                                                                                                                
+                    <Assign Content="236" TextId="T_ParameterTxt2_236"/>
+                    <Assign Content="237" TextId="T_ParameterTxt2_237"/>                                                                                                                                                                                                                
+                    <Assign Content="238" TextId="T_ParameterTxt2_238"/>                                                                                                                                                                                                                
+                    <Assign Content="239" TextId="T_ParameterTxt2_239"/> 
+                    <Assign Content="240" TextId="T_ParameterTxt2_240"/>
+                    <Assign Content="241" TextId="T_ParameterTxt2_241"/>
+                    <Assign Content="242" TextId="T_ParameterTxt2_242"/>
+                    <Assign Content="243" TextId="T_ParameterTxt2_243"/>
+                    <Assign Content="244" TextId="T_ParameterTxt2_244"/>
+                    <Assign Content="245" TextId="T_ParameterTxt2_245"/>
+                    <Assign Content="246" TextId="T_ParameterTxt2_246"/>
+                    <Assign Content="247" TextId="T_ParameterTxt2_247"/>
+                    <Assign Content="248" TextId="T_ParameterTxt2_248"/>
+                    <Assign Content="249" TextId="T_ParameterTxt2_249"/>
+                    <Assign Content="250" TextId="T_ParameterTxt2_250"/>
+                    <Assign Content="251" TextId="T_ParameterTxt2_251"/>
+                    <Assign Content="252" TextId="T_ParameterTxt2_252"/>
+                    <Assign Content="253" TextId="T_ParameterTxt2_253"/>
+                    <Assign Content="254" TextId="T_ParameterTxt2_254"/>
+                    <Assign Content="255" TextId="T_ParameterTxt2_255"/>
+                    </Assignments>
+                </ValueItem>
+
+                <!-- Zuordnung Eingangsbyte OFF,2..115 -->
+                <ValueItem ID="ID_Parameter3">
+                    <Assignments>
+                    <Assign Content="0"  TextId="T_ParameterTxt3_00"/>
+                    <Assign Content="1"  TextId="T_ParameterTxt3_01"/>
+                    <Assign Content="2"  TextId="T_ParameterTxt3_02"/>
+                    <Assign Content="3"  TextId="T_ParameterTxt3_03"/>
+                    <Assign Content="4"  TextId="T_ParameterTxt3_04"/>
+                    <Assign Content="5"  TextId="T_ParameterTxt3_05"/>
+                    <Assign Content="6"  TextId="T_ParameterTxt3_06"/>
+                    <Assign Content="7"  TextId="T_ParameterTxt3_07"/>
+                    <Assign Content="8"  TextId="T_ParameterTxt3_08"/>
+                    <Assign Content="9"  TextId="T_ParameterTxt3_09"/>
+                    <Assign Content="10" TextId="T_ParameterTxt3_10"/>
+                    </Assignments>
+                </ValueItem>
+
+                <!-- Einstellung Netzfrequenz -->
+                <ValueItem ID="ID_Parameter4">
+                    <Assignments>
+                    <Assign Content="50" TextId="T_ParameterTxt4_50"/>
+                    <Assign Content="60" TextId="T_ParameterTxt4_60"/>
+                    </Assignments>
+                </ValueItem>
+
+                <!-- Einstellung PCM Code Auswahl -->
+                <ValueItem ID="ID_Parameter5">
+                    <Assignments>
+                    <Assign Content="6"  TextId="T_ParameterTxt5_06"/>
+                    <Assign Content="10" TextId="T_ParameterTxt5_10"/>
+                    </Assignments>
+                </ValueItem>
+
+                <!-- Einstellung PN-IO Modus -->
+                <ValueItem ID="ID_Parameter6">
+                    <Assignments>
+                    <Assign Content="0"  TextId="T_ParameterTxt6_00"/>
+                    <Assign Content="1"  TextId="T_ParameterTxt6_01"/>
+                    <Assign Content="2"  TextId="T_ParameterTxt6_02"/>
+                    <Assign Content="3"  TextId="T_ParameterTxt6_03"/>
+                    </Assignments>
+                </ValueItem>
+
+            </ValueList>
+
+            <GraphicsList>
+                <GraphicItem ID="ZM_DeviceSymbol" GraphicFile="ZM-PN"/>
+            </GraphicsList>
+
+            <CategoryList>
+                <CategoryItem ID="CAT_REF_RT_IN_MOD"     TextId="T_ID_RT_IN_MOD"/>
+                <CategoryItem ID="CAT_REF_RT_OUT_MOD"    TextId="T_ID_RT_OUT_MOD"/>
+                <CategoryItem ID="CAT_REF_OTHER_MOD"     TextId="T_ID_OTHER_MOD" />
+                <CategoryItem ID="CAT_REF_MIGRATION_DAP" TextId="T_ID_MIGRATION_DAP"/>
+            </CategoryList>
+
+
+            <ExternalTextList>
+                <PrimaryLanguage>
+                    <!--Identification-->
+                    <Text TextId="T_ID_ZM_PN_DAP_V1"         Value="ZM-PN"/>
+                    <Text TextId="T_ID_ZM_PN_DAP_V2"         Value="ZM-PN"/>
+                    <Text TextId="T_ID_DEV_DESCRIPTION"      Value="Central Module Profinet IO"/>
+                    <Text TextId="T_ID_V1_DEV_DESCRIPTION"   Value="This Device Access Point should be used for IO controllers without physical device. Only RT C1 communication is possible.   ATTENTION: After changes in the module configuration the parameters must be adjusted !"/>
+                    <Text TextId="T_ID_V2_DEV_DESCRIPTION"   Value="This Device Access Point supports RT C1, RT C2 (unsync/sync), and RT C3 (IRT high performance).   ATTENTION: After changes in the module configuration the parameters must be adjusted !"/>
+                    <Text TextId="T_ID_ABS_PIR_V2_RT"        Value="RT"/>
+                    <Text TextId="T_ID_SS_INTERFACE"         Value="X1"/>
+                    <Text TextId="T_ID_SS_PORT1"             Value="P1"/>
+                    <Text TextId="T_ID_SS_PORT2"             Value="P2"/>
+                    <Text TextId="T_ID_DAP_INTERFACE_MODULE" Value="Interface"/>
+                    <Text TextId="T_ID_PORT"                 Value="RJ45 100 MBit/s"/>
+                    <Text TextId="ZM-PARA_NAME"              Value="Configuration"/>
+                    <Text TextId="ZM-PARA_INFO"              Value="IO configuration"/>
+
+                    <!--Module category-->
+                    <Text TextId="T_ID_RT_IN_MOD"            Value="Input modules"/>
+                    <Text TextId="T_ID_RT_OUT_MOD"           Value="Output modules"/>
+                    <Text TextId="T_ID_OTHER_MOD"            Value="Other modules"/>
+                    <Text TextId="T_ID_MIGRATION_DAP"        Value="Migration" />
+
+                    <!--Parameter -->
+                    <Text TextId="T_EA_Parameter"      Value="I/O Configuration"/>
+                    <Text TextId="T_CFG_Parameter"     Value="I/O and Mode Configuration"/>
+
+                    <Text TextId="T_ParameterTxt01"    Value="Bit string PCM module 1 (Fixed codes)"/>
+                    <Text TextId="T_ParameterTxt02"    Value="Source PCM output module 1"/>
+                    <Text TextId="T_ParameterTxt03"    Value="Bit string PCM module 2 (Fixed codes)"/>
+                    <Text TextId="T_ParameterTxt04"    Value="Source PCM output module 2"/>
+                    <Text TextId="T_ParameterTxt05"    Value="Bit string PCM module 3 (Fixed codes)"/>
+                    <Text TextId="T_ParameterTxt06"    Value="Source PCM output module 3"/>
+                    <Text TextId="T_ParameterTxt07"    Value="Dest. EM input module 1 pos. half wave"/>
+                    <Text TextId="T_ParameterTxt08"    Value="Dest. EM input module 1 neg. half wave"/>
+                    <Text TextId="T_ParameterTxt09"    Value="Dest. EM input module 2 pos. half wave"/>
+                    <Text TextId="T_ParameterTxt10"    Value="Dest. EM input module 2 neg. half wave"/>
+                    <Text TextId="T_ParameterTxt11"    Value="Dest. EM input module 3 pos. half wave"/>
+                    <Text TextId="T_ParameterTxt12"    Value="Dest. EM input module 3 neg. half wave"/>
+                    <Text TextId="T_ParameterTxt13"    Value="Source 24 Volt DC output module 1"/>
+                    <Text TextId="T_ParameterTxt14"    Value="Source 24 Volt DC output module 2"/>
+                    <Text TextId="T_ParameterTxt15"    Value="Dest. 24 Volt DC input module 1"/>
+                    <Text TextId="T_ParameterTxt16"    Value="Dest. 24 Volt DC input module 2"/>
+                    <Text TextId="T_ParameterTxt17"    Value="Dest. 24 Volt DC input module 3"/>
+                    <Text TextId="T_ParameterTxt18"    Value="Config Switch: Net frequency"/>
+                    <Text TextId="T_ParameterTxt19"    Value="Config Switch: PCM Code select"/>
+                    <Text TextId="T_ParameterTxt20"    Value="Config Switch: PN-IO Mode"/>
+
+                    <Text TextId="T_ParameterTxt1_00"  Value="OFF"/>
+                    <Text TextId="T_ParameterTxt1_01"  Value="Output Byte 2"/>
+                    <Text TextId="T_ParameterTxt1_02"  Value="Output Byte 3"/>
+                    <Text TextId="T_ParameterTxt1_03"  Value="Output Byte 4"/>
+                    <Text TextId="T_ParameterTxt1_04"  Value="Output Byte 5"/>
+                    <Text TextId="T_ParameterTxt1_05"  Value="Output Byte 6"/>
+                    <Text TextId="T_ParameterTxt1_06"  Value="Output Byte 7"/>
+                    <Text TextId="T_ParameterTxt1_07"  Value="Output Byte 8"/>
+                    <Text TextId="T_ParameterTxt1_08"  Value="Output Byte 9"/>
+                    <Text TextId="T_ParameterTxt1_09"  Value="Output Byte 10"/>
+                    <Text TextId="T_ParameterTxt1_10"  Value="Output Byte 11"/>
+                    <Text TextId="T_ParameterTxt1_11"  Value="Output Byte 12"/>
+                    <Text TextId="T_ParameterTxt1_12"  Value="Output Byte 13"/>
+                    <Text TextId="T_ParameterTxt1_13"  Value="Output Byte 14"/>
+                    <Text TextId="T_ParameterTxt1_14"  Value="Output Byte 15"/>
+                    <Text TextId="T_ParameterTxt1_15"  Value="Output Byte 16"/>
+                    <Text TextId="T_ParameterTxt1_16"  Value="Output Byte 17"/>
+                    <Text TextId="T_ParameterTxt1_17"  Value="Output Byte 18"/>
+                    <Text TextId="T_ParameterTxt1_18"  Value="Output Byte 19"/>
+                    <Text TextId="T_ParameterTxt1_19"  Value="Output Byte 20"/>
+                    <Text TextId="T_ParameterTxt1_20"  Value="Output Byte 21"/>
+                    <Text TextId="T_ParameterTxt1_21"  Value="Output Byte 22"/>
+                    <Text TextId="T_ParameterTxt1_22"  Value="Output Byte 23"/>
+                    <Text TextId="T_ParameterTxt1_23"  Value="Output Byte 24"/>
+                    <Text TextId="T_ParameterTxt1_24"  Value="Output Byte 25"/>
+                    <Text TextId="T_ParameterTxt1_25"  Value="Output Byte 26"/>
+                    <Text TextId="T_ParameterTxt1_26"  Value="Output Byte 27"/>
+                    <Text TextId="T_ParameterTxt1_27"  Value="Output Byte 28"/>
+                    <Text TextId="T_ParameterTxt1_28"  Value="Output Byte 29"/>
+                    <Text TextId="T_ParameterTxt1_29"  Value="Output Byte 30"/>
+
+                    <Text TextId="T_ParameterTxt2_00"  Value="OFF"/>
+                    <Text TextId="T_ParameterTxt2_01"  Value="Output Byte 2"/>
+                    <Text TextId="T_ParameterTxt2_02"  Value="Output Byte 3"/>
+                    <Text TextId="T_ParameterTxt2_03"  Value="Output Byte 4"/>
+                    <Text TextId="T_ParameterTxt2_04"  Value="Output Byte 5"/>
+                    <Text TextId="T_ParameterTxt2_05"  Value="Output Byte 6"/>
+                    <Text TextId="T_ParameterTxt2_06"  Value="Output Byte 7"/>
+                    <Text TextId="T_ParameterTxt2_07"  Value="Output Byte 8"/>
+                    <Text TextId="T_ParameterTxt2_08"  Value="Output Byte 9"/>
+                    <Text TextId="T_ParameterTxt2_09"  Value="Output Byte 10"/>
+                    <Text TextId="T_ParameterTxt2_10"  Value="Output Byte 11"/>
+                    <Text TextId="T_ParameterTxt2_11"  Value="Output Byte 12"/>
+                    <Text TextId="T_ParameterTxt2_12"  Value="Output Byte 13"/>
+                    <Text TextId="T_ParameterTxt2_13"  Value="Output Byte 14"/>
+                    <Text TextId="T_ParameterTxt2_14"  Value="Output Byte 15"/>
+                    <Text TextId="T_ParameterTxt2_15"  Value="Output Byte 16"/>
+                    <Text TextId="T_ParameterTxt2_16"  Value="Output Byte 17"/>
+                    <Text TextId="T_ParameterTxt2_17"  Value="Output Byte 18"/>
+                    <Text TextId="T_ParameterTxt2_18"  Value="Output Byte 19"/>
+                    <Text TextId="T_ParameterTxt2_19"  Value="Output Byte 20"/>
+                    <Text TextId="T_ParameterTxt2_20"  Value="Output Byte 21"/>
+                    <Text TextId="T_ParameterTxt2_21"  Value="Output Byte 22"/>
+                    <Text TextId="T_ParameterTxt2_22"  Value="Output Byte 23"/>
+                    <Text TextId="T_ParameterTxt2_23"  Value="Output Byte 24"/>
+                    <Text TextId="T_ParameterTxt2_24"  Value="Output Byte 25"/>
+                    <Text TextId="T_ParameterTxt2_25"  Value="Output Byte 26"/>
+                    <Text TextId="T_ParameterTxt2_26"  Value="Output Byte 27"/>
+                    <Text TextId="T_ParameterTxt2_27"  Value="Output Byte 28"/>
+                    <Text TextId="T_ParameterTxt2_28"  Value="Output Byte 29"/>
+                    <Text TextId="T_ParameterTxt2_29"  Value="Output Byte 30"/>
+                    <Text TextId="T_ParameterTxt2_31"  Value="High nibble Output Byte 2"/>
+                    <Text TextId="T_ParameterTxt2_32"  Value="High nibble Output Byte 3"/>
+                    <Text TextId="T_ParameterTxt2_33"  Value="High nibble Output Byte 4"/>
+                    <Text TextId="T_ParameterTxt2_34"  Value="High nibble Output Byte 5"/>
+                    <Text TextId="T_ParameterTxt2_35"  Value="High nibble Output Byte 6"/>
+                    <Text TextId="T_ParameterTxt2_36"  Value="High nibble Output Byte 7"/>
+                    <Text TextId="T_ParameterTxt2_37"  Value="High nibble Output Byte 8"/>
+                    <Text TextId="T_ParameterTxt2_38"  Value="High nibble Output Byte 9"/>
+                    <Text TextId="T_ParameterTxt2_39"  Value="High nibble Output Byte 10"/>
+                    <Text TextId="T_ParameterTxt2_40"  Value="High nibble Output Byte 11"/>
+                    <Text TextId="T_ParameterTxt2_41"  Value="High nibble Output Byte 12"/>
+                    <Text TextId="T_ParameterTxt2_42"  Value="High nibble Output Byte 13"/>
+                    <Text TextId="T_ParameterTxt2_43"  Value="High nibble Output Byte 14"/>
+                    <Text TextId="T_ParameterTxt2_44"  Value="High nibble Output Byte 15"/>
+                    <Text TextId="T_ParameterTxt2_45"  Value="High nibble Output Byte 16"/>
+                    <Text TextId="T_ParameterTxt2_46"  Value="High nibble Output Byte 17"/>
+                    <Text TextId="T_ParameterTxt2_47"  Value="High nibble Output Byte 18"/>
+                    <Text TextId="T_ParameterTxt2_48"  Value="High nibble Output Byte 19"/>
+                    <Text TextId="T_ParameterTxt2_49"  Value="High nibble Output Byte 20"/>
+                    <Text TextId="T_ParameterTxt2_50"  Value="High nibble Output Byte 21"/>
+                    <Text TextId="T_ParameterTxt2_51"  Value="High nibble Output Byte 22"/>
+                    <Text TextId="T_ParameterTxt2_52"  Value="High nibble Output Byte 23"/>
+                    <Text TextId="T_ParameterTxt2_53"  Value="High nibble Output Byte 24"/>
+                    <Text TextId="T_ParameterTxt2_54"  Value="High nibble Output Byte 25"/>
+                    <Text TextId="T_ParameterTxt2_55"  Value="High nibble Output Byte 26"/>
+                    <Text TextId="T_ParameterTxt2_56"  Value="High nibble Output Byte 27"/>
+                    <Text TextId="T_ParameterTxt2_57"  Value="High nibble Output Byte 28"/>
+                    <Text TextId="T_ParameterTxt2_58"  Value="High nibble Output Byte 29"/>
+                    <Text TextId="T_ParameterTxt2_59"  Value="High nibble Output Byte 30"/>
+                    <Text TextId="T_ParameterTxt2_61"  Value="Low nibble Output Byte 2"/>
+                    <Text TextId="T_ParameterTxt2_62"  Value="Low nibble Output Byte 3"/>
+                    <Text TextId="T_ParameterTxt2_63"  Value="Low nibble Output Byte 4"/>
+                    <Text TextId="T_ParameterTxt2_64"  Value="Low nibble Output Byte 5"/>
+                    <Text TextId="T_ParameterTxt2_65"  Value="Low nibble Output Byte 6"/>
+                    <Text TextId="T_ParameterTxt2_66"  Value="Low nibble Output Byte 7"/>
+                    <Text TextId="T_ParameterTxt2_67"  Value="Low nibble Output Byte 8"/>
+                    <Text TextId="T_ParameterTxt2_68"  Value="Low nibble Output Byte 9"/>
+                    <Text TextId="T_ParameterTxt2_69"  Value="Low nibble Output Byte 10"/>
+                    <Text TextId="T_ParameterTxt2_70"  Value="Low nibble Output Byte 11"/>
+                    <Text TextId="T_ParameterTxt2_71"  Value="Low nibble Output Byte 12"/>
+                    <Text TextId="T_ParameterTxt2_72"  Value="Low nibble Output Byte 13"/>
+                    <Text TextId="T_ParameterTxt2_73"  Value="Low nibble Output Byte 14"/>
+                    <Text TextId="T_ParameterTxt2_74"  Value="Low nibble Output Byte 15"/>
+                    <Text TextId="T_ParameterTxt2_75"  Value="Low nibble Output Byte 16"/>
+                    <Text TextId="T_ParameterTxt2_76"  Value="Low nibble Output Byte 17"/>
+                    <Text TextId="T_ParameterTxt2_77"  Value="Low nibble Output Byte 18"/>
+                    <Text TextId="T_ParameterTxt2_78"  Value="Low nibble Output Byte 19"/>
+                    <Text TextId="T_ParameterTxt2_79"  Value="Low nibble Output Byte 20"/>
+                    <Text TextId="T_ParameterTxt2_80"  Value="Low nibble Output Byte 21"/>
+                    <Text TextId="T_ParameterTxt2_81"  Value="Low nibble Output Byte 22"/>
+                    <Text TextId="T_ParameterTxt2_82"  Value="Low nibble Output Byte 23"/>
+                    <Text TextId="T_ParameterTxt2_83"  Value="Low nibble Output Byte 24"/>
+                    <Text TextId="T_ParameterTxt2_84"  Value="Low nibble Output Byte 25"/>
+                    <Text TextId="T_ParameterTxt2_85"  Value="Low nibble Output Byte 26"/>
+                    <Text TextId="T_ParameterTxt2_86"  Value="Low nibble Output Byte 27"/>
+                    <Text TextId="T_ParameterTxt2_87"  Value="Low nibble Output Byte 28"/>
+                    <Text TextId="T_ParameterTxt2_88"  Value="Low nibble Output Byte 29"/>
+                    <Text TextId="T_ParameterTxt2_89"  Value="Low nibble Output Byte 30"/>
+                    <Text TextId="T_ParameterTxt2_100" Value="PCM code 0"/>
+                    <Text TextId="T_ParameterTxt2_101" Value="PCM code 1"/>
+                    <Text TextId="T_ParameterTxt2_102" Value="PCM code 2"/>
+                    <Text TextId="T_ParameterTxt2_103" Value="PCM code 3"/>
+                    <Text TextId="T_ParameterTxt2_104" Value="PCM code 4"/>
+                    <Text TextId="T_ParameterTxt2_105" Value="PCM code 5"/>                                                                                                                                                                                         
+                    <Text TextId="T_ParameterTxt2_106" Value="PCM code 6"/>
+                    <Text TextId="T_ParameterTxt2_107" Value="PCM code 7"/>
+                    <Text TextId="T_ParameterTxt2_108" Value="PCM code 8"/>
+                    <Text TextId="T_ParameterTxt2_109" Value="PCM code 9"/>
+                    <Text TextId="T_ParameterTxt2_110" Value="PCM code 10"/>
+                    <Text TextId="T_ParameterTxt2_111" Value="PCM code 11"/>
+                    <Text TextId="T_ParameterTxt2_112" Value="PCM code 12"/>
+                    <Text TextId="T_ParameterTxt2_113" Value="PCM code 13"/>
+                    <Text TextId="T_ParameterTxt2_114" Value="PCM code 14"/>
+                    <Text TextId="T_ParameterTxt2_115" Value="PCM code 15"/>
+                    <Text TextId="T_ParameterTxt2_116" Value="PCM code 16"/>
+                    <Text TextId="T_ParameterTxt2_117" Value="PCM code 17"/>
+                    <Text TextId="T_ParameterTxt2_118" Value="PCM code 18"/>
+                    <Text TextId="T_ParameterTxt2_119" Value="PCM code 19"/>
+                    <Text TextId="T_ParameterTxt2_120" Value="PCM code 20"/>
+                    <Text TextId="T_ParameterTxt2_121" Value="PCM code 21"/>
+                    <Text TextId="T_ParameterTxt2_122" Value="PCM code 22"/>
+                    <Text TextId="T_ParameterTxt2_123" Value="PCM code 23"/>
+                    <Text TextId="T_ParameterTxt2_124" Value="PCM code 24"/>
+                    <Text TextId="T_ParameterTxt2_125" Value="PCM code 25"/>                                                                                                                                                                                                
+                    <Text TextId="T_ParameterTxt2_126" Value="PCM code 26"/>
+                    <Text TextId="T_ParameterTxt2_127" Value="PCM code 27"/>
+                    <Text TextId="T_ParameterTxt2_128" Value="PCM code 28"/>
+                    <Text TextId="T_ParameterTxt2_129" Value="PCM code 29"/>
+                    <Text TextId="T_ParameterTxt2_130" Value="PCM code 30"/>
+                    <Text TextId="T_ParameterTxt2_131" Value="PCM code 31"/>
+                    <Text TextId="T_ParameterTxt2_132" Value="PCM code 32"/>
+                    <Text TextId="T_ParameterTxt2_133" Value="PCM code 33"/>
+                    <Text TextId="T_ParameterTxt2_134" Value="PCM code 34"/>
+                    <Text TextId="T_ParameterTxt2_135" Value="PCM code 35"/>                                                                                                                                                                                                
+                    <Text TextId="T_ParameterTxt2_136" Value="PCM code 36"/>
+                    <Text TextId="T_ParameterTxt2_137" Value="PCM code 37"/>
+                    <Text TextId="T_ParameterTxt2_138" Value="PCM code 38"/>
+                    <Text TextId="T_ParameterTxt2_139" Value="PCM code 39"/>
+                    <Text TextId="T_ParameterTxt2_140" Value="PCM code 40"/>
+                    <Text TextId="T_ParameterTxt2_141" Value="PCM code 41"/>
+                    <Text TextId="T_ParameterTxt2_142" Value="PCM code 42"/>
+                    <Text TextId="T_ParameterTxt2_143" Value="PCM code 43"/>
+                    <Text TextId="T_ParameterTxt2_144" Value="PCM code 44"/>
+                    <Text TextId="T_ParameterTxt2_145" Value="PCM code 45"/>
+                    <Text TextId="T_ParameterTxt2_146" Value="PCM code 46"/>
+                    <Text TextId="T_ParameterTxt2_147" Value="PCM code 47"/>
+                    <Text TextId="T_ParameterTxt2_148" Value="PCM code 48"/>
+                    <Text TextId="T_ParameterTxt2_149" Value="PCM code 49"/>
+                    <Text TextId="T_ParameterTxt2_150" Value="PCM code 50"/>
+                    <Text TextId="T_ParameterTxt2_151" Value="PCM code 51"/>
+                    <Text TextId="T_ParameterTxt2_152" Value="PCM code 52"/>
+                    <Text TextId="T_ParameterTxt2_153" Value="PCM code 53"/>
+                    <Text TextId="T_ParameterTxt2_154" Value="PCM code 54"/>
+                    <Text TextId="T_ParameterTxt2_155" Value="PCM code 55"/>                                                                                                                                                                                                
+                    <Text TextId="T_ParameterTxt2_156" Value="PCM code 56"/>
+                    <Text TextId="T_ParameterTxt2_157" Value="PCM code 57"/>
+                    <Text TextId="T_ParameterTxt2_158" Value="PCM code 58"/>
+                    <Text TextId="T_ParameterTxt2_159" Value="PCM code 59"/>
+                    <Text TextId="T_ParameterTxt2_160" Value="PCM code 60"/>
+                    <Text TextId="T_ParameterTxt2_161" Value="PCM code 61"/>
+                    <Text TextId="T_ParameterTxt2_162" Value="PCM code 62"/>
+                    <Text TextId="T_ParameterTxt2_163" Value="PCM code 63"/>
+                    <Text TextId="T_ParameterTxt2_164" Value="PCM code 64"/>
+                    <Text TextId="T_ParameterTxt2_165" Value="PCM code 65"/>
+                    <Text TextId="T_ParameterTxt2_166" Value="PCM code 66"/>
+                    <Text TextId="T_ParameterTxt2_167" Value="PCM code 67"/>
+                    <Text TextId="T_ParameterTxt2_168" Value="PCM code 68"/>
+                    <Text TextId="T_ParameterTxt2_169" Value="PCM code 69"/>                        
+                    <Text TextId="T_ParameterTxt2_170" Value="PCM code 70"/>
+                    <Text TextId="T_ParameterTxt2_171" Value="PCM code 71"/>
+                    <Text TextId="T_ParameterTxt2_172" Value="PCM code 72"/>
+                    <Text TextId="T_ParameterTxt2_173" Value="PCM code 73"/>
+                    <Text TextId="T_ParameterTxt2_174" Value="PCM code 74"/>
+                    <Text TextId="T_ParameterTxt2_175" Value="PCM code 75"/>
+                    <Text TextId="T_ParameterTxt2_176" Value="PCM code 76"/>
+                    <Text TextId="T_ParameterTxt2_177" Value="PCM code 77"/>
+                    <Text TextId="T_ParameterTxt2_178" Value="PCM code 78"/>
+                    <Text TextId="T_ParameterTxt2_179" Value="PCM code 79"/>
+                    <Text TextId="T_ParameterTxt2_180" Value="PCM code 80"/>
+                    <Text TextId="T_ParameterTxt2_181" Value="PCM code 81"/>
+                    <Text TextId="T_ParameterTxt2_182" Value="PCM code 82"/>
+                    <Text TextId="T_ParameterTxt2_183" Value="PCM code 83"/>
+                    <Text TextId="T_ParameterTxt2_184" Value="PCM code 84"/>
+                    <Text TextId="T_ParameterTxt2_185" Value="PCM code 85"/>
+                    <Text TextId="T_ParameterTxt2_186" Value="PCM code 86"/>
+                    <Text TextId="T_ParameterTxt2_187" Value="PCM code 87"/>
+                    <Text TextId="T_ParameterTxt2_188" Value="PCM code 88"/>
+                    <Text TextId="T_ParameterTxt2_189" Value="PCM code 89"/>
+                    <Text TextId="T_ParameterTxt2_190" Value="PCM code 90"/>
+                    <Text TextId="T_ParameterTxt2_191" Value="PCM code 91"/>
+                    <Text TextId="T_ParameterTxt2_192" Value="PCM code 92"/>
+                    <Text TextId="T_ParameterTxt2_193" Value="PCM code 93"/>
+                    <Text TextId="T_ParameterTxt2_194" Value="PCM code 94"/>
+                    <Text TextId="T_ParameterTxt2_195" Value="PCM code 95"/>
+                    <Text TextId="T_ParameterTxt2_196" Value="PCM code 96"/>
+                    <Text TextId="T_ParameterTxt2_197" Value="PCM code 97"/>
+                    <Text TextId="T_ParameterTxt2_198" Value="PCM code 98"/>
+                    <Text TextId="T_ParameterTxt2_199" Value="PCM code 99"/>                        
+                    <Text TextId="T_ParameterTxt2_200" Value="PCM code 100"/>
+                    <Text TextId="T_ParameterTxt2_201" Value="PCM code 101"/>
+                    <Text TextId="T_ParameterTxt2_202" Value="PCM code 102"/>
+                    <Text TextId="T_ParameterTxt2_203" Value="PCM code 103"/>
+                    <Text TextId="T_ParameterTxt2_204" Value="PCM code 104"/>
+                    <Text TextId="T_ParameterTxt2_205" Value="PCM code 105"/>
+                    <Text TextId="T_ParameterTxt2_206" Value="PCM code 106"/>
+                    <Text TextId="T_ParameterTxt2_207" Value="PCM code 107"/>
+                    <Text TextId="T_ParameterTxt2_208" Value="PCM code 108"/>
+                    <Text TextId="T_ParameterTxt2_209" Value="PCM code 109"/>
+                    <Text TextId="T_ParameterTxt2_210" Value="PCM code 110"/>
+                    <Text TextId="T_ParameterTxt2_211" Value="PCM code 111"/>
+                    <Text TextId="T_ParameterTxt2_212" Value="PCM code 112"/>
+                    <Text TextId="T_ParameterTxt2_213" Value="PCM code 113"/>
+                    <Text TextId="T_ParameterTxt2_214" Value="PCM code 114"/>
+                    <Text TextId="T_ParameterTxt2_215" Value="PCM code 115"/>                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_216" Value="PCM code 116"/>
+                    <Text TextId="T_ParameterTxt2_217" Value="PCM code 117"/>
+                    <Text TextId="T_ParameterTxt2_218" Value="PCM code 118"/>
+                    <Text TextId="T_ParameterTxt2_219" Value="PCM code 119"/>
+                    <Text TextId="T_ParameterTxt2_220" Value="PCM code 120"/>
+                    <Text TextId="T_ParameterTxt2_221" Value="PCM code 121"/>
+                    <Text TextId="T_ParameterTxt2_222" Value="PCM code 122"/>
+                    <Text TextId="T_ParameterTxt2_223" Value="PCM code 123"/>
+                    <Text TextId="T_ParameterTxt2_224" Value="PCM code 124"/>
+                    <Text TextId="T_ParameterTxt2_225" Value="PCM code 125"/>                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_226" Value="PCM code 126"/>
+                    <Text TextId="T_ParameterTxt2_227" Value="PCM code 127"/>
+                    <Text TextId="T_ParameterTxt2_228" Value="PCM code 128"/>
+                    <Text TextId="T_ParameterTxt2_229" Value="PCM code 129"/>
+                    <Text TextId="T_ParameterTxt2_230" Value="PCM code 130"/>                                                                                                                                                                                             
+                    <Text TextId="T_ParameterTxt2_231" Value="PCM code 131"/>
+                    <Text TextId="T_ParameterTxt2_232" Value="PCM code 132"/>                                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_233" Value="PCM code 133"/>                                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_234" Value="PCM code 134"/>                                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_235" Value="PCM code 135"/>
+                    <Text TextId="T_ParameterTxt2_236" Value="PCM code 136"/>                                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_237" Value="PCM code 137"/>                                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_238" Value="PCM code 138"/>
+                    <Text TextId="T_ParameterTxt2_239" Value="PCM code 139"/> 
+                    <Text TextId="T_ParameterTxt2_240" Value="PCM code 140"/>
+                    <Text TextId="T_ParameterTxt2_241" Value="PCM code 141"/>
+                    <Text TextId="T_ParameterTxt2_242" Value="PCM code 142"/>
+                    <Text TextId="T_ParameterTxt2_243" Value="PCM code 143"/>
+                    <Text TextId="T_ParameterTxt2_244" Value="PCM code 144"/>
+                    <Text TextId="T_ParameterTxt2_245" Value="PCM code 145"/>
+                    <Text TextId="T_ParameterTxt2_246" Value="PCM code 146"/>
+                    <Text TextId="T_ParameterTxt2_247" Value="PCM code 147"/>
+                    <Text TextId="T_ParameterTxt2_248" Value="PCM code 148"/>
+                    <Text TextId="T_ParameterTxt2_249" Value="PCM code 149"/>
+                    <Text TextId="T_ParameterTxt2_250" Value="PCM code 150"/>
+                    <Text TextId="T_ParameterTxt2_251" Value="PCM code 151"/>
+                    <Text TextId="T_ParameterTxt2_252" Value="PCM code 152"/>
+                    <Text TextId="T_ParameterTxt2_253" Value="PCM code 153"/>
+                    <Text TextId="T_ParameterTxt2_254" Value="PCM code 154"/>
+                    <Text TextId="T_ParameterTxt2_255" Value="PCM code 155"/>
+
+                    <Text TextId="T_ParameterTxt3_00"  Value="OFF"/>
+                    <Text TextId="T_ParameterTxt3_01"  Value="Input Byte 2"/>
+                    <Text TextId="T_ParameterTxt3_02"  Value="Input Byte 3"/>
+                    <Text TextId="T_ParameterTxt3_03"  Value="Input Byte 4"/>
+                    <Text TextId="T_ParameterTxt3_04"  Value="Input Byte 5"/>
+                    <Text TextId="T_ParameterTxt3_05"  Value="Input Byte 6"/>
+                    <Text TextId="T_ParameterTxt3_06"  Value="Input Byte 7"/>
+                    <Text TextId="T_ParameterTxt3_07"  Value="Input Byte 8"/>
+                    <Text TextId="T_ParameterTxt3_08"  Value="Input Byte 9"/>
+                    <Text TextId="T_ParameterTxt3_09"  Value="Input Byte 10"/>
+                    <Text TextId="T_ParameterTxt3_10"  Value="Input Byte 11"/>
+
+                    <Text TextId="T_ParameterTxt4_50"  Value="50 Herz"/>
+                    <Text TextId="T_ParameterTxt4_60"  Value="60 Herz"/>
+
+                    <Text TextId="T_ParameterTxt5_06"  Value="Typ: 6 Bit"/>
+                    <Text TextId="T_ParameterTxt5_10"  Value="Typ:10 Bit"/>
+
+                    <Text TextId="T_ParameterTxt6_00"  Value="DAP-V1 (Migration)"/>
+                    <Text TextId="T_ParameterTxt6_01"  Value="DAP-V2"/>
+                    <Text TextId="T_ParameterTxt6_02"  Value="DAP-V1 (Migration) + Param check"/>
+                    <Text TextId="T_ParameterTxt6_03"  Value="DAP-V2 + Param check"/>
+
+                    <!--Input modules-->
+                    <Text TextId="T_ID_INPUT"          Value="Inputs"/>
+                    <Text TextId="T_ID_IN_00_NAME"     Value="State 2 Byte"/>
+                    <Text TextId="T_ID_IN_01_NAME"     Value="EM-8-Bus HW 2 Byte"/>
+                    <Text TextId="T_ID_IN_02_NAME"     Value="EM-8-Bus VW 1 Byte"/>
+                    <Text TextId="T_ID_IN_03_NAME"     Value="DI-8-Bus 1 Byte"/>
+                    <Text TextId="T_ID_IN_00_INFO"     Value="State + cyclic telegram counter"/>
+                    <Text TextId="T_ID_IN_01_INFO"     Value="8 x PCM 230 VAC Inputs half wave detection: 2x8 Bit"/>
+                    <Text TextId="T_ID_IN_02_INFO"     Value="8 x PCM 230 VAC Inputs full wave detection: 1x8 Bit"/>
+                    <Text TextId="T_ID_IN_03_INFO"     Value="8 x Digital 24 VDC Inputs"/>
+
+                    <!--Output modules-->
+                    <Text TextId="T_ID_OUTPUT"         Value="Outputs"/>
+                    <Text TextId="T_ID_OUT_00_NAME"    Value="Command 2 Byte"/>
+                    <Text TextId="T_ID_OUT_01_NAME"    Value="PCM-8-Bus 1 Byte"/>
+                    <Text TextId="T_ID_OUT_02_NAME"    Value="PCM-8-Bus 2 Byte"/>
+                    <Text TextId="T_ID_OUT_03_NAME"    Value="PCM-8-Bus 3 Byte"/>
+                    <Text TextId="T_ID_OUT_04_NAME"    Value="PCM-8-Bus 4 Byte"/>
+                    <Text TextId="T_ID_OUT_05_NAME"    Value="PCM-8-Bus 5 Byte"/>
+                    <Text TextId="T_ID_OUT_06_NAME"    Value="PCM-8-Bus 6 Byte"/>
+                    <Text TextId="T_ID_OUT_07_NAME"    Value="PCM-8-Bus 7 Byte"/>
+                    <Text TextId="T_ID_OUT_08_NAME"    Value="PCM-8-Bus 8 Byte"/>
+                    <Text TextId="T_ID_OUT_09_NAME"    Value="PCM-8-Bus 9 Byte"/>
+                    <Text TextId="T_ID_OUT_10_NAME"    Value="DO-8-Bus 1 Byte"/>
+                    <Text TextId="T_ID_OUT_00_INFO"    Value="Command + cyclic telegram counter"/>
+                    <Text TextId="T_ID_OUT_01_INFO"    Value="8 x PCM 230 VAC Outputs: 1 Byte for command"/>
+                    <Text TextId="T_ID_OUT_02_INFO"    Value="8 x PCM 230 VAC Outputs: 2 Byte for command"/>
+                    <Text TextId="T_ID_OUT_03_INFO"    Value="8 x PCM 230 VAC Outputs: 3 Byte for command"/>
+                    <Text TextId="T_ID_OUT_04_INFO"    Value="8 x PCM 230 VAC Outputs: 4 Byte for command"/>
+                    <Text TextId="T_ID_OUT_05_INFO"    Value="8 x PCM 230 VAC Outputs: 5 Byte for command"/>
+                    <Text TextId="T_ID_OUT_06_INFO"    Value="8 x PCM 230 VAC Outputs: 6 Byte for command"/>
+                    <Text TextId="T_ID_OUT_07_INFO"    Value="8 x PCM 230 VAC Outputs: 7 Byte for command"/>
+                    <Text TextId="T_ID_OUT_08_INFO"    Value="8 x PCM 230 VAC Outputs: 8 Byte for command"/>
+                    <Text TextId="T_ID_OUT_09_INFO"    Value="8 x PCM 230 VAC Outputs: 1+8 Byte for command"/>
+                    <Text TextId="T_ID_OUT_10_INFO"    Value="8 x Digital 24 VDC Outputs"/>
+
+                    <!--Other modules-->
+                    <Text TextId="T_ID_EMPTY_SLOT_NAME" Value="Empty slot"/>
+                    <Text TextId="T_ID_EMPTY_SLOT_INFO" Value="No data associated with this module"/>
+                </PrimaryLanguage>
+
+                <Language xml:lang="de">
+                    <!--Identification-->
+                    <Text TextId="T_ID_ZM_PN_DAP_V1"         Value="ZM-PN"/>
+                    <Text TextId="T_ID_ZM_PN_DAP_V2"         Value="ZM-PN"/>
+                    <Text TextId="T_ID_DEV_DESCRIPTION"      Value="Zentralmodul Profinet IO"/>
+                    <Text TextId="T_ID_V1_DEV_DESCRIPTION"   Value="Dieser Zugangspunkt sollte für IO Controller ohne Physikalisches Device Interface benutzt werden. Nur RT C1 Kommunikation wird unterstützt.   ACHTUNG: Nach Änderungen bei der Modulbestückung ist der Parametersatz anzupassen !"/>
+                    <Text TextId="T_ID_V2_DEV_DESCRIPTION"   Value="Dieser Zugangspunkt unterstützt RT C1, RT C2 (unsync/sync), und RT C3 (IRT high performance) Kommunikation.   ACHTUNG: Nach Änderungen bei der Modulbestückung ist der Parametersatz anzupassen !"/>
+                    <Text TextId="T_ID_ABS_PIR_V2_RT"        Value="RT"/>
+                    <Text TextId="T_ID_SS_INTERFACE"         Value="X1"/>
+                    <Text TextId="T_ID_SS_PORT1"             Value="P1"/>
+                    <Text TextId="T_ID_SS_PORT2"             Value="P2"/>
+                    <Text TextId="T_ID_DAP_INTERFACE_MODULE" Value="Interface"/>
+                    <Text TextId="T_ID_PORT"                 Value="RJ45 100 MBit/s"/>
+                    <Text TextId="ZM-PARA_NAME"              Value="Configuration"/>
+                    <Text TextId="ZM-PARA_INFO"              Value="IO configuration"/>
+
+                    <!--Module category-->
+                    <Text TextId="T_ID_RT_IN_MOD"            Value="Eingangsmodule"/>
+                    <Text TextId="T_ID_RT_OUT_MOD"           Value="Ausgangsmodule"/>
+                    <Text TextId="T_ID_OTHER_MOD"            Value="Andere Module"/>
+                    <Text TextId="T_ID_MIGRATION_DAP"        Value="Migration" />
+
+                    <!--Parameter -->
+                    <Text TextId="T_EA_Parameter"      Value="E/A Konfiguration"/>
+                    <Text TextId="T_CFG_Parameter"     Value="E/A und Modus Konfiguration"/>
+
+                    <Text TextId="T_ParameterTxt01"    Value="Bitleiste PCM Modul 1 (Festcode)"/>
+                    <Text TextId="T_ParameterTxt02"    Value="Quelle PCM Ausgangs Modul 1"/>
+                    <Text TextId="T_ParameterTxt03"    Value="Bitleiste PCM Modul 2 (Festcode)"/>
+                    <Text TextId="T_ParameterTxt04"    Value="Quelle PCM Ausgangs Modul 2"/>
+                    <Text TextId="T_ParameterTxt05"    Value="Bitleiste PCM Modul 3 (Festcode)"/>
+                    <Text TextId="T_ParameterTxt06"    Value="Quelle PCM Ausgangs Modul 3"/>
+                    <Text TextId="T_ParameterTxt07"    Value="Ziel EM Eingangs Modul 1 pos. Halbwelle"/>
+                    <Text TextId="T_ParameterTxt08"    Value="Ziel EM Eingangs Modul 1 neg. Halbwelle"/>
+                    <Text TextId="T_ParameterTxt09"    Value="Ziel EM Eingangs Modul 2 pos. Halbwelle"/>
+                    <Text TextId="T_ParameterTxt10"    Value="Ziel EM Eingangs Modul 2 neg. Halbwelle"/>
+                    <Text TextId="T_ParameterTxt11"    Value="Ziel EM Eingangs Modul 3 pos. Halbwelle"/>
+                    <Text TextId="T_ParameterTxt12"    Value="Ziel EM Eingangs Modul 3 neg. Halbwelle"/>
+                    <Text TextId="T_ParameterTxt13"    Value="Quelle 24 Volt DC Ausgangs Modul 1"/>
+                    <Text TextId="T_ParameterTxt14"    Value="Quelle 24 Volt DC Ausgangs Modul 2"/>
+                    <Text TextId="T_ParameterTxt15"    Value="Ziel 24 Volt DC Eingangs Modul 1"/>
+                    <Text TextId="T_ParameterTxt16"    Value="Ziel 24 Volt DC Eingangs Modul 2"/>
+                    <Text TextId="T_ParameterTxt17"    Value="Ziel 24 Volt DC Eingangs Modul 3"/>
+                    <Text TextId="T_ParameterTxt18"    Value="Modus Schalter: Netzfrequenz"/>
+                    <Text TextId="T_ParameterTxt19"    Value="Modus Schalter: PCM Code Auswahl"/>
+                    <Text TextId="T_ParameterTxt20"    Value="Modus Schalter: PN-IO Modus"/>
+
+                    <Text TextId="T_ParameterTxt1_00"  Value="AUS"/>
+                    <Text TextId="T_ParameterTxt1_01"  Value="Ausgangs Byte 2"/>
+                    <Text TextId="T_ParameterTxt1_02"  Value="Ausgangs Byte 3"/>
+                    <Text TextId="T_ParameterTxt1_03"  Value="Ausgangs Byte 4"/>
+                    <Text TextId="T_ParameterTxt1_04"  Value="Ausgangs Byte 5"/>
+                    <Text TextId="T_ParameterTxt1_05"  Value="Ausgangs Byte 6"/>
+                    <Text TextId="T_ParameterTxt1_06"  Value="Ausgangs Byte 7"/>
+                    <Text TextId="T_ParameterTxt1_07"  Value="Ausgangs Byte 8"/>
+                    <Text TextId="T_ParameterTxt1_08"  Value="Ausgangs Byte 9"/>
+                    <Text TextId="T_ParameterTxt1_09"  Value="Ausgangs Byte 10"/>
+                    <Text TextId="T_ParameterTxt1_10"  Value="Ausgangs Byte 11"/>
+                    <Text TextId="T_ParameterTxt1_11"  Value="Ausgangs Byte 12"/>
+                    <Text TextId="T_ParameterTxt1_12"  Value="Ausgangs Byte 13"/>
+                    <Text TextId="T_ParameterTxt1_13"  Value="Ausgangs Byte 14"/>
+                    <Text TextId="T_ParameterTxt1_14"  Value="Ausgangs Byte 15"/>
+                    <Text TextId="T_ParameterTxt1_15"  Value="Ausgangs Byte 16"/>
+                    <Text TextId="T_ParameterTxt1_16"  Value="Ausgangs Byte 17"/>
+                    <Text TextId="T_ParameterTxt1_17"  Value="Ausgangs Byte 18"/>
+                    <Text TextId="T_ParameterTxt1_18"  Value="Ausgangs Byte 19"/>
+                    <Text TextId="T_ParameterTxt1_19"  Value="Ausgangs Byte 20"/>
+                    <Text TextId="T_ParameterTxt1_20"  Value="Ausgangs Byte 21"/>
+                    <Text TextId="T_ParameterTxt1_21"  Value="Ausgangs Byte 22"/>
+                    <Text TextId="T_ParameterTxt1_22"  Value="Ausgangs Byte 23"/>
+                    <Text TextId="T_ParameterTxt1_23"  Value="Ausgangs Byte 24"/>
+                    <Text TextId="T_ParameterTxt1_24"  Value="Ausgangs Byte 25"/>
+                    <Text TextId="T_ParameterTxt1_25"  Value="Ausgangs Byte 26"/>
+                    <Text TextId="T_ParameterTxt1_26"  Value="Ausgangs Byte 27"/>
+                    <Text TextId="T_ParameterTxt1_27"  Value="Ausgangs Byte 28"/>
+                    <Text TextId="T_ParameterTxt1_28"  Value="Ausgangs Byte 29"/>
+                    <Text TextId="T_ParameterTxt1_29"  Value="Ausgangs Byte 30"/>
+
+                    <Text TextId="T_ParameterTxt2_00"  Value="AUS"/>
+                    <Text TextId="T_ParameterTxt2_01"  Value="Ausgangs Byte 2"/>
+                    <Text TextId="T_ParameterTxt2_02"  Value="Ausgangs Byte 3"/>
+                    <Text TextId="T_ParameterTxt2_03"  Value="Ausgangs Byte 4"/>
+                    <Text TextId="T_ParameterTxt2_04"  Value="Ausgangs Byte 5"/>
+                    <Text TextId="T_ParameterTxt2_05"  Value="Ausgangs Byte 6"/>
+                    <Text TextId="T_ParameterTxt2_06"  Value="Ausgangs Byte 7"/>
+                    <Text TextId="T_ParameterTxt2_07"  Value="Ausgangs Byte 8"/>
+                    <Text TextId="T_ParameterTxt2_08"  Value="Ausgangs Byte 9"/>
+                    <Text TextId="T_ParameterTxt2_09"  Value="Ausgangs Byte 10"/>
+                    <Text TextId="T_ParameterTxt2_10"  Value="Ausgangs Byte 11"/>
+                    <Text TextId="T_ParameterTxt2_11"  Value="Ausgangs Byte 12"/>
+                    <Text TextId="T_ParameterTxt2_12"  Value="Ausgangs Byte 13"/>
+                    <Text TextId="T_ParameterTxt2_13"  Value="Ausgangs Byte 14"/>
+                    <Text TextId="T_ParameterTxt2_14"  Value="Ausgangs Byte 15"/>
+                    <Text TextId="T_ParameterTxt2_15"  Value="Ausgangs Byte 16"/>
+                    <Text TextId="T_ParameterTxt2_16"  Value="Ausgangs Byte 17"/>
+                    <Text TextId="T_ParameterTxt2_17"  Value="Ausgangs Byte 18"/>
+                    <Text TextId="T_ParameterTxt2_18"  Value="Ausgangs Byte 19"/>
+                    <Text TextId="T_ParameterTxt2_19"  Value="Ausgangs Byte 20"/>
+                    <Text TextId="T_ParameterTxt2_20"  Value="Ausgangs Byte 21"/>
+                    <Text TextId="T_ParameterTxt2_21"  Value="Ausgangs Byte 22"/>
+                    <Text TextId="T_ParameterTxt2_22"  Value="Ausgangs Byte 23"/>
+                    <Text TextId="T_ParameterTxt2_23"  Value="Ausgangs Byte 24"/>
+                    <Text TextId="T_ParameterTxt2_24"  Value="Ausgangs Byte 25"/>
+                    <Text TextId="T_ParameterTxt2_25"  Value="Ausgangs Byte 26"/>
+                    <Text TextId="T_ParameterTxt2_26"  Value="Ausgangs Byte 27"/>
+                    <Text TextId="T_ParameterTxt2_27"  Value="Ausgangs Byte 28"/>
+                    <Text TextId="T_ParameterTxt2_28"  Value="Ausgangs Byte 29"/>
+                    <Text TextId="T_ParameterTxt2_29"  Value="Ausgangs Byte 30"/>
+                    <Text TextId="T_ParameterTxt2_31"  Value="High nibble Ausgangs Byte 2"/>
+                    <Text TextId="T_ParameterTxt2_32"  Value="High nibble Ausgangs Byte 3"/>
+                    <Text TextId="T_ParameterTxt2_33"  Value="High nibble Ausgangs Byte 4"/>
+                    <Text TextId="T_ParameterTxt2_34"  Value="High nibble Ausgangs Byte 5"/>
+                    <Text TextId="T_ParameterTxt2_35"  Value="High nibble Ausgangs Byte 6"/>
+                    <Text TextId="T_ParameterTxt2_36"  Value="High nibble Ausgangs Byte 7"/>
+                    <Text TextId="T_ParameterTxt2_37"  Value="High nibble Ausgangs Byte 8"/>
+                    <Text TextId="T_ParameterTxt2_38"  Value="High nibble Ausgangs Byte 9"/>
+                    <Text TextId="T_ParameterTxt2_39"  Value="High nibble Ausgangs Byte 10"/>
+                    <Text TextId="T_ParameterTxt2_40"  Value="High nibble Ausgangs Byte 11"/>
+                    <Text TextId="T_ParameterTxt2_41"  Value="High nibble Ausgangs Byte 12"/>
+                    <Text TextId="T_ParameterTxt2_42"  Value="High nibble Ausgangs Byte 13"/>
+                    <Text TextId="T_ParameterTxt2_43"  Value="High nibble Ausgangs Byte 14"/>
+                    <Text TextId="T_ParameterTxt2_44"  Value="High nibble Ausgangs Byte 15"/>
+                    <Text TextId="T_ParameterTxt2_45"  Value="High nibble Ausgangs Byte 16"/>
+                    <Text TextId="T_ParameterTxt2_46"  Value="High nibble Ausgangs Byte 17"/>
+                    <Text TextId="T_ParameterTxt2_47"  Value="High nibble Ausgangs Byte 18"/>
+                    <Text TextId="T_ParameterTxt2_48"  Value="High nibble Ausgangs Byte 19"/>
+                    <Text TextId="T_ParameterTxt2_49"  Value="High nibble Ausgangs Byte 20"/>
+                    <Text TextId="T_ParameterTxt2_50"  Value="High nibble Ausgangs Byte 21"/>
+                    <Text TextId="T_ParameterTxt2_51"  Value="High nibble Ausgangs Byte 22"/>
+                    <Text TextId="T_ParameterTxt2_52"  Value="High nibble Ausgangs Byte 23"/>
+                    <Text TextId="T_ParameterTxt2_53"  Value="High nibble Ausgangs Byte 24"/>
+                    <Text TextId="T_ParameterTxt2_54"  Value="High nibble Ausgangs Byte 25"/>
+                    <Text TextId="T_ParameterTxt2_55"  Value="High nibble Ausgangs Byte 26"/>
+                    <Text TextId="T_ParameterTxt2_56"  Value="High nibble Ausgangs Byte 27"/>
+                    <Text TextId="T_ParameterTxt2_57"  Value="High nibble Ausgangs Byte 28"/>
+                    <Text TextId="T_ParameterTxt2_58"  Value="High nibble Ausgangs Byte 29"/>
+                    <Text TextId="T_ParameterTxt2_59"  Value="High nibble Ausgangs Byte 30"/>
+                    <Text TextId="T_ParameterTxt2_61"  Value="Low nibble Ausgangs Byte 2"/>
+                    <Text TextId="T_ParameterTxt2_62"  Value="Low nibble Ausgangs Byte 3"/>
+                    <Text TextId="T_ParameterTxt2_63"  Value="Low nibble Ausgangs Byte 4"/>
+                    <Text TextId="T_ParameterTxt2_64"  Value="Low nibble Ausgangs Byte 5"/>
+                    <Text TextId="T_ParameterTxt2_65"  Value="Low nibble Ausgangs Byte 6"/>
+                    <Text TextId="T_ParameterTxt2_66"  Value="Low nibble Ausgangs Byte 7"/>
+                    <Text TextId="T_ParameterTxt2_67"  Value="Low nibble Ausgangs Byte 8"/>
+                    <Text TextId="T_ParameterTxt2_68"  Value="Low nibble Ausgangs Byte 9"/>
+                    <Text TextId="T_ParameterTxt2_69"  Value="Low nibble Ausgangs Byte 10"/>
+                    <Text TextId="T_ParameterTxt2_70"  Value="Low nibble Ausgangs Byte 11"/>
+                    <Text TextId="T_ParameterTxt2_71"  Value="Low nibble Ausgangs Byte 12"/>
+                    <Text TextId="T_ParameterTxt2_72"  Value="Low nibble Ausgangs Byte 13"/>
+                    <Text TextId="T_ParameterTxt2_73"  Value="Low nibble Ausgangs Byte 14"/>
+                    <Text TextId="T_ParameterTxt2_74"  Value="Low nibble Ausgangs Byte 15"/>
+                    <Text TextId="T_ParameterTxt2_75"  Value="Low nibble Ausgangs Byte 16"/>
+                    <Text TextId="T_ParameterTxt2_76"  Value="Low nibble Ausgangs Byte 17"/>
+                    <Text TextId="T_ParameterTxt2_77"  Value="Low nibble Ausgangs Byte 18"/>
+                    <Text TextId="T_ParameterTxt2_78"  Value="Low nibble Ausgangs Byte 19"/>
+                    <Text TextId="T_ParameterTxt2_79"  Value="Low nibble Ausgangs Byte 20"/>
+                    <Text TextId="T_ParameterTxt2_80"  Value="Low nibble Ausgangs Byte 21"/>
+                    <Text TextId="T_ParameterTxt2_81"  Value="Low nibble Ausgangs Byte 22"/>
+                    <Text TextId="T_ParameterTxt2_82"  Value="Low nibble Ausgangs Byte 23"/>
+                    <Text TextId="T_ParameterTxt2_83"  Value="Low nibble Ausgangs Byte 24"/>
+                    <Text TextId="T_ParameterTxt2_84"  Value="Low nibble Ausgangs Byte 25"/>
+                    <Text TextId="T_ParameterTxt2_85"  Value="Low nibble Ausgangs Byte 26"/>
+                    <Text TextId="T_ParameterTxt2_86"  Value="Low nibble Ausgangs Byte 27"/>
+                    <Text TextId="T_ParameterTxt2_87"  Value="Low nibble Ausgangs Byte 28"/>
+                    <Text TextId="T_ParameterTxt2_88"  Value="Low nibble Ausgangs Byte 29"/>
+                    <Text TextId="T_ParameterTxt2_89"  Value="Low nibble Ausgangs Byte 30"/>
+                    <Text TextId="T_ParameterTxt2_100" Value="PCM Code 0"/>
+                    <Text TextId="T_ParameterTxt2_101" Value="PCM Code 1"/>
+                    <Text TextId="T_ParameterTxt2_102" Value="PCM Code 2"/>
+                    <Text TextId="T_ParameterTxt2_103" Value="PCM Code 3"/>
+                    <Text TextId="T_ParameterTxt2_104" Value="PCM Code 4"/>
+                    <Text TextId="T_ParameterTxt2_105" Value="PCM Code 5"/>                                                                                                                                                                                             
+                    <Text TextId="T_ParameterTxt2_106" Value="PCM Code 6"/>
+                    <Text TextId="T_ParameterTxt2_107" Value="PCM Code 7"/>
+                    <Text TextId="T_ParameterTxt2_108" Value="PCM Code 8"/>
+                    <Text TextId="T_ParameterTxt2_109" Value="PCM Code 9"/>
+                    <Text TextId="T_ParameterTxt2_110" Value="PCM Code 10"/>
+                    <Text TextId="T_ParameterTxt2_111" Value="PCM Code 11"/>
+                    <Text TextId="T_ParameterTxt2_112" Value="PCM Code 12"/>
+                    <Text TextId="T_ParameterTxt2_113" Value="PCM Code 13"/>
+                    <Text TextId="T_ParameterTxt2_114" Value="PCM Code 14"/>
+                    <Text TextId="T_ParameterTxt2_115" Value="PCM Code 15"/>                                                                                                                                                                                                
+                    <Text TextId="T_ParameterTxt2_116" Value="PCM Code 16"/>
+                    <Text TextId="T_ParameterTxt2_117" Value="PCM Code 17"/>
+                    <Text TextId="T_ParameterTxt2_118" Value="PCM Code 18"/>
+                    <Text TextId="T_ParameterTxt2_119" Value="PCM Code 19"/>
+                    <Text TextId="T_ParameterTxt2_120" Value="PCM Code 20"/>
+                    <Text TextId="T_ParameterTxt2_121" Value="PCM Code 21"/>
+                    <Text TextId="T_ParameterTxt2_122" Value="PCM Code 22"/>
+                    <Text TextId="T_ParameterTxt2_123" Value="PCM Code 23"/>
+                    <Text TextId="T_ParameterTxt2_124" Value="PCM Code 24"/>
+                    <Text TextId="T_ParameterTxt2_125" Value="PCM Code 25"/>                                                                                                                                                                                                
+                    <Text TextId="T_ParameterTxt2_126" Value="PCM Code 26"/>
+                    <Text TextId="T_ParameterTxt2_127" Value="PCM Code 27"/>
+                    <Text TextId="T_ParameterTxt2_128" Value="PCM Code 28"/>
+                    <Text TextId="T_ParameterTxt2_129" Value="PCM Code 29"/>
+                    <Text TextId="T_ParameterTxt2_130" Value="PCM Code 30"/>
+                    <Text TextId="T_ParameterTxt2_131" Value="PCM Code 31"/>
+                    <Text TextId="T_ParameterTxt2_132" Value="PCM Code 32"/>
+                    <Text TextId="T_ParameterTxt2_133" Value="PCM Code 33"/>
+                    <Text TextId="T_ParameterTxt2_134" Value="PCM Code 34"/>
+                    <Text TextId="T_ParameterTxt2_135" Value="PCM Code 35"/>
+                    <Text TextId="T_ParameterTxt2_136" Value="PCM Code 36"/>
+                    <Text TextId="T_ParameterTxt2_137" Value="PCM Code 37"/>
+                    <Text TextId="T_ParameterTxt2_138" Value="PCM Code 38"/>
+                    <Text TextId="T_ParameterTxt2_139" Value="PCM Code 39"/>
+                    <Text TextId="T_ParameterTxt2_140" Value="PCM Code 40"/>
+                    <Text TextId="T_ParameterTxt2_141" Value="PCM Code 41"/>
+                    <Text TextId="T_ParameterTxt2_142" Value="PCM Code 42"/>
+                    <Text TextId="T_ParameterTxt2_143" Value="PCM Code 43"/>
+                    <Text TextId="T_ParameterTxt2_144" Value="PCM Code 44"/>
+                    <Text TextId="T_ParameterTxt2_145" Value="PCM Code 45"/>                                                                                                                                                                                                
+                    <Text TextId="T_ParameterTxt2_146" Value="PCM Code 46"/>
+                    <Text TextId="T_ParameterTxt2_147" Value="PCM Code 47"/>
+                    <Text TextId="T_ParameterTxt2_148" Value="PCM Code 48"/>
+                    <Text TextId="T_ParameterTxt2_149" Value="PCM Code 49"/>
+                    <Text TextId="T_ParameterTxt2_150" Value="PCM Code 50"/>
+                    <Text TextId="T_ParameterTxt2_151" Value="PCM Code 51"/>
+                    <Text TextId="T_ParameterTxt2_152" Value="PCM Code 52"/>
+                    <Text TextId="T_ParameterTxt2_153" Value="PCM Code 53"/>
+                    <Text TextId="T_ParameterTxt2_154" Value="PCM Code 54"/>
+                    <Text TextId="T_ParameterTxt2_155" Value="PCM Code 55"/>                                                                                                                                                                                                
+                    <Text TextId="T_ParameterTxt2_156" Value="PCM Code 56"/>
+                    <Text TextId="T_ParameterTxt2_157" Value="PCM Code 57"/>
+                    <Text TextId="T_ParameterTxt2_158" Value="PCM Code 58"/>
+                    <Text TextId="T_ParameterTxt2_159" Value="PCM Code 59"/>
+                    <Text TextId="T_ParameterTxt2_160" Value="PCM Code 60"/>
+                    <Text TextId="T_ParameterTxt2_161" Value="PCM Code 61"/>
+                    <Text TextId="T_ParameterTxt2_162" Value="PCM Code 62"/>
+                    <Text TextId="T_ParameterTxt2_163" Value="PCM Code 63"/>
+                    <Text TextId="T_ParameterTxt2_164" Value="PCM Code 64"/>
+                    <Text TextId="T_ParameterTxt2_165" Value="PCM Code 65"/>                                                                                                                                                                                                
+                    <Text TextId="T_ParameterTxt2_166" Value="PCM Code 66"/>
+                    <Text TextId="T_ParameterTxt2_167" Value="PCM Code 67"/>
+                    <Text TextId="T_ParameterTxt2_168" Value="PCM Code 68"/>
+                    <Text TextId="T_ParameterTxt2_169" Value="PCM Code 69"/>                        
+                    <Text TextId="T_ParameterTxt2_170" Value="PCM Code 70"/>
+                    <Text TextId="T_ParameterTxt2_171" Value="PCM Code 71"/>
+                    <Text TextId="T_ParameterTxt2_172" Value="PCM Code 72"/>
+                    <Text TextId="T_ParameterTxt2_173" Value="PCM Code 73"/>
+                    <Text TextId="T_ParameterTxt2_174" Value="PCM Code 74"/>
+                    <Text TextId="T_ParameterTxt2_175" Value="PCM Code 75"/>                                                                                                                                                                                                
+                    <Text TextId="T_ParameterTxt2_176" Value="PCM Code 76"/>
+                    <Text TextId="T_ParameterTxt2_177" Value="PCM Code 77"/>
+                    <Text TextId="T_ParameterTxt2_178" Value="PCM Code 78"/>
+                    <Text TextId="T_ParameterTxt2_179" Value="PCM Code 79"/>                        
+                    <Text TextId="T_ParameterTxt2_180" Value="PCM Code 80"/>
+                    <Text TextId="T_ParameterTxt2_181" Value="PCM Code 81"/>
+                    <Text TextId="T_ParameterTxt2_182" Value="PCM Code 82"/>
+                    <Text TextId="T_ParameterTxt2_183" Value="PCM Code 83"/>
+                    <Text TextId="T_ParameterTxt2_184" Value="PCM Code 84"/>
+                    <Text TextId="T_ParameterTxt2_185" Value="PCM Code 85"/>                                                                                                                                                                                                
+                    <Text TextId="T_ParameterTxt2_186" Value="PCM Code 86"/>
+                    <Text TextId="T_ParameterTxt2_187" Value="PCM Code 87"/>
+                    <Text TextId="T_ParameterTxt2_188" Value="PCM Code 88"/>
+                    <Text TextId="T_ParameterTxt2_189" Value="PCM Code 89"/>
+                    <Text TextId="T_ParameterTxt2_190" Value="PCM Code 90"/>
+                    <Text TextId="T_ParameterTxt2_191" Value="PCM Code 91"/>
+                    <Text TextId="T_ParameterTxt2_192" Value="PCM Code 92"/>
+                    <Text TextId="T_ParameterTxt2_193" Value="PCM Code 93"/>
+                    <Text TextId="T_ParameterTxt2_194" Value="PCM Code 94"/>
+                    <Text TextId="T_ParameterTxt2_195" Value="PCM Code 95"/>                                                                                                                                                                                                
+                    <Text TextId="T_ParameterTxt2_196" Value="PCM Code 96"/>
+                    <Text TextId="T_ParameterTxt2_197" Value="PCM Code 97"/>
+                    <Text TextId="T_ParameterTxt2_198" Value="PCM Code 98"/>
+                    <Text TextId="T_ParameterTxt2_199" Value="PCM Code 99"/>                        
+                    <Text TextId="T_ParameterTxt2_200" Value="PCM Code 100"/>
+                    <Text TextId="T_ParameterTxt2_201" Value="PCM Code 101"/>
+                    <Text TextId="T_ParameterTxt2_202" Value="PCM Code 102"/>
+                    <Text TextId="T_ParameterTxt2_203" Value="PCM Code 103"/>
+                    <Text TextId="T_ParameterTxt2_204" Value="PCM Code 104"/>
+                    <Text TextId="T_ParameterTxt2_205" Value="PCM Code 105"/>                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_206" Value="PCM Code 106"/>
+                    <Text TextId="T_ParameterTxt2_207" Value="PCM Code 107"/>
+                    <Text TextId="T_ParameterTxt2_208" Value="PCM Code 108"/>
+                    <Text TextId="T_ParameterTxt2_209" Value="PCM Code 109"/>
+                    <Text TextId="T_ParameterTxt2_210" Value="PCM Code 110"/>
+                    <Text TextId="T_ParameterTxt2_211" Value="PCM Code 111"/>
+                    <Text TextId="T_ParameterTxt2_212" Value="PCM Code 112"/>
+                    <Text TextId="T_ParameterTxt2_213" Value="PCM Code 113"/>
+                    <Text TextId="T_ParameterTxt2_214" Value="PCM Code 114"/>
+                    <Text TextId="T_ParameterTxt2_215" Value="PCM Code 115"/>                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_216" Value="PCM Code 116"/>
+                    <Text TextId="T_ParameterTxt2_217" Value="PCM Code 117"/>
+                    <Text TextId="T_ParameterTxt2_218" Value="PCM Code 118"/>
+                    <Text TextId="T_ParameterTxt2_219" Value="PCM Code 119"/>
+                    <Text TextId="T_ParameterTxt2_220" Value="PCM Code 120"/>
+                    <Text TextId="T_ParameterTxt2_221" Value="PCM Code 121"/>
+                    <Text TextId="T_ParameterTxt2_222" Value="PCM Code 122"/>
+                    <Text TextId="T_ParameterTxt2_223" Value="PCM Code 123"/>
+                    <Text TextId="T_ParameterTxt2_224" Value="PCM Code 124"/>
+                    <Text TextId="T_ParameterTxt2_225" Value="PCM Code 125"/>                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_226" Value="PCM Code 126"/>
+                    <Text TextId="T_ParameterTxt2_227" Value="PCM Code 127"/>
+                    <Text TextId="T_ParameterTxt2_228" Value="PCM Code 128"/>
+                    <Text TextId="T_ParameterTxt2_229" Value="PCM Code 129"/>
+                    <Text TextId="T_ParameterTxt2_230" Value="PCM Code 130"/>                                                                                                                                                                                             
+                    <Text TextId="T_ParameterTxt2_231" Value="PCM Code 131"/>                                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_232" Value="PCM Code 132"/>                                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_233" Value="PCM Code 133"/>
+                    <Text TextId="T_ParameterTxt2_234" Value="PCM Code 134"/>
+                    <Text TextId="T_ParameterTxt2_235" Value="PCM Code 135"/>                                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_236" Value="PCM Code 136"/>                                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_237" Value="PCM Code 137"/>                                                                                                                                                                                                               
+                    <Text TextId="T_ParameterTxt2_238" Value="PCM Code 138"/>
+                    <Text TextId="T_ParameterTxt2_239" Value="PCM Code 139"/> 
+                    <Text TextId="T_ParameterTxt2_240" Value="PCM Code 140"/>
+                    <Text TextId="T_ParameterTxt2_241" Value="PCM Code 141"/>
+                    <Text TextId="T_ParameterTxt2_242" Value="PCM Code 142"/>
+                    <Text TextId="T_ParameterTxt2_243" Value="PCM Code 143"/>
+                    <Text TextId="T_ParameterTxt2_244" Value="PCM Code 144"/>
+                    <Text TextId="T_ParameterTxt2_245" Value="PCM Code 145"/>
+                    <Text TextId="T_ParameterTxt2_246" Value="PCM Code 146"/>
+                    <Text TextId="T_ParameterTxt2_247" Value="PCM Code 147"/>
+                    <Text TextId="T_ParameterTxt2_248" Value="PCM Code 148"/>
+                    <Text TextId="T_ParameterTxt2_249" Value="PCM Code 149"/>
+                    <Text TextId="T_ParameterTxt2_250" Value="PCM Code 150"/>
+                    <Text TextId="T_ParameterTxt2_251" Value="PCM Code 151"/>
+                    <Text TextId="T_ParameterTxt2_252" Value="PCM Code 152"/>
+                    <Text TextId="T_ParameterTxt2_253" Value="PCM Code 153"/>
+                    <Text TextId="T_ParameterTxt2_254" Value="PCM Code 154"/>
+                    <Text TextId="T_ParameterTxt2_255" Value="PCM Code 155"/>
+
+                    <Text TextId="T_ParameterTxt3_00"  Value="AUS"/>
+                    <Text TextId="T_ParameterTxt3_01"  Value="Eingangs Byte 2"/>
+                    <Text TextId="T_ParameterTxt3_02"  Value="Eingangs Byte 3"/>
+                    <Text TextId="T_ParameterTxt3_03"  Value="Eingangs Byte 4"/>
+                    <Text TextId="T_ParameterTxt3_04"  Value="Eingangs Byte 5"/>
+                    <Text TextId="T_ParameterTxt3_05"  Value="Eingangs Byte 6"/>
+                    <Text TextId="T_ParameterTxt3_06"  Value="Eingangs Byte 7"/>
+                    <Text TextId="T_ParameterTxt3_07"  Value="Eingangs Byte 8"/>
+                    <Text TextId="T_ParameterTxt3_08"  Value="Eingangs Byte 9"/>
+                    <Text TextId="T_ParameterTxt3_09"  Value="Eingangs Byte 10"/>
+                    <Text TextId="T_ParameterTxt3_10"  Value="Eingangs Byte 11"/>
+
+                    <Text TextId="T_ParameterTxt4_50"  Value="50 Herz"/>
+                    <Text TextId="T_ParameterTxt4_60"  Value="60 Herz"/>
+
+                    <Text TextId="T_ParameterTxt5_06"  Value="Typ: 6 Bit"/>
+                    <Text TextId="T_ParameterTxt5_10"  Value="Typ:10 Bit"/>
+
+                    <Text TextId="T_ParameterTxt6_00"  Value="DAP-V1 (Migration)"/>
+                    <Text TextId="T_ParameterTxt6_01"  Value="DAP-V2"/>
+                    <Text TextId="T_ParameterTxt6_02"  Value="DAP-V1 (Migration) + Param check"/>
+                    <Text TextId="T_ParameterTxt6_03"  Value="DAP-V2 + Param check"/>
+
+                    <!--Input modules-->
+                    <Text TextId="T_ID_INPUT"          Value="Eingänge"/>
+                    <Text TextId="T_ID_IN_00_NAME"     Value="Status 2 Byte"/>
+                    <Text TextId="T_ID_IN_01_NAME"     Value="EM-8-Bus HW 2 Byte"/>
+                    <Text TextId="T_ID_IN_02_NAME"     Value="EM-8-Bus VW 1 Byte"/>
+                    <Text TextId="T_ID_IN_03_NAME"     Value="DI-8-Bus 1 Byte"/>
+                    <Text TextId="T_ID_IN_00_INFO"     Value="Statusbyte + Zyklischer Telegrammcounter"/>
+                    <Text TextId="T_ID_IN_01_INFO"     Value="8 x PCM 230 VAC Eingänge Halbwellenauswertung: 2x8 Bit"/>
+                    <Text TextId="T_ID_IN_02_INFO"     Value="8 x PCM 230 VAC Eingänge Vollwellenauswertung: 1x8 Bit"/>
+                    <Text TextId="T_ID_IN_03_INFO"     Value="8 x Digitale 24 VDC Eingänge"/>
+
+                    <!--Output modules-->
+                    <Text TextId="T_ID_OUTPUT"         Value="Ausgänge"/>
+                    <Text TextId="T_ID_OUT_00_NAME"    Value="Befehl 2 Byte"/>
+                    <Text TextId="T_ID_OUT_01_NAME"    Value="PCM-8-Bus 1 Byte"/>
+                    <Text TextId="T_ID_OUT_02_NAME"    Value="PCM-8-Bus 2 Byte"/>
+                    <Text TextId="T_ID_OUT_03_NAME"    Value="PCM-8-Bus 3 Byte"/>
+                    <Text TextId="T_ID_OUT_04_NAME"    Value="PCM-8-Bus 4 Byte"/>
+                    <Text TextId="T_ID_OUT_05_NAME"    Value="PCM-8-Bus 5 Byte"/>
+                    <Text TextId="T_ID_OUT_06_NAME"    Value="PCM-8-Bus 6 Byte"/>
+                    <Text TextId="T_ID_OUT_07_NAME"    Value="PCM-8-Bus 7 Byte"/>
+                    <Text TextId="T_ID_OUT_08_NAME"    Value="PCM-8-Bus 8 Byte"/>
+                    <Text TextId="T_ID_OUT_09_NAME"    Value="PCM-8-Bus 9 Byte"/>
+                    <Text TextId="T_ID_OUT_10_NAME"    Value="DO-8-Bus 1 Byte"/>
+                    <Text TextId="T_ID_OUT_00_INFO"    Value="Befehlsbyte + Zyklischer Telegrammcounter"/>
+                    <Text TextId="T_ID_OUT_01_INFO"    Value="8 x PCM 230 VAC Ausgänge: 1 Byte für Befehl"/>
+                    <Text TextId="T_ID_OUT_02_INFO"    Value="8 x PCM 230 VAC Ausgänge: 2 Byte für Befehle"/>
+                    <Text TextId="T_ID_OUT_03_INFO"    Value="8 x PCM 230 VAC Ausgänge: 3 Byte für Befehle"/>
+                    <Text TextId="T_ID_OUT_04_INFO"    Value="8 x PCM 230 VAC Ausgänge: 4 Byte für Befehle"/>
+                    <Text TextId="T_ID_OUT_05_INFO"    Value="8 x PCM 230 VAC Ausgänge: 5 Byte für Befehle"/>
+                    <Text TextId="T_ID_OUT_06_INFO"    Value="8 x PCM 230 VAC Ausgänge: 6 Byte für Befehle"/>
+                    <Text TextId="T_ID_OUT_07_INFO"    Value="8 x PCM 230 VAC Ausgänge: 7 Byte für Befehle"/>
+                    <Text TextId="T_ID_OUT_08_INFO"    Value="8 x PCM 230 VAC Ausgänge: 8 Byte für Befehle"/>
+                    <Text TextId="T_ID_OUT_09_INFO"    Value="8 x PCM 230 VAC Ausgänge: 1+8 Byte für Befehle"/>
+                    <Text TextId="T_ID_OUT_10_INFO"    Value="8 x Digitale 24 VDC Ausgänge"/>
+
+                    <!--Other modules-->
+                    <Text TextId="T_ID_EMPTY_SLOT_NAME" Value="Leerplatz"/>
+                    <Text TextId="T_ID_EMPTY_SLOT_INFO" Value="Diesem Modul sind keine Daten zugeordnet"/>
+
+                </Language>
+
+            </ExternalTextList>
+
+        </ApplicationProcess>
+
+    </ProfileBody>
+
+</ISO15745Profile>

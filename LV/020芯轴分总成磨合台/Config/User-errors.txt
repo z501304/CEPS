@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nidocument>
+<nicomment>
+
+<nifamily familyname="ÎÒµÄ´íÎó·¶Î§" displayname="ÎÒµÄ´íÎó·¶Î§">
+</nifamily>
+</nicomment>
+<nierror code="5000">
+¼±Í£°´ÏÂ£¡
+</nierror>
+<nierror code="5001">
+ÆøÑ¹²»×ã
+</nierror>
+<nierror code="5002">
+¹âÄ»±»ÕÚµ²
+</nierror>
+<nierror code="5003">
+Éè±¸ºóÃÅ´ò¿ª
+</nierror>
+<nierror code="5004">
+×ó¹¤Î»ÆôÓÃµ«¹¤¼þÎ´ÔÚÎ»
+</nierror>
+<nierror code="5005">
+ÓÒ¹¤Î»ÆôÓÃµ«¹¤¼þÎ´ÔÚÎ»
+</nierror>
+<nierror code="5006">
+Î´ÔÚ´¥ÃþÆÁÉÏÆôÓÃ×ó¹¤Î»
+</nierror>
+<nierror code="5007">
+Î´ÔÚ´¥ÃþÆÁÉÏÆôÓÃÓÒ¹¤Î»
+</nierror>
+<nierror code="5008">
+Ã»ÓÐÇÐ»»ÊÖ¶¯
+</nierror>
+<nierror code="5200">
+×óÓÒÑ¹½ôÆø¸×²»ÔÚÏÂÎ»
+</nierror>
+<nierror code="5201">
+×óÓÒÑ¹½ôÆø¸×²»ÔÚÉÏÎ»
+</nierror>
+<nierror code="5202">
+×ó¼ÓÔØ»ú¹¹½øÎ´µ½Î»
+</nierror>
+<nierror code="5203">
+×ó¼ÓÔØ»ú¹¹ÍËÎ´µ½Î»
+</nierror>
+<nierror code="5204">
+ÓÒ¼ÓÔØ»ú¹¹½øÎ´µ½Î»
+</nierror>
+<nierror code="5205">
+ÓÒ¼ÓÔØ»ú¹¹ÍËÎ´µ½Î»
+</nierror>
+<nierror code="5206">
+×óÇý¶¯Î´Éýµ½Î»
+</nierror>
+<nierror code="5207">
+×óÇý¶¯Î´½µµ½Î»
+</nierror>
+<nierror code="5208">
+ÓÒÇý¶¯Î´Éýµ½Î»
+</nierror>
+<nierror code="5209">
+ÓÒÇý¶¯Î´½µµ½Î»
+</nierror>
+<nierror code="5100">
+×óÇý¶¯ËÅ·þ±¨¾¯
+</nierror>
+<nierror code="5110">
+×ó¼ÓÔØËÅ·þ±¨¾¯
+</nierror>
+<nierror code="5120">
+ÓÒ¼ÓÔØËÅ·þ±¨¾¯
+</nierror>
+<nierror code="5130">
+ÓÒÇý¶¯ËÅ·þ±¨¾¯
+</nierror>
+<nierror code="5140">
+²»ÔÚ×Ô¶¯Æô¶¯
+</nierror>
+</nidocument>

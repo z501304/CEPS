@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='ConversionLogFile.xsl'?>
+<LogFile projectName="激光打标" typeText="类型" messageText="消息" timeText="时间">
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Information" Timestamp="2021/03/20 18:47:08">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="已开始升级" />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:10" Debug="false">
+    <Text>Reorganization succeed!</Text>
+  </Details>
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Information" Timestamp="2021/03/20 18:47:10">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="CheckRepair lost+found objects" />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:10" Debug="false">
+    <Text>No error is detected.</Text>
+  </Details>
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Information" Timestamp="2021/03/20 18:47:11">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="CheckRepair missing bidirectional links" />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:11" Debug="false">
+    <Text>No error is detected.</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:22" Debug="false">
+    <Text>Not invalidating fingerprints for protected object: MB_SERVER[FB1085]</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:22" Debug="false">
+    <Text>Not invalidating fingerprints for protected object: T_DISCON[SFB103]</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:22" Debug="false">
+    <Text>Not invalidating fingerprints for protected object: T_RESET[SFB107]</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:22" Debug="false">
+    <Text>Not invalidating fingerprints for protected object: T_DIAG[SFB106]</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:22" Debug="false">
+    <Text>Not invalidating fingerprints for protected object: TRCV[SFB151]</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:22" Debug="false">
+    <Text>Not invalidating fingerprints for protected object: TSEND[SFB150]</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:22" Debug="false">
+    <Text>Not invalidating fingerprints for protected object: TCON[SFB109]</Text>
+  </Details>
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Information" Timestamp="2021/03/20 18:47:29">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="正在转换交叉引用信息。" />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Information" Timestamp="2021/03/20 18:47:33">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="交叉引用信息已成功创建." />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Information" Timestamp="2021/03/20 18:47:33">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="交叉引用信息转换完成。" />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:34" Debug="false">
+    <Text>Package container 'Siemens.Simatic.Lang.S7BSW.V14.0.1.0.NonMandatory' was deleted</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:34" Debug="false">
+    <Text>Product version 'Siemens.Simatic.STEP7.Basic:14.00.01.00' was deleted</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:34" Debug="false">
+    <Text>Product version 'Siemens.Simatic.Portal:14.00.01.00' was deleted</Text>
+  </Details>
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Error" Timestamp="2021/03/20 18:47:34">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="升级失败。&#xA;&#xA;更多信息，请参见日志文件。如果项目仍无法升级，则请联系西门子客户支持。" />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <Details ServiceId="80" MessageId="30" Timestamp="2021/03/20 18:47:34" Debug="false">
+    <Text>引发类型为“Siemens.Automation.ObjectFrame.CancelOperationException”的异常。
+   在 Siemens.Automation.ObjectFrame.Conversion.ConversionProcess.BeginPhase(ICascadedProgress cascadedProgress, String captionResourceId, Int32 percentage)
+   在 Siemens.Automation.ObjectFrame.Conversion.ConversionProcess.CleanUpEnvironment(IConversionHandler conversionHandler, ICascadedProgress cascadedProgress)
+   在 Siemens.Automation.ObjectFrame.Conversion.ConversionProcess.Run()</Text>
+  </Details>
+  <MessageCell ServiceId="Automation-ObjectFrame-Feedbacks" MessageId="ConversionInfoTabProjectFailed" MessageClass="Error" Timestamp="2021/03/20 18:47:35">
+    <Number ServiceNumber="80" MessageNumber="33" />
+    <Text FeedbackText="无法升级项目 'D:\SVN\PLC\激光打标\System\PEData.plf'。" />
+    <Help HelpId="-1" HelpFile="" />
+  </MessageCell>
+</LogFile>

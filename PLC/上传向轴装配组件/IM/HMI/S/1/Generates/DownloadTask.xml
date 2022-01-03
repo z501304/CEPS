@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DownloadTask>
+  <ProjectInfo
+    DeviceVersion="14.0.1.0"
+    CreationTime="2020-06-29 01:17:26 (UTC)"
+    Runtime="SMART"
+    RtProjectName="芜湖恒隆上传向轴装配组件2019-10-28.A180648-6_HMI[KTP900 Basic PN]"
+    RtProjectFolderName="芜湖恒隆上传向轴装配组件2019-10-28.A180648-6_HMI[KTP900 Basic PN]"
+    DeviceType="KTP900_Basic"
+    DisplayOrientation="0"
+    RTReleaseNo="14.0.1.0"
+    ImageReleaseNo="14.0.1.0"
+    RTCV="14.0.1.0"
+    PRCV="14.0.1.0"
+    FirmwareFileName="KTP900\14.0.1.0\KTP900_V14_00_01_00.fwf"
+    RuntimeFileName="KTP900\14.0.1.0\KTP900_V14_00_01_00.fwf"
+    RuntimeAddonFolderName="KTP900" />
+  <FullDownload>pdata.srt</FullDownload>
+  <FullDownload
+    type="ADMINDATA">pdata.pwx</FullDownload>
+  <FullDownload>pdata.ORIE.cnk</FullDownload>
+  <FullDownload
+    type="RECIPE">pdata.R001.cnk</FullDownload>
+  <FullDownload>pdata.ETH0.cnk</FullDownload>
+  <FullDownload
+    type="RECIPE">pdata.R000.cnk</FullDownload>
+</DownloadTask>

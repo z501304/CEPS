@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type='text/xsl' href='MassDataHandlerLogFile.xsl'?>
+<LogFile titleName="PLCTags Log_2.xml" projectName="C:\Users\Godfly\Desktop\PLCTags.xlsx" typeText="类型" messageText="消息" timeText="时间">
+  <LogEntry type="Error" dateTime="11:05:09">
+    <Message>指定文件中无法找到文件夹“Hmi Tags”。导入过程终止。</Message>
+  </LogEntry>
+</LogFile>

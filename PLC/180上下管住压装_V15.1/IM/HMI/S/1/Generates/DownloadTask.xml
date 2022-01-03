@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DownloadTask>
+  <ProjectInfo
+    DeviceVersion="14.0.1.0"
+    CreationTime="2021-04-26 00:15:32 (UTC)"
+    Runtime="SMART"
+    RtProjectName="180上下管住压装_V15.1.HMI_180[KTP900 Basic PN]"
+    RtProjectFolderName="180上下管住压装_V15.1.HMI_180[KTP900 Basic PN]"
+    DeviceType="KTP900_Basic"
+    DisplayOrientation="0"
+    RTReleaseNo="14.0.1.0"
+    ImageReleaseNo="14.0.1.0"
+    RTCV="14.0.1.0"
+    PRCV="14.0.1.0"
+    FirmwareFileName=""
+    RuntimeFileName=""
+    RuntimeAddonFolderName="KTP900" />
+  <FullDownload>pdata.srt</FullDownload>
+  <FullDownload
+    type="ADMINDATA">pdata.pwx</FullDownload>
+  <FullDownload>pdata.ORIE.cnk</FullDownload>
+  <FullDownload
+    type="RECIPE">pdata.R001.cnk</FullDownload>
+  <FullDownload>pdata.ETH0.cnk</FullDownload>
+  <FullDownload
+    type="RECIPE">pdata.R000.cnk</FullDownload>
+</DownloadTask>

@@ -1,0 +1,774 @@
+;================================================================
+;  GSD-File for BTL5-T1XX-MXXXX-X-SXXX
+;  Company:  Gebhard Balluff GmbH & Co.
+;  Version:  6.0
+;  Contact:  Hansjuergen Eberle
+;  Tel.   :  07158/173-328
+;  Fax.   :  07158/173-58328
+;  eMail  :  heberle@balluff.de
+; 05-13-08 Model_Name changed PA-ATMO1/EES fue2fe
+;================================================================
+
+#Profibus_DP
+
+;
+;---parameter selection---
+;
+;octet9
+PrmText=1
+Text(0)="Min Value at Connector Side"
+Text(1)="Max Value at Connector side"
+EndPrmText
+PrmText=2
+Text(0)="Disable"
+Text(1)="Enable"
+EndPrmText
+PrmText=3
+Text(0)="Disable"
+Text(1)="Enable"
+EndPrmText
+PrmText=4
+Text(0)="Disable"
+Text(1)="Enable"
+EndPrmText
+PrmText=7
+Text(0)="Position First, Speed Follows"
+Text(1)="Position/Speed Alternates"
+Text(2)="Speed First, Position Follows"
+EndPrmText
+PrmText=8
+Text(0)="1 Magnet  Expected"
+Text(1)="2 Magnets Expected"
+Text(2)="3 Magnets Expected"
+Text(3)="4 Magnets Expected"
+EndPrmText
+PrmText=9
+Text(0)="User Diagnostic Enabled"
+Text(1)="User Diagnostic Disabled"
+EndPrmText
+
+;
+;---parameter text---
+;
+;octet 9
+ExtUserPrmData=1 "Code Sequence"
+Bit(0) 0 0-1
+Prm_Text_Ref=1
+EndExtUserPrmData
+ExtUserPrmData=2 "Class 2 Functionality Enable"
+Bit(1) 1 0-1
+Prm_Text_Ref=2
+EndExtUserPrmData
+ExtUserPrmData=3 "Commissioning Diagnostic Control"
+Bit(2) 1 0-1
+Prm_Text_Ref=3
+EndExtUserPrmData
+ExtUserPrmData=4 "Scaling Function Control"
+Bit(3) 1 0-1
+Prm_Text_Ref=4
+EndExtUserPrmData
+
+;octed 10-13
+ExtUserPrmData=5 "Measuring Units"
+; HWW Unsigned32 0 0-0xFFFFFFFF
+Unsigned32 0 0-0xFFFFFFFF
+EndExtUserPrmData
+
+;octed 14-17
+ExtUserPrmData=6 "Total Measuring Range"
+; HWW Unsigned32 0 0-0xFFFFFFFF
+Unsigned32 0 0-0xFFFFFFFF
+EndExtUserPrmData
+
+;start with manufacturer specific entries
+;octet 26
+ExtUserPrmData=100 "Mode Selector"
+BitArea(0-1) 0 0-2
+Prm_Text_Ref=7
+EndExtUserPrmData
+
+;octet 26
+ExtUserPrmData=101 "Number of Expected Magnets"
+BitArea(4-5) 0 0-3
+Prm_Text_Ref=8
+EndExtUserPrmData
+
+;octet 26
+ExtUserPrmData=102 "Disable Diagnostic Message"
+Bit(7) 0 0-1
+Prm_Text_Ref=9
+EndExtUserPrmData
+
+;octet 27-30
+ExtUserPrmData=8  "Pos. Engeneering Unit [0.001um]"
+; HWW Unsigned32 1000 0-0xFFFFFFFF
+Unsigned32 0x3E8 0-0xFFFFFFFF
+EndExtUserPrmData
+
+;octet 31-34
+ExtUserPrmData=9  "Pos. Revolution Unit  [0.001um]"
+; HWW Unsigned32 5000 0-0xFFFFFFFF
+Unsigned32 0x1388 0-0xFFFFFFFF
+EndExtUserPrmData
+
+;octet 35-38
+ExtUserPrmData=10 "Spd. Engeneering Unit [0.01mm/s]"
+; HWW Unsigned32 10 0-0xFFFFFFFF
+Unsigned32 0xA 0-0xFFFFFFFF
+EndExtUserPrmData
+
+;octet 39-42
+ExtUserPrmData=11 "Spd. Revolution Unit  [0.01mm/s]"
+; HWW Unsigned32 10 0-0xFFFFFFFF
+Unsigned32 0xA 0-0xFFFFFFFF
+EndExtUserPrmData
+
+;octet 43-46
+ExtUserPrmData=12 "Preset Position 1"
+; HWW Unsigned32 0 0-0xFFFFFFFF
+Unsigned32 0 0-0xFFFFFFFF
+EndExtUserPrmData
+
+;octet 47-50
+ExtUserPrmData=13 "Preset Position 2"
+; HWW Unsigned32 0 0-0xFFFFFFFF
+Unsigned32 0 0-0xFFFFFFFF
+EndExtUserPrmData
+
+;octet 51-54
+ExtUserPrmData=14 "Preset Position 3"
+; HWW Unsigned32 0 0-0xFFFFFFFF
+Unsigned32 0 0-0xFFFFFFFF
+EndExtUserPrmData
+
+;octet 55-58
+ExtUserPrmData=15 "Preset Position 4"
+; HWW Unsigned32 0 0-0xFFFFFFFF
+Unsigned32 0 0-0xFFFFFFFF
+EndExtUserPrmData
+
+
+;octet 59-62
+ExtUserPrmData=16 "Low Limit Position 1"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 63-66
+ExtUserPrmData=17 "Low Limit Position 2"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 67-70
+ExtUserPrmData=18 "Low Limit Position 3"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 71-64
+ExtUserPrmData=19 "Low Limit Position 4"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 75-78
+ExtUserPrmData=20 "High Limit Position 1"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 79-82
+ExtUserPrmData=21 "High Limit Position 2"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 83-86
+ExtUserPrmData=22 "High Limit Position 3"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 87-90
+ExtUserPrmData=23 "High Limit Position 4"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 91-94
+ExtUserPrmData=24 "Low Limit Speed 1"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 95-98
+ExtUserPrmData=25 "Low Limit Speed 2"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 99-102
+ExtUserPrmData=26 "Low Limit Speed 3"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 103-106
+ExtUserPrmData=27 "Low Limit Speed 4"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 107-110
+ExtUserPrmData=28 "High Limit Speed 1"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 111-114
+ExtUserPrmData=29 "High Limit Speed 2"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 115-118
+ExtUserPrmData=30 "High Limit Speed 3"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+;octet 119-122
+ExtUserPrmData=31 "High Limit Speed 4"
+; HWW Signed32 0 0x80000000-0x7FFFFFFF
+; HWW Signed32 0 -2147483648-2147483647
+Signed32 0 -2147483648-2147483647
+EndExtUserPrmData
+
+GSD_Revision=2
+
+;
+;---communication behaviour---
+;
+Vendor_Name         = "Gebhard Balluff GmbH & Co."
+Model_Name          = "Balluff: pos.transducer BTL5-T"
+Revision            = "Version 06.00"
+Ident_Number        = 0x04B2
+Protocol_Ident      = 0	; PROFIBUS DP
+Station_Type        = 0 ; DP SLAVE
+FMS_supp            = 0	; No FMS/DP mixed device
+Hardware_Release    = "V01.00"
+Software_Release    = "V01.13"
+9.6_supp            = 1
+19.2_supp           = 1
+93.75_supp          = 1
+187.5_supp          = 1
+500_supp            = 1
+1.5M_supp           = 1
+3M_supp             = 1
+6M_supp             = 1
+12M_supp            = 1
+MaxTsdr_9.6         = 60
+MaxTsdr_19.2        = 60
+MaxTsdr_93.75       = 60
+MaxTsdr_187.5       = 60
+MaxTsdr_500         = 100
+MaxTsdr_1.5M        = 150
+MaxTsdr_3M          = 250
+MaxTsdr_6M          = 450
+MaxTsdr_12M         = 800
+Redundancy          = 0		; No
+Repeater_Ctrl_Sig   = 0		; No
+24V_Pins            = 0		; Pin M24V and P24V not connected
+
+Implementation_Type="SPC41"
+Bitmap_Device="BTL504B2"
+
+OrderNumber="BTL5-T1XX-MXXXX-P-SXXX"
+
+;
+;---slave specific values---
+;
+Freeze_Mode_supp    = 1
+Sync_Mode_supp      = 1
+Auto_Baud_supp      = 1
+Set_Slave_Add_supp  = 1
+Slave_Family        = 7@Linear@Absolute
+
+Min_Slave_Intervall = 0x000A  ; 1ms
+
+Modular_Station     = 1
+Max_Module          = 1
+
+Max_Input_Len       = 0x20
+Max_Output_Len      = 0x04
+Max_Data_Len        = 0x24
+
+Max_Diag_Data_Len   = 62
+
+Unit_Diag_Bit(0000) = "E:Position not Valid"
+Unit_Diag_Bit(0001) = "E:Supply Voltage"
+Unit_Diag_Bit(0002) = "E:Current too High"
+Unit_Diag_Bit(0003) = "E:Comissioning Diagnostics"
+Unit_Diag_Bit(0004) = "E:Device Memory"
+
+Unit_Diag_Bit(0008) = "S:Work Area Inversion"
+Unit_Diag_Bit(0009) = "S:Class 2 Enable"
+Unit_Diag_Bit(0010) = "S:Diagnostics Enable"
+Unit_Diag_Bit(0011) = "S:Scaling Function Enable"
+
+Unit_Diag_Area=416-419
+Value(15) = "E:No Magnet Available"
+Value(14) = "S:1 Magnet Available"
+Value(12) = "S:2 Magnets Available"
+Value(8)  = "S:3 Magnets Available"
+Value(0)  = "S:4 Magnets Available"
+Unit_Diag_Area_End
+
+Unit_Diag_Area=424-425
+Value(0)  = "S:Pos1 Inside Work Area"
+Value(1)  = "S:Pos1 Lower than Low Limit"
+Value(2)  = "S:Pos1 Higher than High Limit"
+Unit_Diag_Area_End
+
+Unit_Diag_Area=426-427
+Value(0)  = "S:Pos2 Inside Work Area"
+Value(1)  = "S:Pos2 Lower than Low Limit"
+Value(2)  = "S:Pos2 Higher than High Limit"
+Unit_Diag_Area_End
+
+Unit_Diag_Area=428-429
+Value(0)  = "S:Pos3 Inside Work Area"
+Value(1)  = "S:Pos3 Lower than Low Limit"
+Value(2)  = "S:Pos3 Higher than High Limit"
+Unit_Diag_Area_End
+
+Unit_Diag_Area=430-431
+Value(0)  = "S:Pos4 Inside Work Area"
+Value(1)  = "S:Pos4 Lower than Low Limit"
+Value(2)  = "S:Pos4 Higher than High Limit"
+Unit_Diag_Area_End
+
+Unit_Diag_Area=432-433
+Value(0)  = "S:Spd1 Inside Work Area"
+Value(1)  = "S:Spd1 Lower than Low Limit"
+Value(2)  = "S:Spd1 Higher than High Limit"
+Unit_Diag_Area_End
+
+Unit_Diag_Area=434-435
+Value(0)  = "S:Spd2 Inside Work Area"
+Value(1)  = "S:Spd2 Lower than Low Limit"
+Value(2)  = "S:Spd2 Higher than High Limit"
+Unit_Diag_Area_End
+
+Unit_Diag_Area=436-437
+Value(0)  = "S:Spd3 Inside Work Area"
+Value(1)  = "S:Spd3 Lower than Low Limit"
+Value(2)  = "S:Spd3 Higher than High Limit"
+Unit_Diag_Area_End
+
+Unit_Diag_Area=438-439
+Value(0)  = "S:Spd4 Inside Work Area"
+Value(1)  = "S:Spd4 Lower than Low Limit"
+Value(2)  = "S:Spd4 Higher than High Limit"
+Unit_Diag_Area_End
+
+
+Max_User_Prm_Data_Len = 114
+
+
+;
+;---modules---
+;
+Module= "Class 1 Encoder" 0xD1
+Ext_Module_Prm_Data_Len=1
+Ext_User_Prm_Data_Const(0) = 0
+Ext_User_Prm_Data_Ref(0)=1	; Code Sequence
+EndModule
+
+Module= "Class 2 Encoder" 0xF1
+Ext_Module_Prm_Data_Len= 17
+Ext_User_Prm_Data_Const(0)= 0x02,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ext_User_Prm_Data_Ref(0)  =1	; Code Sequence
+
+Ext_User_Prm_Data_Ref(0)  =3	; Commissioning Diagnostic
+Ext_User_Prm_Data_Ref(0)  =4	; Scaling
+
+Ext_User_Prm_Data_Ref(1)  =5	; Measuring Units per Revolution
+Ext_User_Prm_Data_Ref(5)  =6	; Total Measuring Range in Measuring Units
+
+EndModule
+
+Module= "BALLUFF 1 x Position" 0xD1
+
+Ext_Module_Prm_Data_Len= 114
+
+Ext_User_Prm_Data_Const(0)=\
+0x0C,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x03,0xE8,0x00,0x00,0x13,0x88,0x00,0x00,0x00,0x0A,\
+0x00,0x00,0x00,0x0A,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(0)  =1	; Code Sequence
+
+Ext_User_Prm_Data_Ref(17) =102	; Disable Diagnostic Message
+	
+Ext_User_Prm_Data_Ref(18) =8	; Position Engeneering Unit
+Ext_User_Prm_Data_Ref(22) =9	; Position Resolution
+
+Ext_User_Prm_Data_Ref(34) =12	; Preset Position 1
+Ext_User_Prm_Data_Ref(50) =16	; Low Limit Position 1
+Ext_User_Prm_Data_Ref(66) =20	; High Limit Position 1
+EndModule
+
+Module= "BALLUFF 2 x Position" 0xD3
+Ext_Module_Prm_Data_Len= 114
+Ext_User_Prm_Data_Const(0)=\
+0x0C,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x10,0x00,0x00,\
+0x03,0xE8,0x00,0x00,0x13,0x88,0x00,0x00,0x00,0x0A,\
+0x00,0x00,0x00,0x0A,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(0)  =1	; Code Sequence
+
+Ext_User_Prm_Data_Ref(17) =102	; Disable Diagnostic Message
+
+Ext_User_Prm_Data_Ref(18) =8	; Position Engeneering Unit
+Ext_User_Prm_Data_Ref(22) =9	; Position Resolution
+
+Ext_User_Prm_Data_Ref(34) =12	; Preset Position 1
+Ext_User_Prm_Data_Ref(38) =13	; Preset Position 2
+Ext_User_Prm_Data_Ref(50) =16	; Low Limit Position 1
+Ext_User_Prm_Data_Ref(54) =17	; Low Limit Position 2
+Ext_User_Prm_Data_Ref(66) =20	; High Limit Position 1
+Ext_User_Prm_Data_Ref(70) =21	; High Limit Position 2
+EndModule
+
+Module= "BALLUFF 3 x Position" 0xD5
+Ext_Module_Prm_Data_Len= 114
+Ext_User_Prm_Data_Const(0)=\
+0x0C,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x20,0x00,0x00,\
+0x03,0xE8,0x00,0x00,0x13,0x88,0x00,0x00,0x00,0x0A,\
+0x00,0x00,0x00,0x0A,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(0)  =1	; Code Sequence
+
+Ext_User_Prm_Data_Ref(17) =102	; Disable Diagnostic Message
+
+Ext_User_Prm_Data_Ref(18) =8	; Position Engeneering Unit
+Ext_User_Prm_Data_Ref(22) =9	; Position Resolution
+
+Ext_User_Prm_Data_Ref(34) =12	; Preset Position 1
+Ext_User_Prm_Data_Ref(38) =13	; Preset Position 2
+Ext_User_Prm_Data_Ref(42) =14	; Preset Position 3
+Ext_User_Prm_Data_Ref(50) =16	; Low Limit Position 1
+Ext_User_Prm_Data_Ref(54) =17	; Low Limit Position 2
+Ext_User_Prm_Data_Ref(58) =18	; Low Limit Position 3
+Ext_User_Prm_Data_Ref(66) =20	; High Limit Position 1
+Ext_User_Prm_Data_Ref(70) =21	; High Limit Position 2
+Ext_User_Prm_Data_Ref(75) =22	; High Limit Position 3
+EndModule
+
+Module= "BALLUFF 4 x Position" 0xD7
+Ext_Module_Prm_Data_Len= 114
+Ext_User_Prm_Data_Const(0)=\
+0x0C,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x30,0x00,0x00,\
+0x03,0xE8,0x00,0x00,0x13,0x88,0x00,0x00,0x00,0x0A,\
+0x00,0x00,0x00,0x0A,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(0)  =1	; Code Sequence
+
+Ext_User_Prm_Data_Ref(17) =102	; Disable Diagnostic Message
+
+Ext_User_Prm_Data_Ref(18) =8	; Position Engeneering Unit
+Ext_User_Prm_Data_Ref(22) =9	; Position Resolution
+
+Ext_User_Prm_Data_Ref(34) =12	; Preset Position 1
+Ext_User_Prm_Data_Ref(38) =13	; Preset Position 2
+Ext_User_Prm_Data_Ref(42) =14	; Preset Position 3
+Ext_User_Prm_Data_Ref(46) =15	; Preset Position 4
+
+Ext_User_Prm_Data_Ref(50) =16	; Low Limit Position 1
+Ext_User_Prm_Data_Ref(54) =17	; Low Limit Position 2
+Ext_User_Prm_Data_Ref(58) =18	; Low Limit Position 3
+Ext_User_Prm_Data_Ref(62) =19	; Low Limit Position 4
+
+Ext_User_Prm_Data_Ref(66) =20	; High Limit Position 1
+Ext_User_Prm_Data_Ref(70) =21	; High Limit Position 2
+Ext_User_Prm_Data_Ref(74) =22	; High Limit Position 3
+Ext_User_Prm_Data_Ref(78) =23	; High Limit Position 4
+EndModule
+
+Module= "BALLUFF 1 x Position, 1 x Speed" 0xD3
+Ext_Module_Prm_Data_Len= 114
+Ext_User_Prm_Data_Const(0)=\
+0x0C,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x03,0xE8,0x00,0x00,0x13,0x88,0x00,0x00,0x00,0x0A,\
+0x00,0x00,0x00,0x0A,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(0)  =1	; Code Sequence
+
+Ext_User_Prm_Data_Ref(17) =100	; Mode Selector
+Ext_User_Prm_Data_Ref(17) =102	; Disable Diagnostic Message
+
+Ext_User_Prm_Data_Ref(18) =8	; Position Engeneering Unit
+Ext_User_Prm_Data_Ref(22) =9	; Position Resolution
+Ext_User_Prm_Data_Ref(26) =10	; Speed Engeneering Unit
+Ext_User_Prm_Data_Ref(30) =11	; Speed Resolution
+
+Ext_User_Prm_Data_Ref(34) =12	; Preset Position 1
+Ext_User_Prm_Data_Ref(50) =16	; Low Limit Position 1
+Ext_User_Prm_Data_Ref(66) =20	; High Limit Position 1
+Ext_User_Prm_Data_Ref(82) =24	; Low Limit Speed 1
+Ext_User_Prm_Data_Ref(98) =28	; High Limit Speed 1
+EndModule
+
+Module= "BALLUFF 2 x Position, 2 x Speed" 0xD7
+Ext_Module_Prm_Data_Len= 114
+Ext_User_Prm_Data_Const(0)=\
+0x0C,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x10,0x00,0x00,\
+0x03,0xE8,0x00,0x00,0x13,0x88,0x00,0x00,0x00,0x0A,\
+0x00,0x00,0x00,0x0A,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(0)  =1	; Code Sequence
+
+Ext_User_Prm_Data_Ref(17) =100	; Mode Selector
+Ext_User_Prm_Data_Ref(17) =102	; Disable Diagnostic Message
+
+Ext_User_Prm_Data_Ref(18) =8	; Position Engeneering Unit
+Ext_User_Prm_Data_Ref(22) =9	; Position Resolution
+Ext_User_Prm_Data_Ref(26) =10	; Speed Engeneering Unit
+Ext_User_Prm_Data_Ref(30) =11	; Speed Resolution
+
+Ext_User_Prm_Data_Ref(34) =12	; Preset Position 1
+Ext_User_Prm_Data_Ref(38) =13	; Preset Position 2
+Ext_User_Prm_Data_Ref(50) =16	; Low Limit Position 1
+Ext_User_Prm_Data_Ref(54) =17	; Low Limit Position 2
+Ext_User_Prm_Data_Ref(66) =20	; High Limit Position 1
+Ext_User_Prm_Data_Ref(70) =21	; High Limit Position 2
+Ext_User_Prm_Data_Ref(82) =24	; Low Limit Speed 1
+Ext_User_Prm_Data_Ref(86) =25	; Low Limit Speed 2
+Ext_User_Prm_Data_Ref(98) =28	; High Limit Speed 1
+Ext_User_Prm_Data_Ref(102)=29	; High Limit Speed 2
+EndModule
+
+Module= "BALLUFF 3 x Position, 3 x Speed" 0xDB
+Ext_Module_Prm_Data_Len= 114
+Ext_User_Prm_Data_Const(0)=\
+0x0C,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x20,0x00,0x00,\
+0x03,0xE8,0x00,0x00,0x13,0x88,0x00,0x00,0x00,0x0A,\
+0x00,0x00,0x00,0x0A,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(0)  =1	; Code Sequence
+
+Ext_User_Prm_Data_Ref(17) =100	; Mode Selector
+Ext_User_Prm_Data_Ref(17) =102	; Disable Diagnostic Message
+
+Ext_User_Prm_Data_Ref(18) =8	; Position Engeneering Unit
+Ext_User_Prm_Data_Ref(22) =9	; Position Resolution
+Ext_User_Prm_Data_Ref(26) =10	; Speed Engeneering Unit
+Ext_User_Prm_Data_Ref(30) =11	; Speed Resolution
+
+Ext_User_Prm_Data_Ref(34) =12	; Preset Position 1
+Ext_User_Prm_Data_Ref(38) =13	; Preset Position 2
+Ext_User_Prm_Data_Ref(42) =14	; Preset Position 3
+Ext_User_Prm_Data_Ref(50) =16	; Low Limit Position 1
+Ext_User_Prm_Data_Ref(54) =17	; Low Limit Position 2
+Ext_User_Prm_Data_Ref(58) =18	; Low Limit Position 3
+Ext_User_Prm_Data_Ref(66) =20	; High Limit Position 1
+Ext_User_Prm_Data_Ref(70) =21	; High Limit Position 2
+Ext_User_Prm_Data_Ref(74) =22	; High Limit Position 3
+Ext_User_Prm_Data_Ref(82) =24	; Low Limit Speed 1
+Ext_User_Prm_Data_Ref(86) =25	; Low Limit Speed 2
+Ext_User_Prm_Data_Ref(90) =26	; Low Limit Speed 3
+Ext_User_Prm_Data_Ref(98) =28	; High Limit Speed 1
+Ext_User_Prm_Data_Ref(102)=29	; High Limit Speed 2
+Ext_User_Prm_Data_Ref(106)=30	; High Limit Speed 3
+EndModule
+
+Module= "BALLUFF 4 x Position, 4 x Speed" 0xDF
+Ext_Module_Prm_Data_Len= 114
+Ext_User_Prm_Data_Const(0)=\
+0x0C,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x40,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(0)  =1	; Code Sequence
+
+Ext_User_Prm_Data_Ref(17) =100	; Mode Selector
+Ext_User_Prm_Data_Ref(17) =102	; Disable Diagnostic Message
+
+Ext_User_Prm_Data_Ref(18) =8	; Position Engeneering Unit
+Ext_User_Prm_Data_Ref(22) =9	; Position Resolution
+Ext_User_Prm_Data_Ref(26) =10	; Speed Engeneering Unit
+Ext_User_Prm_Data_Ref(30) =11	; Speed Resolution
+
+Ext_User_Prm_Data_Ref(34) =12	; Preset Position 1
+Ext_User_Prm_Data_Ref(38) =13	; Preset Position 2
+Ext_User_Prm_Data_Ref(42) =14	; Preset Position 3
+Ext_User_Prm_Data_Ref(46) =15	; Preset Position 4
+
+Ext_User_Prm_Data_Ref(50) =16	; Low Limit Position 1
+Ext_User_Prm_Data_Ref(54) =17	; Low Limit Position 2
+Ext_User_Prm_Data_Ref(58) =18	; Low Limit Position 3
+Ext_User_Prm_Data_Ref(62) =19	; Low Limit Position 4
+
+Ext_User_Prm_Data_Ref(66) =20	; High Limit Position 1
+Ext_User_Prm_Data_Ref(70) =21	; High Limit Position 2
+Ext_User_Prm_Data_Ref(74) =22	; High Limit Position 3
+Ext_User_Prm_Data_Ref(78) =23	; High Limit Position 4
+
+Ext_User_Prm_Data_Ref(82) =24	; Low Limit Speed 1
+Ext_User_Prm_Data_Ref(86) =25	; Low Limit Speed 2
+Ext_User_Prm_Data_Ref(90) =26	; Low Limit Speed 3
+Ext_User_Prm_Data_Ref(94) =27	; Low Limit Speed 4
+
+Ext_User_Prm_Data_Ref(98) =28	; High Limit Speed 1
+Ext_User_Prm_Data_Ref(102)=29	; High Limit Speed 2
+Ext_User_Prm_Data_Ref(106)=30	; High Limit Speed 3
+Ext_User_Prm_Data_Ref(110)=31	; High Limit Speed 4
+EndModule
+
+Module= "FREE CONFIGURATION" 0xDF
+Ext_Module_Prm_Data_Len= 114
+Ext_User_Prm_Data_Const(0)=\
+0x0C,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x03,0xE8,0x00,0x00,0x13,0x88,0x00,0x00,0x00,0x0A,\
+0x00,0x00,0x00,0x0A,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\
+0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(0)  =1	; Code Sequence
+Ext_User_Prm_Data_Ref(0)  =2	; Class 2 Functionality
+Ext_User_Prm_Data_Ref(0)  =3	; Commissioning Diagnostic
+Ext_User_Prm_Data_Ref(0)  =4	; Scaling
+
+Ext_User_Prm_Data_Ref(1)  =5	; Measuring Units
+Ext_User_Prm_Data_Ref(5)  =6	; Measuring Range
+
+Ext_User_Prm_Data_Ref(17) =100	; Mode Selector
+Ext_User_Prm_Data_Ref(17) =101  ; Number of Expected Magnets
+Ext_User_Prm_Data_Ref(17) =102	; Disable Diagnostic Message
+
+Ext_User_Prm_Data_Ref(18) =8	; Position Engeneering Unit
+Ext_User_Prm_Data_Ref(22) =9	; Position Resolution
+Ext_User_Prm_Data_Ref(26) =10	; Speed Engeneering Unit
+Ext_User_Prm_Data_Ref(30) =11	; Speed Resolution
+
+Ext_User_Prm_Data_Ref(34) =12	; Preset Position 1
+Ext_User_Prm_Data_Ref(38) =13	; Preset Position 2
+Ext_User_Prm_Data_Ref(42) =14	; Preset Position 3
+Ext_User_Prm_Data_Ref(46) =15	; Preset Position 4
+
+Ext_User_Prm_Data_Ref(50) =16	; Low Limit Position 1
+Ext_User_Prm_Data_Ref(54) =17	; Low Limit Position 2
+Ext_User_Prm_Data_Ref(58) =18	; Low Limit Position 3
+Ext_User_Prm_Data_Ref(62) =19	; Low Limit Position 4
+
+Ext_User_Prm_Data_Ref(66) =20	; High Limit Position 1
+Ext_User_Prm_Data_Ref(70) =21	; High Limit Position 2
+Ext_User_Prm_Data_Ref(74) =22	; High Limit Position 3
+Ext_User_Prm_Data_Ref(78) =23	; High Limit Position 4
+
+Ext_User_Prm_Data_Ref(82) =24	; Low Limit Speed 1
+Ext_User_Prm_Data_Ref(86) =25	; Low Limit Speed 2
+Ext_User_Prm_Data_Ref(90) =26	; Low Limit Speed 3
+Ext_User_Prm_Data_Ref(94) =27	; Low Limit Speed 4
+
+Ext_User_Prm_Data_Ref(98) =28	; High Limit Speed 1
+Ext_User_Prm_Data_Ref(102)=29	; High Limit Speed 2
+Ext_User_Prm_Data_Ref(106)=30	; High Limit Speed 3
+Ext_User_Prm_Data_Ref(110)=31	; High Limit Speed 4
+EndModule
+
+
+
+
+
+
+
+
+
