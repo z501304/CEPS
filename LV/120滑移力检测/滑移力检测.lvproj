@@ -473,7 +473,6 @@
 				<Item Name="DTbl Boolean Array to Digital.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DTblOps.llb/DTbl Boolean Array to Digital.vi"/>
 				<Item Name="DTbl Compress Digital.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DTblOps.llb/DTbl Compress Digital.vi"/>
 				<Item Name="DTbl Digital Size.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DTblOps.llb/DTbl Digital Size.vi"/>
-				<Item Name="svc_Clear Error Cluster for Specific Code.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Clear Error Cluster for Specific Code.vi"/>
 				<Item Name="svc_Set SV Channel Info.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Set SV Channel Info.vi"/>
 				<Item Name="svc_Set SV Channel Info (variant).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Set SV Channel Info (variant).vi"/>
 				<Item Name="SVL Set dB Reference (variant).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/SVL Set dB Reference (variant).vi"/>
@@ -482,7 +481,6 @@
 				<Item Name="svc_Compute Scale Factor to Convert C to EU.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Compute Scale Factor to Convert C to EU.vi"/>
 				<Item Name="svc_Set dB ref if Pascal.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Set dB ref if Pascal.vi"/>
 				<Item Name="svc_Caller VI Returned in Error Source.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Caller VI Returned in Error Source.vi"/>
-				<Item Name="svc_Set SV Channel Info (SGL).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Set SV Channel Info (SGL).vi"/>
 				<Item Name="svc_Spectrum Info.ctl" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Controls/svc_Spectrum Info.ctl"/>
 				<Item Name="svc_X-Axis Units.ctl" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Controls/svc_X-Axis Units.ctl"/>
 				<Item Name="svc_Spectrum Type.ctl" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Controls/svc_Spectrum Type.ctl"/>
@@ -504,65 +502,6 @@
 				<Item Name="svc_Build Unit Label for Frequency Range.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Build Unit Label for Frequency Range.vi"/>
 				<Item Name="svfa_Three Finger Peak Search.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Spectrum Processing/subVIs/svfa_Three Finger Peak Search.vi"/>
 				<Item Name="svc_Unit Label Lexical Class.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Unit Label Lexical Class.vi"/>
-				<Item Name="svc_Convert Spectrum Array to dB.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Convert Spectrum Array to dB.vi"/>
-				<Item Name="svc_Log View for Power Spectrum (1 Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Log View for Power Spectrum (1 Ch).vi"/>
-				<Item Name="svfa_Scale FFT Array for RMS.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Zoom FFT/subVIs/svfa_Scale FFT Array for RMS.vi"/>
-				<Item Name="svfa_Compute Factors.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Zoom FFT/subVIs/svfa_Compute Factors.vi"/>
-				<Item Name="svfa_Coerce M to Factor of N.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Zoom FFT/subVIs/svfa_Coerce M to Factor of N.vi"/>
-				<Item Name="svc_Convert Start and Stop to Start Index and Length.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Convert Start and Stop to Start Index and Length.vi"/>
-				<Item Name="svfa_Map Parameters for DZT.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Zoom FFT/subVIs/svfa_Map Parameters for DZT.vi"/>
-				<Item Name="svfa_Compute FFT Subset.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Subset FFT/subVIs/svfa_Compute FFT Subset.vi"/>
-				<Item Name="svc_Channel Info to Spectrum Info.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Channel Info to Spectrum Info.vi"/>
-				<Item Name="svc_Unit Label to Engineering Units.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Unit Label to Engineering Units.vi"/>
-				<Item Name="svfa_Spectrum Info Window to windowTd Type Def.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Spectrum Processing/subVIs/svfa_Spectrum Info Window to windowTd Type Def.vi"/>
-				<Item Name="svc_Window Parameters.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Window Parameters.vi"/>
-				<Item Name="svc_Get Window Info.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Get Window Info.vi"/>
-				<Item Name="svfa_Check for AvgParam Change.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Check for Parameter Change/svfa_Check for AvgParam Change.vi"/>
-				<Item Name="svfa_Check for Window Change.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Check for Parameter Change/svfa_Check for Window Change.vi"/>
-				<Item Name="svc_Check Frequency Range in Bandwidth.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Check Frequency Range in Bandwidth.vi"/>
-				<Item Name="svc_Check Frequency Range.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Check Frequency Range.vi"/>
-				<Item Name="svfa_Check for Frequency Range Change.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Subset FFT/subVIs/svfa_Check for Frequency Range Change.vi"/>
-				<Item Name="svc_Get SV Channel Info.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Get SV Channel Info.vi"/>
-				<Item Name="svc_Waveform Parameters.ctl" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Controls/svc_Waveform Parameters.ctl"/>
-				<Item Name="svc_Check for Waveform Parameter Continuity (no state).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Check for Waveform Parameter Continuity (no state).vi"/>
-				<Item Name="svc_Check for Waveform Parameter Continuity (1 Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Check for Waveform Parameter Continuity (1 Ch).vi"/>
-				<Item Name="svfa_Check Data Valid [FFT subset] (1 Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Subset FFT/subVIs/svfa_Check Data Valid [FFT subset] (1 Ch).vi"/>
-				<Item Name="svfa_Peak Hold Array.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_Peak Hold Array.vi"/>
-				<Item Name="svfa_Average Array (real).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_Average Array (real).vi"/>
-				<Item Name="svfa_No Average Array (real).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_No Average Array (real).vi"/>
-				<Item Name="svfa_Average Array (complex).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_Average Array (complex).vi"/>
-				<Item Name="svfa_No Average Array (complex).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_No Average Array (complex).vi"/>
-				<Item Name="svfa_Average Array (real) No State.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_Average Array (real) No State.vi"/>
-				<Item Name="svfa_Average Array (complex) No State.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_Average Array (complex) No State.vi"/>
-				<Item Name="svfa_Scaled Time Domain Window (Array).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Windowing/svfa_Scaled Time Domain Window (Array).vi"/>
-				<Item Name="svfa_Average Array with Avg Checks (real) No State.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_Average Array with Avg Checks (real) No State.vi"/>
-				<Item Name="svc_Complex to Mag2 Array.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Complex to Mag2 Array.vi"/>
-				<Item Name="svfa_Average Array with Avg Checks (complex) No State.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_Average Array with Avg Checks (complex) No State.vi"/>
-				<Item Name="svfa_Reset Averaging State Info.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_Reset Averaging State Info.vi"/>
-				<Item Name="svfa_Build Spectrum Info.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Info/svfa_Build Spectrum Info.vi"/>
-				<Item Name="svfa_Linear OneShot or AutoRestart Averaging Done.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_Linear OneShot or AutoRestart Averaging Done.vi"/>
-				<Item Name="svfa_Scaled Time Domain Window (1 Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Windowing/svfa_Scaled Time Domain Window (1 Ch).vi"/>
-				<Item Name="svfa_Average Spectrum (real) No State.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_Average Spectrum (real) No State.vi"/>
-				<Item Name="svc_Complex to Mag2 Spectrum.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Complex to Mag2 Spectrum.vi"/>
-				<Item Name="svfa_Average Spectrum (complex) No State.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_Average Spectrum (complex) No State.vi"/>
-				<Item Name="SVFA Power Spectrum Subset (1 Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Subset FFT/SVFA Power Spectrum Subset (1 Ch).vi"/>
-				<Item Name="svc_Resampled Channel Info.ctl" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Controls/svc_Resampled Channel Info.ctl"/>
-				<Item Name="svc_Complex Datatype Defaults.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Complex Datatype Defaults.vi"/>
-				<Item Name="svc_Log View for Power Spectrum (N Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Log View for Power Spectrum (N Ch).vi"/>
-				<Item Name="svc_Check for Waveform Parameter Continuity (N Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Common/svc_Check for Waveform Parameter Continuity (N Ch).vi"/>
-				<Item Name="svfa_Check Data Valid [FFT subset] (N Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Subset FFT/subVIs/svfa_Check Data Valid [FFT subset] (N Ch).vi"/>
-				<Item Name="svfa_Build Spectrum Info (N Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Info/svfa_Build Spectrum Info (N Ch).vi"/>
-				<Item Name="svfa_Scaled Time Domain Window (N Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Windowing/svfa_Scaled Time Domain Window (N Ch).vi"/>
-				<Item Name="svfa_Initialize Averaging State (N Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Spectrum Averaging/svfa_Initialize Averaging State (N Ch).vi"/>
-				<Item Name="svfa_Cosine Window Coefficients.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Spectrum Processing/subVIs/svfa_Cosine Window Coefficients.vi"/>
-				<Item Name="svfa_Rect Window Frequency Response.vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Spectrum Processing/subVIs/svfa_Rect Window Frequency Response.vi"/>
-				<Item Name="svfa_Window Frequency Response (double).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Spectrum Processing/subVIs/svfa_Window Frequency Response (double).vi"/>
-				<Item Name="svfa_Window Frequency Response (first derivative, double).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Spectrum Processing/subVIs/svfa_Window Frequency Response (first derivative, double).vi"/>
-				<Item Name="SVFA Get Spectrum Subset (NxM).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Spectrum Processing/SVFA Get Spectrum Subset (NxM).vi"/>
-				<Item Name="SVFA Get Spectrum Subset (Complex) (1 Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Spectrum Processing/SVFA Get Spectrum Subset (Complex) (1 Ch).vi"/>
-				<Item Name="SVFA Get Spectrum Subset (Complex) (N Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Spectrum Processing/SVFA Get Spectrum Subset (Complex) (N Ch).vi"/>
-				<Item Name="SVFA Get Spectrum Subset (N Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Spectrum Processing/SVFA Get Spectrum Subset (N Ch).vi"/>
-				<Item Name="SVFA Spectrum Peak Search (N Ch).vi" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Spectrum Processing/SVFA Spectrum Peak Search (N Ch).vi"/>
 				<Item Name="svc_Channel Info.ctl" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Controls/svc_Channel Info.ctl"/>
 				<Item Name="svc_Weighting Filter Text Ring.ctl" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Controls/svc_Weighting Filter Text Ring.ctl"/>
 				<Item Name="svc_Engineering Units Text Ring.ctl" Type="VI" URL="/&lt;vilib&gt;/_NISVFA/_Shared subVIs/Controls/svc_Engineering Units Text Ring.ctl"/>
@@ -573,6 +512,14 @@
 				<Item Name="svc_Spectrum Type.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/_NISVFA/_Shared subVIs/Controls/svc_Spectrum Type.ctl"/>
 				<Item Name="svc_Complimentary Spectrum Units.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/_NISVFA/_Shared subVIs/Controls/svc_Complimentary Spectrum Units.ctl"/>
 				<Item Name="svc_Channel Info.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/_NISVFA/_Shared subVIs/Controls/svc_Channel Info.ctl"/>
+				<Item Name="svc_Clear Error Cluster for Specific Code.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_NISVFA/_Shared subVIs/Common/svc_Clear Error Cluster for Specific Code.vi"/>
+				<Item Name="svc_Set SV Channel Info (variant).vi" Type="VI" URL="/&lt;vilib&gt;/addons/_NISVFA/_Shared subVIs/Common/svc_Set SV Channel Info (variant).vi"/>
+				<Item Name="SVL Set dB Reference (variant).vi" Type="VI" URL="/&lt;vilib&gt;/addons/_NISVFA/_Shared subVIs/Common/SVL Set dB Reference (variant).vi"/>
+				<Item Name="svc_Engineering Units to Unit Label.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_NISVFA/_Shared subVIs/Common/svc_Engineering Units to Unit Label.vi"/>
+				<Item Name="svc_Compute Scale Factor to Convert V to EU.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_NISVFA/_Shared subVIs/Common/svc_Compute Scale Factor to Convert V to EU.vi"/>
+				<Item Name="svc_Compute Scale Factor to Convert C to EU.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_NISVFA/_Shared subVIs/Common/svc_Compute Scale Factor to Convert C to EU.vi"/>
+				<Item Name="svc_Set dB ref if Pascal.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_NISVFA/_Shared subVIs/Common/svc_Set dB ref if Pascal.vi"/>
+				<Item Name="svc_Set SV Channel Info (SGL).vi" Type="VI" URL="/&lt;vilib&gt;/addons/_NISVFA/_Shared subVIs/Common/svc_Set SV Channel Info (SGL).vi"/>
 			</Item>
 			<Item Name="Advapi32.dll" Type="Document" URL="Advapi32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -596,7 +543,7 @@
 			<Item Name="System.Drawing" Type="Document" URL="System.Drawing">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="DAQNavi_LV.dll" Type="Document" URL="/C/Windows/System32/DAQNavi_LV.dll"/>
+			<Item Name="DAQNavi_LV.dll" Type="Document" URL="../../../../../../../Windows/System32/DAQNavi_LV.dll"/>
 		</Item>
 		<Item Name="程序生成规范" Type="Build">
 			<Item Name="R92ADLL" Type="DLL">
@@ -756,18 +703,18 @@
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">/D/builds/NI_AB_PROJECTNAME/滑移力检测</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/C/Users/终极BOSS/Documents/build/NI_AB_PROJECTNAME</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{4FF40BC5-4CEC-4119-9817-EEB3AB1CDD33}</Property>
-				<Property Name="Bld_version.build" Type="Int">110</Property>
+				<Property Name="Bld_version.build" Type="Int">111</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">滑移力检测.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">/D/builds/NI_AB_PROJECTNAME/滑移力检测/滑移力检测.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">/C/Users/终极BOSS/Documents/build/NI_AB_PROJECTNAME/滑移力检测.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">支持目录</Property>
-				<Property Name="Destination[1].path" Type="Path">/D/builds/NI_AB_PROJECTNAME/滑移力检测/data</Property>
+				<Property Name="Destination[1].path" Type="Path">/C/Users/终极BOSS/Documents/build/NI_AB_PROJECTNAME/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/我的电脑/Sources/Image/Logo.ico</Property>
@@ -779,7 +726,7 @@
 				<Property Name="Exe_VardepHideDeployDlg" Type="Bool">true</Property>
 				<Property Name="Exe_VardepLibItemCount" Type="Int">2</Property>
 				<Property Name="Exe_VardepUndeployOnExit" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{91228837-ADD8-43DF-A43E-18E4433DA5D3}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{5DFE36FB-A2F8-437B-9D9D-5DB756E9062F}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/Sources/From/Login.vi</Property>

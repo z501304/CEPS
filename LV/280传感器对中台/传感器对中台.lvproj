@@ -249,8 +249,6 @@
 				<Item Name="DAQNaviGet_Buffered_CO_Trigger_Edge.vi" Type="VI" URL="/&lt;userlib&gt;/DAQNavi Polymorphic VI/configure/DAQNavi Get Property/CO/DAQNaviGet_Buffered_CO_Trigger_Edge.vi"/>
 				<Item Name="DAQNaviGet_Buffered_CO_Trigger_Level.vi" Type="VI" URL="/&lt;userlib&gt;/DAQNavi Polymorphic VI/configure/DAQNavi Get Property/CO/DAQNaviGet_Buffered_CO_Trigger_Level.vi"/>
 				<Item Name="DAQNaviGet_Buffered_CO_Trigger_Source.vi" Type="VI" URL="/&lt;userlib&gt;/DAQNavi Polymorphic VI/configure/DAQNavi Get Property/CO/DAQNaviGet_Buffered_CO_Trigger_Source.vi"/>
-				<Item Name="DAQNaviGet_AI_BurnShortRetValue.vi" Type="VI" URL="/&lt;userlib&gt;/DAQNavi Polymorphic VI/configure/DAQNavi Get Property/AI/DAQNaviGet_AI_BurnShortRetValue.vi"/>
-				<Item Name="DAQNaviGet_CI_Channel_PulseWidth.vi" Type="VI" URL="/&lt;userlib&gt;/DAQNavi Polymorphic VI/configure/DAQNavi Get Property/CI/DAQNaviGet_CI_Channel_PulseWidth.vi"/>
 				<Item Name="DAQNavi Clear Task.vi" Type="VI" URL="/&lt;userlib&gt;/DAQNavi Polymorphic VI/configure/task/DAQNavi Clear Task.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
@@ -566,6 +564,7 @@
 				<Item Name="Write Delimited Spreadsheet.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write Delimited Spreadsheet.vi"/>
 				<Item Name="DAQmx Create Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/task.llb/DAQmx Create Task.vi"/>
 				<Item Name="DAQmx Stop Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Stop Task.vi"/>
+				<Item Name="subDisplayMessage.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/DisplayMessageBlock.llb/subDisplayMessage.vi"/>
 			</Item>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -592,9 +591,8 @@
 			<Item Name="Imm32.dll" Type="Document" URL="Imm32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="DAQNavi_LV.dll" Type="Document" URL="/C/Windows/System32/DAQNavi_LV.dll"/>
-			<Item Name="Hella PGI.lvlib" Type="Library" URL="/C/Users/z5013/Documents/WeChat Files/wxid_ly9aziuwuy0g21/FileStorage/File/2021-08/测试/Hella PGI.lvlib"/>
-			<Item Name="APSx.dll" Type="Document" URL="../../../../程序临时修改/280传感器对中台/Sources/APSx.dll/APSx.dll"/>
+			<Item Name="DAQNavi_LV.dll" Type="Document" URL="../../../../../../../Windows/System32/DAQNavi_LV.dll"/>
+			<Item Name="Set AP Sx Parameter.vi" Type="VI" URL="../../../../../../z5013/Documents/WeChat Files/wxid_ly9aziuwuy0g21/FileStorage/File/2021-08/测试/Set AP Sx Parameter.vi"/>
 		</Item>
 		<Item Name="程序生成规范" Type="Build">
 			<Item Name="对中台左工位" Type="EXE">
@@ -613,7 +611,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">/D/builds/对中台左工位</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{EBA217AF-EAD6-435E-AE62-5CA6C9797BA2}</Property>
-				<Property Name="Bld_version.build" Type="Int">489</Property>
+				<Property Name="Bld_version.build" Type="Int">504</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">对中台左工位.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">/D/builds/对中台左工位/对中台左工位.exe</Property>
@@ -641,7 +639,7 @@
 				<Property Name="Exe_VardepHideDeployDlg" Type="Bool">true</Property>
 				<Property Name="Exe_VardepLibItemCount" Type="Int">2</Property>
 				<Property Name="Exe_VardepUndeployOnExit" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{C55CFF63-6920-428D-A595-FD60DA9CDE03}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{03AE4B08-D9FD-4D34-9279-03909A73FBB0}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/Sources/From/Login.vi</Property>
@@ -671,6 +669,12 @@
 				<Property Name="Source[17].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[17].itemID" Type="Ref">/我的电脑/Sources/Auto/T1T2占空比.vi</Property>
 				<Property Name="Source[17].type" Type="Str">VI</Property>
+				<Property Name="Source[18].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[18].itemID" Type="Ref">/我的电脑/Sources/Global_Variable/Global.vi</Property>
+				<Property Name="Source[18].type" Type="Str">VI</Property>
+				<Property Name="Source[19].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[19].itemID" Type="Ref">/我的电脑/Sources/Database/SQL_query.vi</Property>
+				<Property Name="Source[19].type" Type="Str">VI</Property>
 				<Property Name="Source[2].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[2].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[2].Container.depDestIndex" Type="Int">0</Property>
@@ -678,6 +682,15 @@
 				<Property Name="Source[2].itemID" Type="Ref">/我的电脑/Sources/Config</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">Container</Property>
+				<Property Name="Source[20].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[20].itemID" Type="Ref">/我的电脑/Sources/Database/Lib/追溯Global.vi</Property>
+				<Property Name="Source[20].type" Type="Str">VI</Property>
+				<Property Name="Source[21].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[21].itemID" Type="Ref">/我的电脑/Sources/Database/Lib/GET_PRO_PRODUCT_IDS.vi</Property>
+				<Property Name="Source[21].type" Type="Str">VI</Property>
+				<Property Name="Source[22].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[22].itemID" Type="Ref">/我的电脑/Sources/Database/Lib/Get_CODE_ID.vi</Property>
+				<Property Name="Source[22].type" Type="Str">VI</Property>
 				<Property Name="Source[3].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[3].Container.depDestIndex" Type="Int">0</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">1</Property>
@@ -700,7 +713,7 @@
 				<Property Name="Source[9].destinationIndex" Type="Int">3</Property>
 				<Property Name="Source[9].itemID" Type="Ref">/我的电脑/Sources/APSx.dll/APSx.h</Property>
 				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="SourceCount" Type="Int">18</Property>
+				<Property Name="SourceCount" Type="Int">23</Property>
 				<Property Name="TgtF_enableDebugging" Type="Bool">true</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">对中台左工位</Property>
 				<Property Name="TgtF_internalName" Type="Str">对中台左工位</Property>
@@ -837,7 +850,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">/D/builds/对中台右工位</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{11F5C65C-F2CE-4D93-B191-EB2785C39B4A}</Property>
-				<Property Name="Bld_version.build" Type="Int">545</Property>
+				<Property Name="Bld_version.build" Type="Int">550</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">对中台右工位.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">/D/builds/对中台右工位/对中台右工位.exe</Property>
