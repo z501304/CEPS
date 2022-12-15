@@ -661,7 +661,7 @@
 			<Item Name="Sent_Recive.vi" Type="VI" URL="../Libraries/ZLG_CAN/Sent_Recive.vi"/>
 			<Item Name="String_TO_CAN_Frame.vi" Type="VI" URL="../Libraries/ZLG_CAN/String_TO_CAN_Frame.vi"/>
 			<Item Name="Recive_Wait.vi" Type="VI" URL="../Libraries/ZLG_CAN/Recive_Wait.vi"/>
-			<Item Name="DAQNavi_LV.dll" Type="Document" URL="../../../../../../../Windows/System32/DAQNavi_LV.dll"/>
+			<Item Name="DAQNavi_LV.dll" Type="Document" URL="../../../../../../../../Windows/System32/DAQNavi_LV.dll"/>
 		</Item>
 		<Item Name="程序生成规范" Type="Build">
 			<Item Name="中间轴装配" Type="EXE">
@@ -680,7 +680,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">/C/Users/终极BOSS/Documents/build/中间轴装配</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{EB2E1B14-0EAD-4F61-9025-A55446C6D13B}</Property>
-				<Property Name="Bld_version.build" Type="Int">172</Property>
+				<Property Name="Bld_version.build" Type="Int">175</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">中间轴装配.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">/C/Users/终极BOSS/Documents/build/中间轴装配/NI_AB_PROJECTNAME.exe</Property>

@@ -591,8 +591,8 @@
 			<Item Name="Imm32.dll" Type="Document" URL="Imm32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="DAQNavi_LV.dll" Type="Document" URL="../../../../../../../Windows/System32/DAQNavi_LV.dll"/>
-			<Item Name="Set AP Sx Parameter.vi" Type="VI" URL="../../../../../../z5013/Documents/WeChat Files/wxid_ly9aziuwuy0g21/FileStorage/File/2021-08/测试/Set AP Sx Parameter.vi"/>
+			<Item Name="DAQNavi_LV.dll" Type="Document" URL="../../../../../../../../Windows/System32/DAQNavi_LV.dll"/>
+			<Item Name="Set AP Sx Parameter.vi" Type="VI" URL="../../../../../../../z5013/Documents/WeChat Files/wxid_ly9aziuwuy0g21/FileStorage/File/2021-08/测试/Set AP Sx Parameter.vi"/>
 		</Item>
 		<Item Name="程序生成规范" Type="Build">
 			<Item Name="对中台左工位" Type="EXE">
@@ -611,7 +611,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">/D/builds/对中台左工位</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{EBA217AF-EAD6-435E-AE62-5CA6C9797BA2}</Property>
-				<Property Name="Bld_version.build" Type="Int">504</Property>
+				<Property Name="Bld_version.build" Type="Int">506</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">对中台左工位.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">/D/builds/对中台左工位/对中台左工位.exe</Property>
@@ -850,7 +850,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">/D/builds/对中台右工位</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{11F5C65C-F2CE-4D93-B191-EB2785C39B4A}</Property>
-				<Property Name="Bld_version.build" Type="Int">550</Property>
+				<Property Name="Bld_version.build" Type="Int">553</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">对中台右工位.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">/D/builds/对中台右工位/对中台右工位.exe</Property>

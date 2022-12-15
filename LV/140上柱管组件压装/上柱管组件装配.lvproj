@@ -548,7 +548,7 @@
 			<Item Name="System.Drawing" Type="Document" URL="System.Drawing">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="DAQNavi_LV.dll" Type="Document" URL="../../../../../../../Windows/System32/DAQNavi_LV.dll"/>
+			<Item Name="DAQNavi_LV.dll" Type="Document" URL="../../../../../../../../Windows/System32/DAQNavi_LV.dll"/>
 		</Item>
 		<Item Name="程序生成规范" Type="Build">
 			<Item Name="CAN_TEST" Type="EXE">
@@ -920,18 +920,18 @@
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">/C/Users/终极BOSS/Documents/build/NI_AB_PROJECTNAME</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/D/builds/NI_AB_PROJECTNAME/上柱管组件装配</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{4FF40BC5-4CEC-4119-9817-EEB3AB1CDD33}</Property>
-				<Property Name="Bld_version.build" Type="Int">61</Property>
+				<Property Name="Bld_version.build" Type="Int">67</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">上柱管组件装配.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">/C/Users/终极BOSS/Documents/build/NI_AB_PROJECTNAME/上柱管组件装配.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">/D/builds/NI_AB_PROJECTNAME/上柱管组件装配/上柱管组件装配.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">支持目录</Property>
-				<Property Name="Destination[1].path" Type="Path">/C/Users/终极BOSS/Documents/build/NI_AB_PROJECTNAME/data</Property>
+				<Property Name="Destination[1].path" Type="Path">/D/builds/NI_AB_PROJECTNAME/上柱管组件装配/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/我的电脑/Sources/Image/Logo.ico</Property>
@@ -943,7 +943,7 @@
 				<Property Name="Exe_VardepHideDeployDlg" Type="Bool">true</Property>
 				<Property Name="Exe_VardepLibItemCount" Type="Int">2</Property>
 				<Property Name="Exe_VardepUndeployOnExit" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{2A130D8E-0CBB-40AD-8BCF-CCE8D39EE22C}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{4B04543A-D7AD-4D0B-B3B5-87CCA2799EE4}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/Sources/From/Login.vi</Property>

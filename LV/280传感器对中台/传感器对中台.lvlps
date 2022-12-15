@@ -16,14 +16,6 @@ Cache_Path[Path] Line0002 = "B8-3B8F-46BA-BE54-C2A6393EDCEB}.txt"
 Cache_Path[Path] Line0001 = "/C/Users/z5013/AppData/Local/Temp/AB_Cache_{0E9823"
 Cache_Path[Path] Line0002 = "06-FB3D-4BA9-9123-EDD469A4668A}.txt"
 
-[AB_Cache_{DBFBDFEB-DDFD-4A9E-99D0-1DC89B9B9F67}]
-Cache_Path[Path] Line0001 = "/C/Users/终极BOSS/AppData/Local/Temp/AB_Cache_{DBF"
-Cache_Path[Path] Line0002 = "BDFEB-DDFD-4A9E-99D0-1DC89B9B9F67}.txt"
-
-[AB_Cache_{11F5C65C-F2CE-4D93-B191-EB2785C39B4A}]
-Cache_Path[Path] Line0001 = "/C/Users/终极BOSS/AppData/Local/Temp/AB_Cache_{11F"
-Cache_Path[Path] Line0002 = "5C65C-F2CE-4D93-B191-EB2785C39B4A}.txt"
-
 [AB_Cache_{CEFB2C4F-3EA3-43C5-A324-ECBAA0DA759F}]
 Cache_Path[Path] Line0001 = "/C/Users/终极BOSS/AppData/Local/Temp/AB_Cache_{CEF"
 Cache_Path[Path] Line0002 = "B2C4F-3EA3-43C5-A324-ECBAA0DA759F}.txt"
@@ -31,4 +23,12 @@ Cache_Path[Path] Line0002 = "B2C4F-3EA3-43C5-A324-ECBAA0DA759F}.txt"
 [AB_Cache_{EBA217AF-EAD6-435E-AE62-5CA6C9797BA2}]
 Cache_Path[Path] Line0001 = "/C/Users/终极BOSS/AppData/Local/Temp/AB_Cache_{EBA"
 Cache_Path[Path] Line0002 = "217AF-EAD6-435E-AE62-5CA6C9797BA2}.txt"
+
+[AB_Cache_{DBFBDFEB-DDFD-4A9E-99D0-1DC89B9B9F67}]
+Cache_Path[Path] Line0001 = "/C/Users/终极BOSS/AppData/Local/Temp/AB_Cache_{DBF"
+Cache_Path[Path] Line0002 = "BDFEB-DDFD-4A9E-99D0-1DC89B9B9F67}.txt"
+
+[AB_Cache_{11F5C65C-F2CE-4D93-B191-EB2785C39B4A}]
+Cache_Path[Path] Line0001 = "/C/Users/终极BOSS/AppData/Local/Temp/AB_Cache_{11F"
+Cache_Path[Path] Line0002 = "5C65C-F2CE-4D93-B191-EB2785C39B4A}.txt"
 
